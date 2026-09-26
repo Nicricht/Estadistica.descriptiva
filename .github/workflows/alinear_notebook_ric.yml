@@ -73,5 +73,7 @@ jobs:
             echo 'El notebook ya está alineado y ejecutado.'
           else
             git commit -m 'fix: ejecutar notebook completo con criterio RIC'
-            git push
+            git fetch origin main
+            git rebase origin/main
+            git push origin main
           fi
