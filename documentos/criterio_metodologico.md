@@ -1,23 +1,43 @@
 # Criterio metodológico
 
-## Tema
-**El precio de elegir en Biobío** conecta las preguntas obligatorias con una dimensión territorial propia de la Región del Biobío.
+## Tema definitivo
 
-## Dos unidades de análisis
+**DEL ACERO AL ALGORITMO**
 
-### Matrículas
-Se utilizan cuando la pregunta describe personas matriculadas:
+Pregunta central:
+
+**¿Desde qué base de capital humano parte el Biobío para transformar su histórica vocación industrial hacia una economía de manufactura avanzada e Industria 4.0?**
+
+El análisis es descriptivo. La base 2021 funciona como una fotografía o línea base; no permite demostrar causalidad ni evolución temporal por sí sola.
+
+## Tres bases de trabajo
+
+### 1. Matrículas de pregrado
+
+Se utilizan cuando la pregunta describe personas, carreras o estructura formativa:
 - edad;
 - género;
 - tipo de institución;
-- jornada.
+- área del conocimiento;
+- clasificación “Del acero al algoritmo”.
 
-Después de restringir a pregrado y excluir aranceles iguales a cero, la base de trabajo contiene **101.067 matrículas**.
+Base: **101.093 matrículas de pregrado**.
 
-### Ofertas académicas únicas
-Se utilizan cuando la pregunta describe el precio de carreras u ofertas.
+Los 26 registros con arancel $0 se mantienen aquí porque el precio no es necesario para estos análisis.
 
-Una oferta se distingue mediante:
+### 2. Matrículas con precio válido
+
+Se utilizan para describir aranceles asociados a matrículas.
+
+Base: **101.067 matrículas**, después de excluir únicamente los 26 registros de pregrado con arancel registrado en $0.
+
+No se interpreta $0 como gratuidad porque la base no entrega esa explicación.
+
+### 3. Ofertas académicas únicas
+
+Se utilizan cuando la pregunta compara cuánto cuesta una carrera u oferta.
+
+Una oferta se identifica mediante:
 - institución;
 - carrera;
 - comuna de sede;
@@ -29,19 +49,69 @@ Una oferta se distingue mediante:
 
 Con este criterio se obtienen **1.273 ofertas académicas únicas**.
 
-## Hallazgos que deben quedar reproducibles en Colab
+La razón es simple: si una carrera tiene 500 estudiantes, no corresponde contar su precio 500 veces al responder cuánto cuesta una oferta académica.
 
-- Mediana global del arancel de ofertas: aproximadamente **$2.030.000**.
-- Áreas con mayores medianas: Derecho, Ciencias Básicas y Agropecuaria.
-- En 15–19 años, CRUCH representa aproximadamente **46,24%** e IP **19,30%**.
-- En 40 años o más, IP representa aproximadamente **52,85%** y CRUCH **10,90%**.
-- Para ofertas únicas: Q1 ≈ **$1.616.000**, Q3 ≈ **$2.580.000**, IQR ≈ **$964.000**.
-- Límite de arancel alto: **$4.026.000**.
-- Ofertas sobre el límite: **135**, aproximadamente **10,6%**.
-- De esas 135 ofertas, **129** se ubican en la provincia de Concepción.
+## Hallazgo “Del acero al algoritmo”
+
+Sobre 101.093 matrículas de pregrado:
+
+- Motores productivos: **20.368 (20,15%)**.
+- Capacidades transformadoras: **7.000 (6,92%)**.
+- Otros campos: **73.725 (72,93%)**.
+- Relación aproximada: **2,9 : 1**.
+
+Interpretación permitida:
+
+> En la fotografía educativa de 2021, el componente formativo asociado a motores productivos tenía un peso cercano a tres veces el componente clasificado como capacidades transformadoras.
+
+No demuestra déficit de profesionales ni atraso de la educación.
+
+## Pregunta obligatoria 1 — Áreas y arancel
+
+Unidad: **oferta académica única**.
+
+Criterio: **mediana del arancel por área**, porque es menos sensible a valores extremos.
+
+- Mediana global: **$2.030.000**.
+- Derecho: **$3.586.000**.
+- Ciencias Básicas: **$3.290.000**.
+- Agropecuaria: **$2.981.500**.
+
+Se calculan también Q1, Q3, RIC y cantidad de ofertas por área.
+
+## Pregunta obligatoria 2 — Edad e institución
+
+Unidad: **matrícula de pregrado**.
+
+Se estudia asociación, no causalidad.
+
+- 15–19 años: CRUCH **46,24%**, IP **19,30%**.
+- 40 años o más: IP **52,93%**, CRUCH **10,88%**.
+
+## Pregunta obligatoria 3 — Arancel sustantivamente alto
+
+Unidad: **oferta académica única**.
+
+Criterio:
+
+**Límite superior = Q3 + 1,5 × RIC**
+
+- Q1 ≈ **$1.616.000**.
+- Q3 ≈ **$2.580.000**.
+- RIC ≈ **$964.000**.
+- Límite superior ≈ **$4.026.000**.
+- Ofertas sobre el límite: **135 de 1.273 (10,6%)**.
+- CRUCH: **73**.
+- Privadas: **62**.
+- Concepción: **129**.
+- Biobío: **6**.
+- Salud: **39**.
+- Tecnología: **39**.
+- Duración mediana del grupo alto: **10 semestres**.
+- Duración mediana del resto: **5 semestres**.
 
 ## Regla de interpretación
-El análisis es descriptivo. Se pueden afirmar diferencias y asociaciones observadas, pero no causalidad.
 
-## Próximo control
-Ejecutar el notebook completo en Google Colab con el Excel y comprobar que todas las tablas y gráficos reproduzcan estos resultados antes de construir el PowerPoint.
+Se pueden afirmar diferencias, concentraciones y asociaciones observadas.
+
+No se debe afirmar causalidad cuando la base no la identifica.
