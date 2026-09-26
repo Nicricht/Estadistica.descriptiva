@@ -35,20 +35,18 @@ for cell in cells:
         cell['source'] = lines(text.replace(old, new))
         break
 
-# 2) Dispersión: incorporar lo exigido por la pauta
+# 2) Dispersión: alinear con el Laboratorio 5 del profesor
 for cell in cells:
     if cell.get('cell_type') == 'markdown' and src(cell).startswith('# 5. Medidas de Dispersión'):
         cell['source'] = lines('''# 5. Medidas de Dispersión
 
-Aplicaremos las medidas de dispersión utilizadas en la pauta del trabajo:
+Aplicaremos las medidas de dispersión que aparecen en el Laboratorio 5 del profesor:
 
 - Rango.
-- Varianza.
 - Desviación estándar.
 - Coeficiente de variación.
-- Rango intercuartílico (RIC).
 
-El desarrollo se mantiene paso a paso y con interpretación descriptiva.
+El RIC se reserva para la Pregunta 3 como aplicación de los cuartiles del Laboratorio 4.
 ''')
         break
 
@@ -61,34 +59,20 @@ minimo_arancel = d_precio['VALOR ARANCEL (PESOS)'].min()
 #Rango
 rango_arancel = maximo_arancel - minimo_arancel
 
-#Varianza y desviación estándar
-varianza_arancel = d_precio['VALOR ARANCEL (PESOS)'].var()
+#Desviación estándar
 desviacion_arancel = d_precio['VALOR ARANCEL (PESOS)'].std()
 
 #Coeficiente de variación
 cv_arancel = desviacion_arancel / media_arancel * 100
 
-#Cuartiles y rango intercuartílico
-q1_arancel = d_precio['VALOR ARANCEL (PESOS)'].quantile(0.25)
-q3_arancel = d_precio['VALOR ARANCEL (PESOS)'].quantile(0.75)
-ric_arancel = q3_arancel - q1_arancel
-
 print(f'Rango: ${rango_arancel}')
-print(f'Varianza: ${varianza_arancel:.0f}')
 print(f'Desviación estándar: ${desviacion_arancel:.0f}')
 print(f'CV: {cv_arancel:.1f}%')
-print(f'Q1: ${q1_arancel:.0f}')
-print(f'Q3: ${q3_arancel:.0f}')
-print(f'RIC: ${ric_arancel:.0f}')
 ''')
         cell['outputs'] = [{'name': 'stdout', 'output_type': 'stream', 'text': [
             'Rango: $8133670\n',
-            'Varianza: $2307332874308\n',
             'Desviación estándar: $1518991\n',
-            'CV: 47.1%\n',
-            'Q1: $1988000\n',
-            'Q3: $4261900\n',
-            'RIC: $2273900\n'
+            'CV: 47.1%\n'
         ]}]
         break
 
@@ -203,4 +187,4 @@ Los aranceles altos aparecen asociados en esta base con determinadas áreas, ter
 cells[start:end] = new_p3
 
 NB.write_text(json.dumps(nb, ensure_ascii=False, indent=1), encoding='utf-8')
-print('Notebook alineado con RIC, varianza y pregunta central definitiva.')
+print('Notebook alineado con el método del profesor y la pregunta central definitiva.')
