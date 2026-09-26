@@ -107,7 +107,7 @@ Estas conexiones se presentan como **contexto e hipótesis de investigación**, 
 - ✅ Preguntas obligatorias 1, 2 y 3 preservadas.
 - ✅ Criterio Q3 + 1,5 × RIC restaurado y documentado.
 - ✅ Varianza y RIC incorporados según la pauta.
-- ✅ Validación local final: **71/71 celdas de código, 0 errores**.
+- ✅ Validación local final: **38/38 celdas de código, 0 errores**.
 - ✅ Narrativa regional “Del acero al algoritmo” documentada.
 - ✅ Auditoría crítica del PowerPoint guardada en `documentos/auditoria_powerpoint_final.md`.
 - ✅ PowerPoint final auditado y corregido: **20 diapositivas con 19 transiciones Morph**.
