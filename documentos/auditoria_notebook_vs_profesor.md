@@ -70,8 +70,8 @@ La interpretación es descriptiva: la fotografía 2021 muestra una base formativ
 ## Validación técnica
 
 La versión corregida fue ejecutada localmente con el Excel real:
-- celdas de código: **71**;
-- celdas ejecutadas: **71**;
+- celdas de código: **38**;
+- celdas ejecutadas: **38**;
 - errores: **0**.
 
 El repositorio fue alineado mediante el commit automatizado `098e13ab406993d4289d593fafe9a59b0360d2e8` (`fix: alinear notebook con RIC, varianza y pauta`).
