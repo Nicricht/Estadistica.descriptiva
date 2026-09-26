@@ -83,7 +83,8 @@ El notebook aplica los laboratorios 0 al 5 del profesor y la pauta:
 - gráficos circular, barras, histogramas, subplots y dispersión;
 - media, mediana, moda y percentiles;
 - `describe()`, `groupby()`, `agg()` y `crosstab()`;
-- rango, **varianza**, desviación estándar, coeficiente de variación y **RIC**.
+- rango, desviación estándar y coeficiente de variación, como en el Laboratorio 5;
+- Q1, Q3 y `quantile()` del Laboratorio 4, usados como base para construir el **RIC** en la Pregunta 3.
 
 ## Contexto regional
 
@@ -106,7 +107,8 @@ Estas conexiones se presentan como **contexto e hipótesis de investigación**, 
 - ✅ Notebook alineado con los laboratorios del profesor.
 - ✅ Preguntas obligatorias 1, 2 y 3 preservadas.
 - ✅ Criterio Q3 + 1,5 × RIC restaurado y documentado.
-- ✅ Varianza y RIC incorporados según la pauta.
+- ✅ Dispersión alineada con el Laboratorio 5: rango, desviación estándar y coeficiente de variación.
+- ✅ RIC conservado solo como aplicación de los cuartiles del Laboratorio 4 para responder la Pregunta 3.
 - ✅ Validación local final: **38/38 celdas de código, 0 errores**.
 - ✅ Narrativa regional “Del acero al algoritmo” documentada.
 - ✅ Auditoría crítica del PowerPoint guardada en `documentos/auditoria_powerpoint_final.md`.
