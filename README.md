@@ -1,35 +1,73 @@
 # Estadística descriptiva
 
-## Tema del trabajo
-**Biobío vuelve a estudiar**  
-*Edad, reconversión y educación superior en una región que envejece.*
+## Tema oficial
+# **El ADN profesional del Biobío**
+### *¿De qué está hecho el talento que formará la región?*
 
 ## Pregunta guía
-**¿La educación superior del Biobío funciona de la misma manera para un joven que recién comienza y para un adulto que vuelve a estudiar?**
+**¿Cómo se distribuye la formación superior entre los motores productivos del Biobío y las capacidades que pueden transformar esos sectores mediante tecnología, automatización y sustentabilidad?**
 
 ## Idea central
-La base 2021 muestra que la trayectoria educativa cambia fuertemente con la edad:
-- entre 15–19 años, CRUCH representa cerca de 46,24% e IP 19,30%;
-- entre 40 años o más, IP sube a 52,85% y CRUCH baja a 10,90%;
-- la edad mediana aumenta desde 22 años en jornada diurna hasta 36 años en semipresencial;
-- CFT e IP presentan aranceles medianos asociados a matrículas bastante menores que las universidades.
+El trabajo ya no usa el territorio o el precio como tema principal. La base 2021 se utiliza para construir una **radiografía del capital humano en formación**.
 
-El análisis se conecta con un Biobío que envejece y que hoy enfrenta procesos de reconversión laboral y transformación industrial. Esto no permite demostrar causalidad individual, pero sí plantea una pregunta regional más interesante que la simple distribución territorial de carreras.
+A partir de los nombres reales de las carreras se construyeron nueve familias estratégicas, inspiradas en sectores y prioridades regionales documentadas por el Gobierno Regional del Biobío.
+
+### Motores productivos
+- Industria y manufactura
+- Construcción e infraestructura
+- Logística y puertos
+- Forestal y madera
+- Pesca y acuicultura
+- Agroalimentario
+
+### Capacidades transformadoras
+- Digital y TIC
+- Automatización y robótica
+- Energía, sustentabilidad y biotecnología
+
+La clasificación es elaboración propia y se implementa directamente en el notebook mediante reglas reproducibles sobre `NOMBRE CARRERA`.
+
+## Hallazgos iniciales
+Sobre **101.067 matrículas** analizadas:
+
+- Motores productivos: **20,14%**.
+- Capacidades transformadoras: **6,93%**.
+- Total de las nueve familias estratégicas: **27,07%**.
+
+Familias con mayor peso:
+- Industria y manufactura: **11,10%**.
+- Construcción e infraestructura: **6,84%**.
+- Digital y TIC: **3,33%**.
+- Automatización y robótica: **2,58%**.
+- Energía, sustentabilidad y biotecnología: **1,02%**.
+- Logística y puertos: **1,02%**.
+
+Un hallazgo destacado aparece en género:
+- Mujeres en Industria y manufactura: **17,17%**.
+- Mujeres en Digital y TIC: **11,50%**.
+- Mujeres en Automatización y robótica: **5,79%**.
+
+## Regla metodológica
+Estos porcentajes **no miden demanda laboral ni déficit de profesionales**. La base contiene matrículas, no vacantes, empleo ni requerimientos de empresas.
+
+El objetivo es describir qué tipo de formación aparece en la educación superior regional y cómo se distribuye por género, edad, territorio, tipo de institución y arancel.
 
 ## Estado actual
-- ✅ Notebook corregido, ejecutado y reenfocado.
-- ✅ Unidad de análisis separada entre matrículas y ofertas académicas únicas.
-- ✅ Preguntas 1, 2 y 3 mantenidas según la evaluación.
-- ✅ Contexto regional de envejecimiento y reconversión incorporado.
-- ⏳ Actualizar la presentación PowerPoint al nuevo relato.
+- ✅ Notebook base corregido y ejecutado previamente.
+- ✅ Preguntas obligatorias 1, 2 y 3 preservadas.
+- ✅ Nuevo enfoque ADN profesional incorporado al notebook.
+- ✅ Clasificación reproducible de carreras incorporada.
+- ✅ Resultados regionales calculados y documentados.
+- ⏳ Ejecutar nuevamente el notebook en Colab para guardar los nuevos gráficos del ADN.
+- ⏳ Reemplazar la presentación anterior por la versión del ADN profesional.
 - ⏳ Preparar defensa oral.
 
 ## Estructura
-- `notebooks/`: notebook principal para Google Colab.
-- `presentacion/`: presentación PowerPoint.
-- `data/`: instrucciones y dataset de trabajo.
-- `graficos/`: gráficos seleccionados para la exposición.
-- `documentos/`: decisiones metodológicas y contexto regional.
+- `notebooks/`: notebook principal de Google Colab.
+- `presentacion/`: presentación.
+- `data/`: instrucciones del dataset.
+- `graficos/`: gráficos seleccionados.
+- `documentos/`: decisiones metodológicas y análisis regional.
 
 ## Notebook principal
 `notebooks/Estadistica_Descriptiva_Biobio.ipynb`
@@ -37,10 +75,10 @@ El análisis se conecta con un Biobío que envejece y que hoy enfrenta procesos 
 ## Fuente de datos
 Registro de Matrícula de Educación Superior 2021, Región del Biobío.
 
-## Regla metodológica central
-- Los análisis sobre edad, género y tipo de institución usan **matrículas**.
-- Los análisis de precios usan **ofertas académicas únicas**.
-- Los resultados se presentan como asociaciones o diferencias observadas, sin atribuir causalidad no demostrada.
+## Fuentes regionales
+- GORE Biobío, Ejes Estratégicos: https://gorebiobio.cl/wp-content/uploads/2025/01/Ejes-Estrategicos.pdf
+- GORE Biobío, sectores tractores y CTCI: https://actas.gorebiobio.cl/actasfiles/Acta-Sesi%C3%B3n-Ordinaria-N%C2%B021-de-fecha-08-11-2023.pdf
+- GORE Biobío, Estrategia Regional de Desarrollo 2015–2030: https://gorebiobio.cl/estrategia-regional-de-desarrollo-2015-2030/
 
 ## Regla de trabajo del repositorio
-Este repositorio es la **fuente oficial del proyecto**. Cada cambio en notebook, presentación, gráficos, documentación o estructura debe quedar guardado en GitHub.
+Este repositorio es la **fuente oficial del proyecto**. Cada cambio del notebook, presentación, gráficos, documentación o estructura debe quedar guardado en GitHub.
