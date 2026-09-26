@@ -1,50 +1,54 @@
-# Validación de ejecución — Del acero al algoritmo
+# Validación de ejecución
 
 **Fecha:** 26-09-2026
 
 ## Resultado técnico
 
-La versión final del notebook fue validada de principio a fin con el Excel real.
+El notebook final fue ejecutado de principio a fin con la base real y la validación automática terminó correctamente.
 
-- Celdas de código: **38**
-- Celdas ejecutadas correctamente: **38**
-- Errores: **0**
 - Registros originales: **106.555**
 - Matrículas de pregrado: **101.093**
-- Matrículas de pregrado con arancel > $0: **101.067**
-- Ofertas académicas únicas: **1.273**
+- Matrículas de pregrado con arancel mayor que 0: **101.067**
 
-## Resultado central
+## Medidas descriptivas del arancel
 
-| Bloque | Matrículas | % sobre pregrado |
-|---|---:|---:|
-| Motores productivos | 20.368 | 20,15% |
-| Capacidades transformadoras | 7.000 | 6,92% |
-| Otros campos | 73.725 | 72,93% |
+- Media: **$3.224.895**
+- Mediana: **$3.133.750**
+- Moda: **$3.373.000**
+- Percentil 25: **$1.988.000**
+- Percentil 75: **$4.261.900**
+- Rango: **$8.133.670**
+- Desviación estándar: **$1.518.991**
+- Coeficiente de variación: **47,1%**
 
-Relación aproximada: **2,9 a 1**.
+## Pregunta 1
 
-## Pregunta 3 — validación definitiva
+Medianas de arancel más altas por área:
+- Agropecuaria: **$4.751.078**
+- Derecho: **$4.250.000**
+- Salud: **$4.243.207**
+- Ciencias Básicas: **$4.144.870**
 
-Criterio: **Q3 + 1,5 × RIC**.
+## Pregunta 2
 
-- Q1: **$1.616.000**
-- Q3: **$2.580.000**
-- RIC: **$964.000**
-- Límite superior: **$4.026.000**
-- Ofertas sobre el límite: **135**
-- Porcentaje: **10,6%**
-- CRUCH: **73**
-- Privadas: **62**
-- Concepción: **129**
-- Biobío: **6**
-- Salud: **39**
-- Tecnología: **39**
-- Duración mediana del grupo alto: **10 semestres**
-- Duración mediana del resto: **5 semestres**
+Entre 15 y 19 años:
+- CRUCH: **46,2%**
+- Institutos Profesionales: **19,3%**
 
-## Interpretación permitida
+Entre 40 años o más:
+- Institutos Profesionales: **52,9%**
+- CRUCH: **10,9%**
 
-La base permite describir patrones y asociaciones. No demuestra causalidad, déficit profesional ni evolución temporal.
+## Pregunta 3
 
-El notebook mantiene el RIC únicamente para la Pregunta 3 como aplicación de los cuartiles. El bloque de dispersión general quedó alineado con el Laboratorio 5 del profesor: rango, desviación estándar y coeficiente de variación.
+Se usa **P75 = $4.261.900** como referencia, porque el Laboratorio 4 trabaja explícitamente `quantile(0.75)`.
+
+Entre las carreras cuya mediana supera P75 aparecen:
+- Odontología: **$7.625.300**
+- Medicina: **$7.490.000**
+- Licenciatura en Medicina: **$6.750.000**
+- Ingeniería Civil de Minas: **$6.050.705**
+
+## Regla final
+
+No se incorporan técnicas fuera de los laboratorios del profesor.
