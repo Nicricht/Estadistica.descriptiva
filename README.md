@@ -66,7 +66,8 @@ Ese riesgo se presenta como **hipótesis de investigación**, no como efecto pro
 - ✅ Clasificación de motores productivos y capacidades transformadoras implementada.
 - ✅ Nuevo relato “Del acero al algoritmo” incorporado.
 - ✅ Causas, consecuencias plausibles y límites metodológicos documentados.
-- ✅ Ejecución completa validada con el Excel real: **18/18 celdas de código sin errores**.
+- ✅ Notebook reestructurado siguiendo el estilo de desarrollo usado por el profesor.
+- ✅ Ejecución completa validada con el Excel real: **32/32 celdas de código sin errores**.
 - ✅ Gráfico principal **Acero vs Algoritmo** incorporado al notebook.
 - ✅ Tres gráficos narrativos guardados en `graficos/`.
 - ⏳ Rehacer la presentación con este único relato.
@@ -94,3 +95,20 @@ Este repositorio es la **fuente oficial del proyecto**. Cada cambio debe quedar 
 ![Familias del ADN profesional](graficos/familias_adn_profesional.svg)
 
 ![Transformación por provincia](graficos/transformacion_por_provincia.svg)
+
+
+## Estilo de desarrollo del notebook
+El notebook fue reorganizado tomando como referencia los laboratorios resueltos del profesor:
+
+- pregunta o actividad claramente escrita;
+- código corto y visible;
+- resultado inmediatamente después;
+- interpretación en una celda Markdown;
+- uso directo de pandas y matplotlib;
+- tablas de frecuencia con groupby().size();
+- frecuencias relativas calculadas de forma explícita;
+- gráficos construidos con fig, ax = plt.subplots();
+- media, mediana, desviación estándar y coeficiente de variación calculados paso a paso;
+- conclusiones descriptivas sin atribuir causalidad.
+
+La creatividad queda en el problema regional **“Del acero al algoritmo”**, mientras que la forma de resolver estadísticamente sigue el nivel y la estructura utilizados en clases.
