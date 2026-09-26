@@ -112,3 +112,13 @@ El notebook fue reorganizado tomando como referencia los laboratorios resueltos 
 - conclusiones descriptivas sin atribuir causalidad.
 
 La creatividad queda en el problema regional **“Del acero al algoritmo”**, mientras que la forma de resolver estadísticamente sigue el nivel y la estructura utilizados en clases.
+
+
+## Auditoría final del notebook
+- ✅ Revisado contra los laboratorios del profesor.
+- ✅ Perfilamiento de calidad agregado.
+- ✅ Separación entre pregrado completo (101.093) y base válida para precios (101.067).
+- ✅ Pregunta 1 reforzada con Q1, Q3 y RIC.
+- ✅ Pregunta 3 ampliada con institución, área, provincia y duración.
+- ✅ Ejecución validada con el Excel real: **41/41 celdas de código, 0 errores**.
+- ✅ Informe completo: `documentos/auditoria_notebook_vs_profesor.md`.
