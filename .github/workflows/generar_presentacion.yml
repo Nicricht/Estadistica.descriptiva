@@ -59,5 +59,7 @@ jobs:
             echo 'La presentación ya está actualizada.'
           else
             git commit -m 'build: generar PowerPoint auditado Del acero al algoritmo'
+            git fetch origin main
+            git rebase origin/main
             git push
           fi
