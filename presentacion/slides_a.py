@@ -3,7 +3,7 @@ from ppt_deck import *
 s=prs.slides.add_slide(prs.slide_layouts[6]); bg(s,0)
 card(s,.75,.85,5.8,2.0,'ESTADÍSTICA DESCRIPTIVA','EDUCACIÓN SUPERIOR','Biobío 2021',C,'!!COVER',27)
 text(s,.9,4.0,11.3,.7,'Aplicación de los contenidos de los laboratorios 0 al 5 del profesor.',18,W,True,name='!!QUESTION')
-note(s,.9,5.15,7.8,'Regla: no usar técnicas que no aparezcan en los laboratorios.',O)
+note(s,.9,5.15,9.4,'Metodología: Pandas, frecuencias, gráficos, tendencia central, percentiles y dispersión.',O)
 flow(s,1); footer(s)
 
 s=basic(2,1,'Base de datos','Carga y filtro de la información','Laboratorio 0: Pandas, exploración y filtros.',0)
