@@ -1,0 +1,47 @@
+name: Sincronizar notebook final
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tmp/notebook_final.gz.b64'
+      - '.github/workflows/sync_notebook_final.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reconstruir notebook final
+        run: |
+          base64 -d tmp/notebook_final.gz.b64 > /tmp/notebook.gz
+          gzip -t /tmp/notebook.gz
+          gzip -dc /tmp/notebook.gz > notebooks/Estadistica_Descriptiva_Biobio.ipynb
+          python - <<'PY'
+          import json
+          p='notebooks/Estadistica_Descriptiva_Biobio.ipynb'
+          nb=json.load(open(p,encoding='utf-8'))
+          codes=[c for c in nb['cells'] if c.get('cell_type')=='code']
+          assert len(codes)==71, len(codes)
+          text='\n'.join(''.join(c.get('source',[])) for c in nb['cells'])
+          assert 'Q3 + 1,5 × RIC' in text
+          assert '135 ofertas' in text
+          print('Notebook validado:', len(codes), 'celdas de código')
+          PY
+      - name: Guardar notebook
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add notebooks/Estadistica_Descriptiva_Biobio.ipynb
+          if git diff --cached --quiet; then
+            echo 'Notebook ya sincronizado.'
+          else
+            git commit -m 'fix: restaurar criterio RIC y cobertura completa de la pauta'
+            git push
+          fi
