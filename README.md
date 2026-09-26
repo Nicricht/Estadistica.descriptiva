@@ -35,3 +35,7 @@ Registro de Matrícula de Educación Superior 2021, Región del Biobío.
 - Los análisis sobre edad, género y tipo de institución usan **matrículas**.
 - Los análisis de precios usan **ofertas académicas únicas**, evitando contar un mismo arancel tantas veces como estudiantes tenga una oferta.
 - Los resultados se presentan como asociaciones o diferencias observadas, sin atribuir causalidad cuando los datos no la demuestran.
+
+
+## Regla de trabajo del repositorio
+Este repositorio es la **fuente oficial del proyecto**. Cada cambio que se haga al notebook, presentación, gráficos, documentación o estructura del trabajo debe quedar guardado en GitHub. No se considerará definitivo ningún cambio que exista solamente de forma local o en el chat.
