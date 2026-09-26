@@ -83,7 +83,7 @@ Este repositorio es la **fuente oficial del proyecto**. Cada cambio debe quedar 
 
 
 ## Gráficos del nuevo relato
-- `graficos/acero_vs_algoritmo.svg`: contraste principal 20,14% vs 6,93%.
+- `graficos/acero_vs_algoritmo.svg`: contraste principal 20,15% vs 6,92%.
 - `graficos/familias_adn_profesional.svg`: composición de las nueve familias estratégicas.
 - `graficos/transformacion_por_provincia.svg`: peso relativo de capacidades transformadoras por provincia.
 
@@ -114,18 +114,12 @@ El notebook fue reorganizado tomando como referencia los laboratorios resueltos 
 La creatividad queda en el problema regional **“Del acero al algoritmo”**, mientras que la forma de resolver estadísticamente sigue el nivel y la estructura utilizados en clases.
 
 
-## Auditoría final del notebook
-- ✅ Revisado contra los laboratorios del profesor.
-- ✅ Perfilamiento de calidad agregado.
-- ✅ Separación entre pregrado completo (101.093) y base válida para precios (101.067).
-- ✅ Pregunta 1 reforzada con Q1, Q3 y RIC.
-- ✅ Pregunta 3 ampliada con institución, área, provincia y duración.
-- ✅ Ejecución validada con el Excel real: **41/41 celdas de código, 0 errores**.
-- ✅ Informe completo: `documentos/auditoria_notebook_vs_profesor.md`.
-
-
-## Contexto regional ampliado
-
-El análisis extendido que conecta la matrícula 2021 con la trayectoria industrial del Biobío, ENADEL 2021, el cierre de Huachipato, la reconversión productiva, Industria 4.0, Biobío 2050, riesgos de capital humano, dimensión territorial y género quedó documentado en:
-
-- documentos/contexto_regional_acero_algoritmo.md
+## Alineación final con los laboratorios del profesor
+- ✅ Se eliminó la frecuencia acumulada de `AREA CONOCIMIENTO` porque es una variable cualitativa nominal.
+- ✅ Las medidas de dispersión quedaron en **rango, desviación estándar y coeficiente de variación**, como en el Laboratorio 5.
+- ✅ Se eliminaron del desarrollo principal la varianza y el RIC.
+- ✅ La clasificación “Del acero al algoritmo” dejó de usar búsquedas complejas con `str.contains()` y ahora usa listas + `isin()`, herramienta que aparece en los laboratorios.
+- ✅ La pregunta Edad × Institución dejó de usar `pd.crosstab()` y ahora se desarrolla con `groupby()`, frecuencias absolutas y relativas.
+- ✅ La pregunta de aranceles sustantivamente altos usa **Percentil 90** como criterio simple y defendible.
+- ✅ Validación local con el Excel real: **51/51 celdas de código ejecutadas, 0 errores**.
+- ✅ Notebook principal actualizado en `notebooks/Estadistica_Descriptiva_Biobio.ipynb`.
