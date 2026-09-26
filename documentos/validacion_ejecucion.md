@@ -6,8 +6,8 @@
 
 La versión final del notebook fue validada de principio a fin con el Excel real.
 
-- Celdas de código: **71**
-- Celdas ejecutadas correctamente: **71**
+- Celdas de código: **38**
+- Celdas ejecutadas correctamente: **38**
 - Errores: **0**
 - Registros originales: **106.555**
 - Matrículas de pregrado: **101.093**
