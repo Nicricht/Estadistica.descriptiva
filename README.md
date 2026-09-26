@@ -122,3 +122,10 @@ La creatividad queda en el problema regional **“Del acero al algoritmo”**, m
 - ✅ Pregunta 3 ampliada con institución, área, provincia y duración.
 - ✅ Ejecución validada con el Excel real: **41/41 celdas de código, 0 errores**.
 - ✅ Informe completo: `documentos/auditoria_notebook_vs_profesor.md`.
+
+
+## Contexto regional ampliado
+
+El análisis extendido que conecta la matrícula 2021 con la trayectoria industrial del Biobío, ENADEL 2021, el cierre de Huachipato, la reconversión productiva, Industria 4.0, Biobío 2050, riesgos de capital humano, dimensión territorial y género quedó documentado en:
+
+- documentos/contexto_regional_acero_algoritmo.md
