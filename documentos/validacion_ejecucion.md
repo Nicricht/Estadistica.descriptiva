@@ -47,4 +47,4 @@ Criterio: **Q3 + 1,5 × RIC**.
 
 La base permite describir patrones y asociaciones. No demuestra causalidad, déficit profesional ni evolución temporal.
 
-El notebook de GitHub quedó alineado con RIC, varianza y la pauta mediante el commit `098e13ab406993d4289d593fafe9a59b0360d2e8`.
+El notebook mantiene el RIC únicamente para la Pregunta 3 como aplicación de los cuartiles. El bloque de dispersión general quedó alineado con el Laboratorio 5 del profesor: rango, desviación estándar y coeficiente de variación.
