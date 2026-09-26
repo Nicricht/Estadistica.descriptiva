@@ -1,6 +1,6 @@
 # Material de referencia del profesor
 
-Esta carpeta contiene los notebooks resueltos entregados por el profesor. Son la referencia oficial para desarrollar el notebook principal del proyecto.
+Esta carpeta contiene los notebooks resueltos entregados por el profesor. Son la referencia metodológica oficial del proyecto.
 
 ## Laboratorios disponibles
 
@@ -11,12 +11,12 @@ Esta carpeta contiene los notebooks resueltos entregados por el profesor. Son la
 - `Soluciones_Laboratorio 4_Medidas de Tendencia Central y Percentiles.ipynb`
 - `Soluciones_Laboratorio 5_Medidas de Dispersión.ipynb`
 
-El segundo archivo adjuntado del Laboratorio 3 es una copia idéntica del mismo notebook y no se conserva duplicado.
+El segundo archivo adjuntado del Laboratorio 3 era una copia idéntica y no se conserva duplicado.
 
-## Regla para el notebook del proyecto
+## Regla para el proyecto
 
-El desarrollo debe seguir el patrón del profesor:
+El desarrollo sigue el patrón:
 
 **pregunta o actividad → código visible → resultado → interpretación**
 
-El notebook principal aplica los contenidos de los seis laboratorios a la base real del Biobío y luego utiliza esas mismas herramientas para responder las preguntas obligatorias y desarrollar “Del acero al algoritmo”.
+Solo se utilizan herramientas y conceptos que aparecen en estos laboratorios.
