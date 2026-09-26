@@ -1,42 +1,46 @@
 # Estadística descriptiva
 
 ## Tema del trabajo
-**El precio de elegir en Biobío**  
-*Territorio, edad, instituciones y aranceles en la Educación Superior.*
+**Biobío vuelve a estudiar**  
+*Edad, reconversión y educación superior en una región que envejece.*
 
 ## Pregunta guía
-**¿Qué diferencias enfrenta una persona al elegir dónde y qué estudiar dentro de la Región del Biobío?**
+**¿La educación superior del Biobío funciona de la misma manera para un joven que recién comienza y para un adulto que vuelve a estudiar?**
 
-## Objetivo
-Analizar descriptivamente la Educación Superior en la Región del Biobío, conectando las preguntas de la evaluación mediante un hilo regional: territorio, perfil etario, tipo de institución y costo de las ofertas académicas.
+## Idea central
+La base 2021 muestra que la trayectoria educativa cambia fuertemente con la edad:
+- entre 15–19 años, CRUCH representa cerca de 46,24% e IP 19,30%;
+- entre 40 años o más, IP sube a 52,85% y CRUCH baja a 10,90%;
+- la edad mediana aumenta desde 22 años en jornada diurna hasta 36 años en semipresencial;
+- CFT e IP presentan aranceles medianos asociados a matrículas bastante menores que las universidades.
+
+El análisis se conecta con un Biobío que envejece y que hoy enfrenta procesos de reconversión laboral y transformación industrial. Esto no permite demostrar causalidad individual, pero sí plantea una pregunta regional más interesante que la simple distribución territorial de carreras.
 
 ## Estado actual
-- ✅ Notebook corregido, ejecutado y guardado con resultados visibles.
+- ✅ Notebook corregido, ejecutado y reenfocado.
 - ✅ Unidad de análisis separada entre matrículas y ofertas académicas únicas.
-- ✅ Contexto territorial por provincias del Biobío incorporado.
-- ✅ Preguntas 1, 2 y 3 corregidas metodológicamente.
-- ✅ Presentación PowerPoint final creada y guardada en el repositorio.
-- ✅ Generador reproducible de la presentación y workflow de GitHub Actions incorporados.
-- ⏳ Preparar y practicar la defensa oral individual.
+- ✅ Preguntas 1, 2 y 3 mantenidas según la evaluación.
+- ✅ Contexto regional de envejecimiento y reconversión incorporado.
+- ⏳ Actualizar la presentación PowerPoint al nuevo relato.
+- ⏳ Preparar defensa oral.
 
 ## Estructura
 - `notebooks/`: notebook principal para Google Colab.
-- `presentacion/`: presentación PowerPoint y generador reproducible.
+- `presentacion/`: presentación PowerPoint.
 - `data/`: instrucciones y dataset de trabajo.
 - `graficos/`: gráficos seleccionados para la exposición.
-- `documentos/`: decisiones metodológicas y material de apoyo.
+- `documentos/`: decisiones metodológicas y contexto regional.
 
-## Entregables principales
-- Notebook ejecutado: `notebooks/Estadistica_Descriptiva_Biobio.ipynb`
-- Presentación: `presentacion/El_Precio_de_Elegir_en_Biobio.pptx`
+## Notebook principal
+`notebooks/Estadistica_Descriptiva_Biobio.ipynb`
 
 ## Fuente de datos
 Registro de Matrícula de Educación Superior 2021, Región del Biobío.
 
 ## Regla metodológica central
 - Los análisis sobre edad, género y tipo de institución usan **matrículas**.
-- Los análisis de precios usan **ofertas académicas únicas**, evitando contar un mismo arancel tantas veces como estudiantes tenga una oferta.
-- Los resultados se presentan como asociaciones o diferencias observadas, sin atribuir causalidad cuando los datos no la demuestran.
+- Los análisis de precios usan **ofertas académicas únicas**.
+- Los resultados se presentan como asociaciones o diferencias observadas, sin atribuir causalidad no demostrada.
 
 ## Regla de trabajo del repositorio
-Este repositorio es la **fuente oficial del proyecto**. Cada cambio que se haga al notebook, presentación, gráficos, documentación o estructura del trabajo debe quedar guardado en GitHub. No se considerará definitivo ningún cambio que exista solamente de forma local o en el chat.
+Este repositorio es la **fuente oficial del proyecto**. Cada cambio en notebook, presentación, gráficos, documentación o estructura debe quedar guardado en GitHub.
