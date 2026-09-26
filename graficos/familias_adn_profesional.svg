@@ -6,7 +6,7 @@
     .lab{font-size:20px}.val{font-size:21px;font-weight:700}.small{font-size:17px;fill:#4b5563}
   </style>
   <text x="70" y="62" class="title">¿De qué está hecho el ADN profesional?</text>
-  <text x="70" y="96" class="sub">Participación de las nueve familias estratégicas sobre 101.067 matrículas</text><line x1="360" y1="135" x2="360" y2="605" stroke="#e5e7eb"/>
+  <text x="70" y="96" class="sub">Participación de las nueve familias estratégicas sobre 101.093 matrículas</text><line x1="360" y1="135" x2="360" y2="605" stroke="#e5e7eb"/>
       <text x="360" y="637" text-anchor="middle" class="small">0%</text><line x1="510" y1="135" x2="510" y2="605" stroke="#e5e7eb"/>
       <text x="510" y="637" text-anchor="middle" class="small">2%</text><line x1="660" y1="135" x2="660" y2="605" stroke="#e5e7eb"/>
       <text x="660" y="637" text-anchor="middle" class="small">5%</text><line x1="810" y1="135" x2="810" y2="605" stroke="#e5e7eb"/>
@@ -21,8 +21,8 @@
       <text x="580.125" y="271.5111111111111" class="val">3.33%</text><text x="342" y="323.7333333333333" text-anchor="end" class="lab">Automatización y robótica</text>
       <rect x="360" y="301.0666666666666" width="161.25" height="31.333333333333332" rx="5" fill="#9ca3af"/>
       <text x="533.25" y="323.7333333333333" class="val">2.58%</text><text x="342" y="375.9555555555556" text-anchor="end" class="lab">Logística y puertos</text>
-      <rect x="360" y="353.2888888888889" width="63.75" height="31.333333333333332" rx="5" fill="#9ca3af"/>
-      <text x="435.75" y="375.9555555555556" class="val">1.02%</text><text x="342" y="428.17777777777775" text-anchor="end" class="lab">Energía, sustentabilidad y biotecnología</text>
+      <rect x="360" y="353.2888888888889" width="64.375" height="31.333333333333332" rx="5" fill="#9ca3af"/>
+      <text x="436.375" y="375.9555555555556" class="val">1.03%</text><text x="342" y="428.17777777777775" text-anchor="end" class="lab">Energía, sustentabilidad y biotecnología</text>
       <rect x="360" y="405.51111111111106" width="63.75" height="31.333333333333332" rx="5" fill="#9ca3af"/>
       <text x="435.75" y="428.17777777777775" class="val">1.02%</text><text x="342" y="480.4" text-anchor="end" class="lab">Agroalimentario</text>
       <rect x="360" y="457.7333333333333" width="53.125" height="31.333333333333332" rx="5" fill="#9ca3af"/>
