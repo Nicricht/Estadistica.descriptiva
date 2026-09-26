@@ -29,8 +29,8 @@ La comparación se conecta con la agenda regional posterior de manufactura avanz
 
 Sobre **101.093 matrículas de pregrado**:
 
-- Motores productivos: **20.350 matrículas, 20,14%**.
-- Capacidades transformadoras: **7.000 matrículas, 6,93%**.
+- Motores productivos: **20.368 matrículas, 20,15%**.
+- Capacidades transformadoras: **7.000 matrículas, 6,92%**.
 - Relación aproximada: **2,9 matrículas en motores productivos por cada matrícula transformadora**.
 
 En otras palabras, el componente formativo asociado al “acero” era casi tres veces el componente asociado al “algoritmo”.
@@ -67,7 +67,7 @@ Ese riesgo se presenta como **hipótesis de investigación**, no como efecto pro
 - ✅ Nuevo relato “Del acero al algoritmo” incorporado.
 - ✅ Causas, consecuencias plausibles y límites metodológicos documentados.
 - ✅ Notebook reestructurado siguiendo el estilo de desarrollo usado por el profesor.
-- ✅ Ejecución completa validada con el Excel real: **51/51 celdas de código sin errores**.
+- ✅ Ejecución completa validada con el Excel real: **71/71 celdas de código sin errores**.
 - ✅ Gráfico principal **Acero vs Algoritmo** incorporado al notebook.
 - ✅ Tres gráficos narrativos guardados en `graficos/`.
 - ⏳ Rehacer la presentación con este único relato.
@@ -114,12 +114,17 @@ El notebook fue reorganizado tomando como referencia los laboratorios resueltos 
 La creatividad queda en el problema regional **“Del acero al algoritmo”**, mientras que la forma de resolver estadísticamente sigue el nivel y la estructura utilizados en clases.
 
 
-## Alineación final con los laboratorios del profesor
-- ✅ Se eliminó la frecuencia acumulada de `AREA CONOCIMIENTO` porque es una variable cualitativa nominal.
-- ✅ Las medidas de dispersión quedaron en **rango, desviación estándar y coeficiente de variación**, como en el Laboratorio 5.
-- ✅ Se eliminaron del desarrollo principal la varianza y el RIC.
-- ✅ La clasificación “Del acero al algoritmo” dejó de usar búsquedas complejas con `str.contains()` y ahora usa listas + `isin()`, herramienta que aparece en los laboratorios.
-- ✅ La pregunta Edad × Institución dejó de usar `pd.crosstab()` y ahora se desarrolla con `groupby()`, frecuencias absolutas y relativas.
-- ✅ La pregunta de aranceles sustantivamente altos usa **Percentil 90** como criterio simple y defendible.
-- ✅ Validación local con el Excel real: **51/51 celdas de código ejecutadas, 0 errores**.
-- ✅ Notebook principal actualizado en `notebooks/Estadistica_Descriptiva_Biobio.ipynb`.
+## Alineación final con TODO el contenido del profesor
+
+El notebook principal fue rehecho siguiendo los laboratorios 0 al 5.
+
+- ✅ **Laboratorio 0 — Pandas:** read_excel, head, tail, shape, type, info, selección de columnas, value_counts, filtros y creación de columnas.
+- ✅ **Laboratorio 1 — Conceptos básicos:** población, muestra y clasificación de variables.
+- ✅ **Laboratorio 2 — Tablas de frecuencia:** frecuencia absoluta, relativa, acumuladas y pd.cut.
+- ✅ **Laboratorio 3 — Gráficos:** circular, barras, histogramas, subplots y dispersión.
+- ✅ **Laboratorio 4 — Tendencia central y percentiles:** media, mediana, moda, quantile, describe, groupby, agg y crosstab.
+- ✅ **Laboratorio 5 — Dispersión:** rango, desviación estándar, coeficiente de variación, comparación entre grupos e isin.
+- ✅ Las tres preguntas obligatorias se resuelven utilizando estas mismas herramientas.
+- ✅ La aplicación regional **“Del acero al algoritmo”** se conserva, pero su código usa filtros y estructuras trabajadas en clases.
+- ✅ Ejecución validada con el Excel real: **71/71 celdas de código, 0 errores**.
+- ✅ El notebook guardado en GitHub contiene los resultados ejecutados.
