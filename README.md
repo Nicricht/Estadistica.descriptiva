@@ -27,7 +27,7 @@ La comparación se conecta con la agenda regional posterior de manufactura avanz
 
 ## Hallazgo principal
 
-Sobre **101.067 matrículas**:
+Sobre **101.093 matrículas de pregrado**:
 
 - Motores productivos: **20.350 matrículas, 20,14%**.
 - Capacidades transformadoras: **7.000 matrículas, 6,93%**.
@@ -67,7 +67,7 @@ Ese riesgo se presenta como **hipótesis de investigación**, no como efecto pro
 - ✅ Nuevo relato “Del acero al algoritmo” incorporado.
 - ✅ Causas, consecuencias plausibles y límites metodológicos documentados.
 - ✅ Notebook reestructurado siguiendo el estilo de desarrollo usado por el profesor.
-- ✅ Ejecución completa validada con el Excel real: **32/32 celdas de código sin errores**.
+- ✅ Ejecución completa validada con el Excel real: **51/51 celdas de código sin errores**.
 - ✅ Gráfico principal **Acero vs Algoritmo** incorporado al notebook.
 - ✅ Tres gráficos narrativos guardados en `graficos/`.
 - ⏳ Rehacer la presentación con este único relato.
