@@ -1,17 +1,16 @@
-name: Alinear y ejecutar notebook con RIC
+name: Validar notebook final
 
 on:
   push:
     branches: [main]
     paths:
-      - 'scripts/patch_notebook_ric.py'
       - '.github/workflows/alinear_notebook_ric.yml'
 
 permissions:
   contents: write
 
 jobs:
-  alinear:
+  validar:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,9 +26,6 @@ jobs:
       - name: Instalar dependencias
         run: pip install pandas openpyxl matplotlib nbconvert ipykernel
 
-      - name: Aplicar corrección metodológica
-        run: python scripts/patch_notebook_ric.py
-
       - name: Preparar base para ejecución
         run: cp "11_MATRICULAS_ED_SUPERIOR_BIOBIO_2021 (3).xlsx" "notebooks/11_MATRICULAS_ED_SUPERIOR_BIOBIO_2021.xlsx"
 
@@ -37,7 +33,12 @@ jobs:
         env:
           MPLBACKEND: Agg
         run: |
-          jupyter nbconvert             --to notebook             --execute             --inplace             --ExecutePreprocessor.timeout=600             notebooks/Estadistica_Descriptiva_Biobio.ipynb
+          jupyter nbconvert \
+            --to notebook \
+            --execute \
+            --inplace \
+            --ExecutePreprocessor.timeout=600 \
+            notebooks/Estadistica_Descriptiva_Biobio.ipynb
 
       - name: Validar ejecución completa
         run: |
@@ -54,25 +55,27 @@ jobs:
               for i, c in enumerate(code_cells)
               if any(o.get('output_type') == 'error' for o in c.get('outputs', []))
           ]
+
           print(f'Celdas de código: {len(code_cells)}')
           print(f'Celdas sin ejecutar: {missing}')
           print(f'Celdas con error: {errors}')
-          if len(code_cells) != 71 or missing or errors:
+
+          if missing or errors:
               raise SystemExit('La validación del notebook falló.')
           PY
 
       - name: Limpiar copia temporal del Excel
         run: rm -f "notebooks/11_MATRICULAS_ED_SUPERIOR_BIOBIO_2021.xlsx"
 
-      - name: Guardar notebook corregido y ejecutado
+      - name: Guardar notebook ejecutado
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add notebooks/Estadistica_Descriptiva_Biobio.ipynb
           if git diff --cached --quiet; then
-            echo 'El notebook ya está alineado y ejecutado.'
+            echo 'El notebook ya estaba ejecutado y validado.'
           else
-            git commit -m 'fix: ejecutar notebook completo con criterio RIC'
+            git commit -m 'chore: ejecutar notebook simplificado'
             git fetch origin main
             git rebase origin/main
             git push origin main
