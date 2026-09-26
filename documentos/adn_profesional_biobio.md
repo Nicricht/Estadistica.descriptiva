@@ -1,96 +1,86 @@
-# Metodología — ADN profesional del Biobío
+# Del acero al algoritmo
 
-## 1. Propósito
+## Tesis del trabajo
 
-Construir una lectura regional de la base de matrículas 2021 que permita describir qué capital humano se está formando en carreras potencialmente vinculadas con los motores productivos del Biobío y con capacidades de transformación tecnológica.
+La base de matrículas 2021 se utiliza como una fotografía del capital humano que estaba formando la educación superior del Biobío antes de la actual agenda regional de manufactura avanzada e Industria 4.0.
 
-La clasificación **no es una taxonomía oficial de carreras** y no mide demanda laboral. Es una herramienta analítica diseñada para el trabajo de Estadística Descriptiva.
+La comparación central es:
 
-## 2. Fundamento regional
+**Motores productivos (“acero”)**
+vs.
+**Capacidades transformadoras (“algoritmo”)**
 
-El Gobierno Regional del Biobío identifica de forma recurrente sectores productivos como pesca, forestal/maderero, agricultura, industria/manufactura, construcción, logística-transporte-puertos y actividades vinculadas a energía y comercio. La estrategia regional de ciencia, tecnología, conocimiento e innovación también plantea fortalecer la innovación en sectores tractores y conectar educación e investigación con servicios tecnológicos.
+## Resultado principal
 
-Fuentes:
-- https://gorebiobio.cl/wp-content/uploads/2025/01/Ejes-Estrategicos.pdf
-- https://actas.gorebiobio.cl/actasfiles/Acta-Sesi%C3%B3n-Ordinaria-N%C2%B021-de-fecha-08-11-2023.pdf
-- https://gorebiobio.cl/estrategia-regional-de-desarrollo-2015-2030/
+- Motores productivos: 20.350 matrículas, **20,14%**.
+- Capacidades transformadoras: 7.000 matrículas, **6,93%**.
+- Relación: aproximadamente **2,9 a 1**.
 
-## 3. Familias creadas
+Por tanto, en 2021 la formación vinculada a la estructura productiva era considerablemente mayor que la formación clasificada como digital, automatizada y sustentable.
+
+## Por qué puede ocurrir
+
+### 1. Herencia industrial
+Biobío posee una larga vocación manufacturera, forestal, logística y productiva. Es razonable que su ecosistema educativo haya construido durante años una oferta relacionada con esos sectores.
+
+Esto es una interpretación contextual, no una causalidad demostrada por la base.
+
+### 2. La transformación tecnológica es una etapa posterior
+La planificación regional más reciente impulsa manufactura avanzada, tecnologías digitales, IA y capital humano avanzado. El Centro Tecnológico de Manufactura Avanzada e Industria 4.0 tiene explícitamente como propósito ayudar a transformar la manufactura tradicional en una industria más intensiva en tecnologías digitales.
+
+## Consecuencias plausibles si la brecha persistiera
+
+Si la demanda por competencias digitales, automatizadas y tecnológicas creciera más rápido que la capacidad regional para formarlas, podrían aparecer:
+
+1. mayor dificultad para adoptar e integrar nuevas tecnologías;
+2. mayor dependencia de profesionales o servicios externos;
+3. menor capacidad para transformar producción tradicional en bienes y servicios de mayor valor agregado.
+
+Estas consecuencias **no son resultados observados en el Excel**. Son hipótesis coherentes con la necesidad declarada de capital humano avanzado en la agenda regional.
+
+## Clasificación utilizada
 
 ### Motores productivos
-1. Industria y manufactura
-2. Construcción e infraestructura
-3. Logística y puertos
-4. Forestal y madera
-5. Pesca y acuicultura
-6. Agroalimentario
+- Industria y manufactura
+- Construcción e infraestructura
+- Logística y puertos
+- Forestal y madera
+- Pesca y acuicultura
+- Agroalimentario
 
 ### Capacidades transformadoras
-7. Digital y TIC
-8. Automatización y robótica
-9. Energía, sustentabilidad y biotecnología
+- Digital y TIC
+- Automatización y robótica
+- Energía, sustentabilidad y biotecnología
 
-Las carreras que no poseen una relación suficientemente clara según su nombre se clasifican como **Otros campos**.
+Las demás carreras quedan como “Otros campos” para evitar forzar asociaciones.
 
-## 4. Criterio de clasificación
+## Resultados secundarios
 
-Se utiliza `NOMBRE CARRERA` y un conjunto transparente de palabras clave.
+| Familia | Matrículas | % total |
+|---|---:|---:|
+| Industria y manufactura | 11.221 | 11,10% |
+| Construcción e infraestructura | 6.916 | 6,84% |
+| Digital y TIC | 3.365 | 3,33% |
+| Automatización y robótica | 2.608 | 2,58% |
+| Energía, sustentabilidad y biotecnología | 1.027 | 1,02% |
+| Logística y puertos | 1.028 | 1,02% |
 
-Ejemplos:
-- `INGENIERIA CIVIL INDUSTRIAL` → Industria y manufactura.
-- `INGENIERIA FORESTAL` → Forestal y madera.
-- `TECNICO EN LOGISTICA MARITIMA PORTUARIA` → Logística y puertos.
-- `INGENIERIA CIVIL INFORMATICA` → Digital y TIC.
-- `INGENIERIA CIVIL EN AUTOMATIZACION` → Automatización y robótica.
-- `INGENIERIA EN ENERGIA Y SUSTENTABILIDAD AMBIENTAL` → Energía, sustentabilidad y biotecnología.
-- `INGENIERIA EN BIOTECNOLOGIA MARINA Y ACUICULTURA` → Pesca y acuicultura, porque se prioriza el sector específico.
+Participación femenina destacada:
+- Industria y manufactura: **17,17%**.
+- Digital y TIC: **11,50%**.
+- Automatización y robótica: **5,79%**.
 
-El código completo está en el notebook y asigna cada carrera a **una sola familia** para evitar doble conteo.
+## Frase de defensa
 
-## 5. Resultados sobre 101.067 matrículas
+> **“Tomamos la matrícula de 2021 como una fotografía del punto de partida. Descubrimos que por cada estudiante vinculado a capacidades transformadoras había casi tres vinculados a motores productivos. Luego lo contrastamos con una región que hoy quiere avanzar hacia manufactura avanzada e Industria 4.0.”**
 
-| Familia | Matrículas | % del total | % mujeres | Edad mediana |
-|---|---:|---:|---:|---:|
-| Industria y manufactura | 11.221 | 11,10% | 17,17% | 23 |
-| Construcción e infraestructura | 6.916 | 6,84% | 27,30% | 23 |
-| Digital y TIC | 3.365 | 3,33% | 11,50% | 22 |
-| Automatización y robótica | 2.608 | 2,58% | 5,79% | 22 |
-| Energía, sustentabilidad y biotecnología | 1.027 | 1,02% | 44,50% | 23 |
-| Logística y puertos | 1.028 | 1,02% | 42,70% | 24 |
-| Agroalimentario | 863 | 0,85% | 46,93% | 23 |
-| Forestal y madera | 171 | 0,17% | 33,33% | 22 |
-| Pesca y acuicultura | 151 | 0,15% | 57,62% | 22 |
+## Límite esencial
 
-Totales por bloque:
-- **Motores productivos:** 20.350 matrículas, **20,14%**.
-- **Capacidades transformadoras:** 7.000 matrículas, **6,93%**.
-- **Nueve familias estratégicas:** 27.350 matrículas, **27,07%**.
-- **Otros campos:** 73.717 matrículas, **72,94%**.
+No se afirma que Biobío tenga un déficit de profesionales, ni que la educación esté cambiando más lento que la industria. Eso requeriría datos de demanda laboral y evolución temporal.
 
-## 6. Hallazgos que sostienen el relato
+## Fuentes de contexto regional
 
-### A. El ADN industrial existe, pero domina sobre el ADN transformador
-Industria y manufactura por sí sola representa 11,10% de toda la base, mientras Digital + Automatización + Energía/Sustentabilidad/Biotecnología suman 6,93%.
-
-### B. La transformación tecnológica presenta una fuerte brecha de género
-Solo 11,50% de las matrículas clasificadas como Digital y TIC corresponden a mujeres. En Automatización y robótica el porcentaje baja a 5,79%.
-
-### C. Las provincias no muestran exactamente el mismo perfil
-Las capacidades transformadoras representan:
-- Concepción: 6,77% de su matrícula.
-- Biobío: 7,61%.
-- Arauco: 8,55%.
-
-Sin embargo, Arauco no registra matrículas clasificadas como Digital y TIC en la base 2021; su componente transformador se concentra principalmente en Automatización/Robótica y Sustentabilidad.
-
-### D. Los precios extremos no son exclusivos del ADN estratégico
-De las 135 ofertas sobre el umbral IQR de $4.026.000:
-- 25 pertenecen a motores productivos.
-- 10 a capacidades transformadoras.
-- 100 a otros campos.
-
-## 7. Conclusión metodológicamente válida
-
-**El Biobío forma una base importante de talento industrial, pero las capacidades asociadas a transformación digital, automatización y sustentabilidad representan una porción mucho menor de la matrícula y exhiben diferencias marcadas de género y composición territorial.**
-
-No se afirma que exista déficit laboral ni que la región esté formando “mal” a sus estudiantes. Para responder eso harían falta datos de empleo, vacantes, salarios y demanda de competencias.
+- GORE Biobío, Plan de Fortalecimiento Industrial / Centro Tecnológico de Manufactura Avanzada e Industria 4.0: https://gorebiobio.cl/wp-content/uploads/2025/10/18.-Ord.-3310-GORE.pdf
+- CORFO, convocatoria Centro Tecnológico de Manufactura Avanzada e Industria 4.0: https://postulaciones.corfo.cl/sites/Satellite?c=C_NoticiaNacional&cid=1476741161258&d=Touch&pagename=CorfoPortalPublico%2FC_NoticiaNacional%2FcorfoDetalleNoticiaNacionalWeb
+- GORE Biobío, Doctorado en IA / Capital Humano Avanzado: https://gorebiobio.cl/2023/10/18/gobierno-regional-del-biobio-lanza-el-primer-doctorado-en-inteligencia-artificial-de-sudamerica/
