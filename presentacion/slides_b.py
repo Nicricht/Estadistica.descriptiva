@@ -27,7 +27,7 @@ card(s,9.05,2.0,3.55,1.5,'P75','$4.261.900','referencia del 25% superior',G,'!!C
 note(s,1.35,4.6,10.5,'El trabajo describe la base 2021 mediante frecuencias, gráficos, medidas descriptivas y percentiles.',C)
 footer(s)
 
-s=basic(10,3,'Cierre','Cómo explicar el proyecto en una frase','La defensa debe poder vincular cada paso con un laboratorio del profesor.',5)
-text(s,1.0,2.0,11.0,1.0,'“Tomamos la base de matrículas del Biobío 2021 y aplicamos las herramientas de estadística descriptiva vistas en los laboratorios para responder tres preguntas sobre aranceles, edad e institución.”',18,W,True,PP_ALIGN.CENTER)
-note(s,2.0,4.3,9.3,'Si preguntan “¿por qué hicieron esto?”, mostramos el laboratorio donde se enseñó.',O)
+s=basic(10,3,'Cierre','Resumen del trabajo','Aplicación de estadística descriptiva a la base de matrículas del Biobío 2021.',5)
+text(s,1.0,2.0,11.0,1.0,'Analizamos la base de matrículas del Biobío 2021 mediante herramientas de estadística descriptiva para responder preguntas sobre aranceles, edad y tipo de institución.',18,W,True,PP_ALIGN.CENTER)
+note(s,2.0,4.3,9.3,'Las herramientas utilizadas corresponden a los contenidos de los laboratorios 0 al 5.',O)
 footer(s,'Material de estudio: laboratorios 0 al 5 del profesor')
