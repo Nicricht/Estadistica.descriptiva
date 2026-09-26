@@ -40,6 +40,26 @@ Interpretación permitida:
 
 Esto establece una **línea base**. No demuestra déficit profesional, atraso educativo ni escasez laboral.
 
+## 2.1 Lecturas descriptivas que sí podemos defender
+
+Al observar las áreas del conocimiento en las matrículas de pregrado:
+
+- Tecnología concentra **27.866 matrículas (27,6%)**, la mayor participación.
+- Salud concentra **24.597 matrículas (24,3%)**, la segunda mayor participación.
+- Humanidades registra **510 matrículas (0,5%)**, la menor participación.
+
+Una formulación segura para la presentación es:
+
+> La matrícula del Biobío en 2021 muestra una fuerte concentración en Tecnología y Salud, mientras que Humanidades presenta una participación considerablemente menor. Este patrón es compatible con una estructura formativa donde las áreas técnicas, productivas y de salud tienen un peso importante, pero la base no permite determinar por qué ocurre esa distribución.
+
+Sobre aranceles, sí podemos afirmar que existen diferencias importantes entre áreas y que la distribución presenta una dispersión considerable. No podemos afirmar, solo con esta base, que los aranceles bajos correspondan necesariamente a perfiles operativos ni que los aranceles altos financien cargos de gestión o especialización empresarial.
+
+Sobre género, las diferencias observadas dentro de Industria, Digital/TIC y Automatización son **descriptivas**. La base no permite demostrar que la estructura productiva regional sea la causa de esa distribución.
+
+Sobre territorio, podemos comparar dónde se concentran las matrículas observadas, pero la base no contiene residencia de origen ni desplazamientos estudiantiles. Por ello no corresponde afirmar que estudiantes de Arauco u otras provincias “se ven obligados a migrar” a Concepción.
+
+Las explicaciones sobre centralización cultural en Santiago, demanda laboral específica, migración de talentos, necesidades empresariales o razones del precio pueden plantearse como **hipótesis o contexto**, pero requieren fuentes adicionales para convertirse en conclusiones.
+
 ## 3. Señal del mercado laboral en 2021 — ENADEL
 
 El Observatorio Laboral del SENCE Biobío presentó resultados ENADEL 2021 para la región.
@@ -146,7 +166,7 @@ En la clasificación del proyecto, la proporción de capacidades transformadoras
 
 La proporción y el volumen absoluto cuentan historias distintas. Concepción concentra mucho más volumen, aunque Arauco tenga una proporción ligeramente mayor.
 
-No se infiere causalidad territorial.
+No se infiere causalidad territorial ni migración estudiantil.
 
 ## 8. Dimensión de género
 
@@ -156,7 +176,7 @@ Dentro de las familias clasificadas:
 - Mujeres en Automatización y robótica: **5,79%**.
 - Mujeres en Industria y manufactura: **17,17%**.
 
-Estos son hallazgos descriptivos. Permiten abrir una pregunta futura sobre cómo se distribuirá la participación en nuevas capacidades tecnológicas.
+Estos son hallazgos descriptivos. Permiten abrir una pregunta futura sobre cómo se distribuirá la participación en nuevas capacidades tecnológicas, pero no permiten atribuir la distribución observada a la matriz productiva regional.
 
 ## 9. Hipótesis futura
 
