@@ -12,8 +12,8 @@ vs.
 
 ## Resultado principal
 
-- Motores productivos: 20.350 matrículas, **20,14%**.
-- Capacidades transformadoras: 7.000 matrículas, **6,93%**.
+- Motores productivos: 20.368 matrículas, **20,15%**.
+- Capacidades transformadoras: 7.000 matrículas, **6,92%**.
 - Relación: aproximadamente **2,9 a 1**.
 
 Por tanto, en 2021 la formación vinculada a la estructura productiva era considerablemente mayor que la formación clasificada como digital, automatizada y sustentable.
@@ -64,7 +64,7 @@ Las demás carreras quedan como “Otros campos” para evitar forzar asociacion
 | Digital y TIC | 3.365 | 3,33% |
 | Automatización y robótica | 2.608 | 2,58% |
 | Energía, sustentabilidad y biotecnología | 1.027 | 1,02% |
-| Logística y puertos | 1.028 | 1,02% |
+| Logística y puertos | 1.046 | 1,03% |
 
 Participación femenina destacada:
 - Industria y manufactura: **17,17%**.
