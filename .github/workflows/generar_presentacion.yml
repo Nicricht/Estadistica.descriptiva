@@ -40,13 +40,13 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           import zipfile
-          p=Path('presentacion/Del_Acero_al_Algoritmo_FINAL_MORPH.pptx')
+          p=Path('presentacion/Estadistica_Descriptiva_Biobio_FINAL.pptx')
           assert p.exists() and p.stat().st_size > 100000
           with zipfile.ZipFile(p) as z:
               slides=[n for n in z.namelist() if n.startswith('ppt/slides/slide') and n.endswith('.xml')]
               morph=sum(b'p159:morph' in z.read(n) for n in slides)
-          assert len(slides)==20, len(slides)
-          assert morph==19, morph
+          assert len(slides)==10, len(slides)
+          assert morph==9, morph
           print('PowerPoint validado:', len(slides), 'slides,', morph, 'Morph')
           PY
 
@@ -54,11 +54,11 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add presentacion/Del_Acero_al_Algoritmo_FINAL_MORPH.pptx
+          git add presentacion/Estadistica_Descriptiva_Biobio_FINAL.pptx
           if git diff --cached --quiet; then
             echo 'La presentación ya está actualizada.'
           else
-            git commit -m 'build: generar PowerPoint auditado Del acero al algoritmo'
+            git commit -m 'build: generar PowerPoint estadistica descriptiva'
             git fetch origin main
             git rebase origin/main
             git push
