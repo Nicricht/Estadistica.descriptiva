@@ -3,21 +3,23 @@
 **Fecha de validación:** 26-09-2026
 
 ## Resultado técnico
-El notebook fue ejecutado de principio a fin usando el archivo real de matrículas del Biobío.
 
-- Celdas de código: **18**
-- Celdas ejecutadas correctamente: **18**
+La versión final alineada con los laboratorios del profesor fue validada con el archivo real de matrículas del Biobío.
+
+- Celdas de código: **51**
+- Celdas ejecutadas correctamente: **51**
 - Errores de ejecución: **0**
 - Registros de la base original: **106.555**
-- Registros de pregrado con arancel > 0 usados en el análisis: **101.067**
+- Matrículas de pregrado usadas para análisis generales: **101.093**
+- Matrículas con arancel mayor que $0 usadas para análisis de precio: **101.067**
 
 ## Resultado central verificado
 
-| Bloque | Matrículas | % sobre la base de trabajo |
+| Bloque | Matrículas | % sobre pregrado |
 |---|---:|---:|
-| Motores productivos | 20.350 | 20,14% |
-| Capacidades transformadoras | 7.000 | 6,93% |
-| Otros campos | 73.717 | 72,94% |
+| Motores productivos | 20.368 | 20,15% |
+| Capacidades transformadoras | 7.000 | 6,92% |
+| Otros campos | 73.725 | 72,93% |
 
 La relación es aproximadamente **2,9 matrículas de motores productivos por cada matrícula de capacidades transformadoras**.
 
@@ -29,30 +31,32 @@ La relación es aproximadamente **2,9 matrículas de motores productivos por cad
 | Construcción e infraestructura | 6.916 | 6,84% |
 | Digital y TIC | 3.365 | 3,33% |
 | Automatización y robótica | 2.608 | 2,58% |
-| Logística y puertos | 1.028 | 1,02% |
+| Logística y puertos | 1.046 | 1,03% |
 | Energía, sustentabilidad y biotecnología | 1.027 | 1,02% |
 | Agroalimentario | 863 | 0,85% |
 | Forestal y madera | 171 | 0,17% |
 | Pesca y acuicultura | 151 | 0,15% |
 
-## Comprobaciones secundarias
+## Pregunta 3 — criterio final
 
-Participación femenina:
-- Industria y manufactura: **17,17%**
-- Digital y TIC: **11,50%**
-- Automatización y robótica: **5,79%**
+Para evitar introducir un criterio más complejo que el material trabajado, se utiliza el **Percentil 90** para definir el grupo superior de aranceles.
 
-Capacidades transformadoras dentro de cada provincia:
-- Concepción: **6,77%**
-- Biobío: **7,61%**
-- Arauco: **8,55%**
-
-La clasificación de Arauco no contiene matrículas categorizadas como Digital y TIC en la base 2021; su componente transformador proviene de automatización/robótica y energía/sustentabilidad.
+- Percentil 90 de las ofertas: **$4.106.400**
+- Ofertas sobre P90: **128 de 1.273**
+- Porcentaje: **10,1%**
+- CRUCH: **73**
+- Privadas: **55**
+- Concepción: **123**
+- Biobío: **5**
+- Duración mediana de ofertas altas: **10 semestres**
+- Duración mediana del resto: **5 semestres**
 
 ## Interpretación permitida
+
 La base 2021 permite describir el **punto de partida formativo**: el componente vinculado a motores productivos es casi tres veces mayor que el componente clasificado como transformador.
 
 ## Interpretación que NO se debe afirmar
+
 El notebook por sí solo no demuestra:
 - déficit de profesionales;
 - escasez de talento digital;
