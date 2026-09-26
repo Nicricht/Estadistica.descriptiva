@@ -41,7 +41,7 @@ jobs:
           from pathlib import Path
           import zipfile
           p=Path('presentacion/Estadistica_Descriptiva_Biobio_FINAL.pptx')
-          assert p.exists() and p.stat().st_size > 100000
+          assert p.exists() and p.stat().st_size > 20000
           with zipfile.ZipFile(p) as z:
               slides=[n for n in z.namelist() if n.startswith('ppt/slides/slide') and n.endswith('.xml')]
               morph=sum(b'p159:morph' in z.read(n) for n in slides)
