@@ -1,25 +1,20 @@
 # Validación de ejecución — Del acero al algoritmo
 
-**Fecha de validación:** 26-09-2026
+**Fecha:** 26-09-2026
 
 ## Resultado técnico
 
-La versión final del notebook fue ejecutada de principio a fin usando el Excel real.
+La versión final del notebook fue validada de principio a fin con el Excel real.
 
 - Celdas de código: **71**
 - Celdas ejecutadas correctamente: **71**
-- Errores de ejecución: **0**
+- Errores: **0**
 - Registros originales: **106.555**
 - Matrículas de pregrado: **101.093**
 - Matrículas de pregrado con arancel > $0: **101.067**
 - Ofertas académicas únicas: **1.273**
 
-## Cobertura de contenidos del profesor
-
-La ejecución incluye contenidos de los Laboratorios 0, 1, 2, 3, 4 y 5:
-Pandas, población/muestra, clasificación de variables, frecuencias, gráficos, tendencia central, percentiles y dispersión.
-
-## Resultado central verificado
+## Resultado central
 
 | Bloque | Matrículas | % sobre pregrado |
 |---|---:|---:|
@@ -29,19 +24,27 @@ Pandas, población/muestra, clasificación de variables, frecuencias, gráficos,
 
 Relación aproximada: **2,9 a 1**.
 
-## Pregunta 3
+## Pregunta 3 — validación definitiva
 
-- Percentil 90 de las ofertas: **$4.106.400**
-- Máximo: **$8.783.670**
-- Ofertas sobre P90: **128**
-- Porcentaje: **10,1%**
+Criterio: **Q3 + 1,5 × RIC**.
+
+- Q1: **$1.616.000**
+- Q3: **$2.580.000**
+- RIC: **$964.000**
+- Límite superior: **$4.026.000**
+- Ofertas sobre el límite: **135**
+- Porcentaje: **10,6%**
 - CRUCH: **73**
-- Privadas: **55**
-- Concepción: **123**
-- Biobío: **5**
+- Privadas: **62**
+- Concepción: **129**
+- Biobío: **6**
+- Salud: **39**
+- Tecnología: **39**
 - Duración mediana del grupo alto: **10 semestres**
 - Duración mediana del resto: **5 semestres**
 
 ## Interpretación permitida
 
 La base permite describir patrones y asociaciones. No demuestra causalidad, déficit profesional ni evolución temporal.
+
+El notebook de GitHub quedó alineado con RIC, varianza y la pauta mediante el commit `098e13ab406993d4289d593fafe9a59b0360d2e8`.
