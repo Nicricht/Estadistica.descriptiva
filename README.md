@@ -1,18 +1,13 @@
 # Estadística descriptiva
 
-## Tema oficial
-# **El ADN profesional del Biobío**
-### *¿De qué está hecho el talento que formará la región?*
-
-## Pregunta guía
-**¿Cómo se distribuye la formación superior entre los motores productivos del Biobío y las capacidades que pueden transformar esos sectores mediante tecnología, automatización y sustentabilidad?**
+# **DEL ACERO AL ALGORITMO**
+## *¿Desde qué base de talento parte el Biobío que quiere avanzar hacia la Industria 4.0?*
 
 ## Idea central
-El trabajo ya no usa el territorio o el precio como tema principal. La base 2021 se utiliza para construir una **radiografía del capital humano en formación**.
 
-A partir de los nombres reales de las carreras se construyeron nueve familias estratégicas, inspiradas en sectores y prioridades regionales documentadas por el Gobierno Regional del Biobío.
+El proyecto compara dos componentes del capital humano formado en la educación superior del Biobío durante 2021:
 
-### Motores productivos
+### “Acero”: motores productivos
 - Industria y manufactura
 - Construcción e infraestructura
 - Logística y puertos
@@ -20,65 +15,65 @@ A partir de los nombres reales de las carreras se construyeron nueve familias es
 - Pesca y acuicultura
 - Agroalimentario
 
-### Capacidades transformadoras
+### “Algoritmo”: capacidades transformadoras
 - Digital y TIC
 - Automatización y robótica
 - Energía, sustentabilidad y biotecnología
 
-La clasificación es elaboración propia y se implementa directamente en el notebook mediante reglas reproducibles sobre `NOMBRE CARRERA`.
+La comparación se conecta con la agenda regional posterior de manufactura avanzada, tecnologías digitales e Industria 4.0.
 
-## Hallazgos iniciales
-Sobre **101.067 matrículas** analizadas:
+## Pregunta guía
+**En la fotografía educativa de 2021, ¿qué peso tenía la formación ligada a los motores productivos tradicionales frente a las capacidades necesarias para transformarlos tecnológicamente?**
 
-- Motores productivos: **20,14%**.
-- Capacidades transformadoras: **6,93%**.
-- Total de las nueve familias estratégicas: **27,07%**.
+## Hallazgo principal
 
-Familias con mayor peso:
-- Industria y manufactura: **11,10%**.
-- Construcción e infraestructura: **6,84%**.
+Sobre **101.067 matrículas**:
+
+- Motores productivos: **20.350 matrículas, 20,14%**.
+- Capacidades transformadoras: **7.000 matrículas, 6,93%**.
+- Relación aproximada: **2,9 matrículas en motores productivos por cada matrícula transformadora**.
+
+En otras palabras, el componente formativo asociado al “acero” era casi tres veces el componente asociado al “algoritmo”.
+
+## Por qué importa
+
+El Gobierno Regional y Corfo han impulsado una transición desde manufactura tradicional hacia manufactura avanzada e Industria 4.0, con tecnologías digitales, innovación y capital humano avanzado.
+
+Por eso la base 2021 se interpreta como una **línea base educativa** desde la cual observar esa transformación.
+
+Esto **no demuestra un déficit laboral** ni permite afirmar que la educación esté cambiando más lento que la industria. Para eso harían falta datos de empleo, vacantes, salarios y una serie temporal.
+
+## Causas plausibles
+- Herencia productiva regional: una gran base industrial y manufacturera genera históricamente una oferta formativa asociada a esos sectores.
+- Transformación tecnológica más reciente: digitalización, automatización, IA y manufactura avanzada están siendo fortalecidas como parte de una nueva etapa productiva.
+
+## Riesgo regional que plantea el trabajo
+Si la demanda futura por capacidades digitales y automatizadas creciera más rápido que la formación disponible, podrían aparecer dificultades de adopción tecnológica, dependencia de talento externo o menor capacidad para agregar valor.
+
+Ese riesgo se presenta como **hipótesis de investigación**, no como efecto probado por el notebook.
+
+## Hallazgos secundarios
+- Industria y manufactura: **11,10%** de la matrícula.
 - Digital y TIC: **3,33%**.
 - Automatización y robótica: **2,58%**.
 - Energía, sustentabilidad y biotecnología: **1,02%**.
-- Logística y puertos: **1,02%**.
-
-Un hallazgo destacado aparece en género:
-- Mujeres en Industria y manufactura: **17,17%**.
 - Mujeres en Digital y TIC: **11,50%**.
 - Mujeres en Automatización y robótica: **5,79%**.
 
-## Regla metodológica
-Estos porcentajes **no miden demanda laboral ni déficit de profesionales**. La base contiene matrículas, no vacantes, empleo ni requerimientos de empresas.
-
-El objetivo es describir qué tipo de formación aparece en la educación superior regional y cómo se distribuye por género, edad, territorio, tipo de institución y arancel.
-
-## Estado actual
-- ✅ Notebook base corregido y ejecutado previamente.
+## Estado
+- ✅ Notebook corregido y ejecutado previamente.
 - ✅ Preguntas obligatorias 1, 2 y 3 preservadas.
-- ✅ Nuevo enfoque ADN profesional incorporado al notebook.
-- ✅ Clasificación reproducible de carreras incorporada.
-- ✅ Resultados regionales calculados y documentados.
-- ⏳ Ejecutar nuevamente el notebook en Colab para guardar los nuevos gráficos del ADN.
-- ⏳ Reemplazar la presentación anterior por la versión del ADN profesional.
+- ✅ Clasificación de motores productivos y capacidades transformadoras implementada.
+- ✅ Nuevo relato “Del acero al algoritmo” incorporado.
+- ✅ Causas, consecuencias plausibles y límites metodológicos documentados.
+- ⏳ Ejecutar nuevamente el notebook en Colab para guardar los nuevos gráficos.
+- ⏳ Rehacer la presentación con este único relato.
 - ⏳ Preparar defensa oral.
 
-## Estructura
-- `notebooks/`: notebook principal de Google Colab.
-- `presentacion/`: presentación.
-- `data/`: instrucciones del dataset.
-- `graficos/`: gráficos seleccionados.
-- `documentos/`: decisiones metodológicas y análisis regional.
-
-## Notebook principal
-`notebooks/Estadistica_Descriptiva_Biobio.ipynb`
-
-## Fuente de datos
-Registro de Matrícula de Educación Superior 2021, Región del Biobío.
-
-## Fuentes regionales
-- GORE Biobío, Ejes Estratégicos: https://gorebiobio.cl/wp-content/uploads/2025/01/Ejes-Estrategicos.pdf
-- GORE Biobío, sectores tractores y CTCI: https://actas.gorebiobio.cl/actasfiles/Acta-Sesi%C3%B3n-Ordinaria-N%C2%B021-de-fecha-08-11-2023.pdf
-- GORE Biobío, Estrategia Regional de Desarrollo 2015–2030: https://gorebiobio.cl/estrategia-regional-de-desarrollo-2015-2030/
+## Fuentes regionales de contexto
+- GORE Biobío, Centro Tecnológico de Manufactura Avanzada e Industria 4.0: https://gorebiobio.cl/wp-content/uploads/2025/10/18.-Ord.-3310-GORE.pdf
+- CORFO, Centro Tecnológico de Manufactura Avanzada e Industria 4.0 en Biobío: https://postulaciones.corfo.cl/sites/Satellite?c=C_NoticiaNacional&cid=1476741161258&d=Touch&pagename=CorfoPortalPublico%2FC_NoticiaNacional%2FcorfoDetalleNoticiaNacionalWeb
+- GORE Biobío, Capital Humano Avanzado en Inteligencia Artificial: https://gorebiobio.cl/2023/10/18/gobierno-regional-del-biobio-lanza-el-primer-doctorado-en-inteligencia-artificial-de-sudamerica/
 
 ## Regla de trabajo del repositorio
-Este repositorio es la **fuente oficial del proyecto**. Cada cambio del notebook, presentación, gráficos, documentación o estructura debe quedar guardado en GitHub.
+Este repositorio es la **fuente oficial del proyecto**. Cada cambio debe quedar guardado en GitHub.
