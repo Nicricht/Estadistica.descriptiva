@@ -1,0 +1,62 @@
+name: Publicar PowerPoint auditado
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'presentacion/_ppt_chunks/**'
+      - '.github/workflows/subir_ppt_auditado.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Comprobar fragmentos
+        id: check
+        shell: bash
+        run: |
+          set -e
+          ok=1
+          for i in 00 01 02 03 04 05 06; do
+            if [ ! -f "presentacion/_ppt_chunks/chunk_${i}" ]; then
+              ok=0
+            fi
+          done
+          echo "ready=$ok" >> "$GITHUB_OUTPUT"
+
+      - name: Reconstruir PowerPoint
+        if: steps.check.outputs.ready == '1'
+        shell: bash
+        run: |
+          set -e
+          cat presentacion/_ppt_chunks/chunk_00 \
+              presentacion/_ppt_chunks/chunk_01 \
+              presentacion/_ppt_chunks/chunk_02 \
+              presentacion/_ppt_chunks/chunk_03 \
+              presentacion/_ppt_chunks/chunk_04 \
+              presentacion/_ppt_chunks/chunk_05 \
+              presentacion/_ppt_chunks/chunk_06 \
+            | base64 -d > presentacion/Del_Acero_al_Algoritmo_FINAL_MORPH.pptx
+          unzip -t presentacion/Del_Acero_al_Algoritmo_FINAL_MORPH.pptx > /dev/null
+
+      - name: Guardar presentación
+        if: steps.check.outputs.ready == '1'
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add presentacion/Del_Acero_al_Algoritmo_FINAL_MORPH.pptx
+          if git diff --cached --quiet; then
+            echo 'El PowerPoint ya coincide con la versión auditada.'
+          else
+            git commit -m 'build: publicar PowerPoint auditado Del acero al algoritmo'
+            git push
+          fi
