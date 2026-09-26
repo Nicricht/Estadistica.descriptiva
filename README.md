@@ -1,11 +1,11 @@
 # Estadística descriptiva
 
 # **DEL ACERO AL ALGORITMO**
-## *¿Desde qué base de talento parte el Biobío que quiere avanzar hacia la Industria 4.0?*
+## *¿Desde qué base de capital humano parte el Biobío para transformar su histórica vocación industrial hacia una economía de manufactura avanzada e Industria 4.0?*
 
 ## Idea central
 
-El proyecto compara dos componentes del capital humano formado en la educación superior del Biobío durante 2021:
+El proyecto utiliza las matrículas de Educación Superior del Biobío de 2021 como una **línea base descriptiva** del capital humano que se estaba formando en la región.
 
 ### “Acero”: motores productivos
 - Industria y manufactura
@@ -20,10 +20,7 @@ El proyecto compara dos componentes del capital humano formado en la educación 
 - Automatización y robótica
 - Energía, sustentabilidad y biotecnología
 
-La comparación se conecta con la agenda regional posterior de manufactura avanzada, tecnologías digitales e Industria 4.0.
-
-## Pregunta guía
-**En la fotografía educativa de 2021, ¿qué peso tenía la formación ligada a los motores productivos tradicionales frente a las capacidades necesarias para transformarlos tecnológicamente?**
+La idea no es “Acero vs. Algoritmo”, sino **Acero + Algoritmo**: transformar una base industrial histórica incorporando digitalización, automatización, datos, energía e innovación.
 
 ## Hallazgo principal
 
@@ -31,28 +28,71 @@ Sobre **101.093 matrículas de pregrado**:
 
 - Motores productivos: **20.368 matrículas, 20,15%**.
 - Capacidades transformadoras: **7.000 matrículas, 6,92%**.
-- Relación aproximada: **2,9 matrículas en motores productivos por cada matrícula transformadora**.
+- Otros campos: **73.725 matrículas, 72,93%**.
+- Relación aproximada: **2,9 a 1**.
 
-En otras palabras, el componente formativo asociado al “acero” era casi tres veces el componente asociado al “algoritmo”.
+La interpretación correcta es descriptiva: en la fotografía educativa de 2021, el componente formativo asociado a motores productivos tenía un peso cercano a tres veces el componente clasificado como capacidades transformadoras.
 
-## Por qué importa
+Esto **no demuestra déficit laboral ni causalidad**.
 
-El Gobierno Regional y Corfo han impulsado una transición desde manufactura tradicional hacia manufactura avanzada e Industria 4.0, con tecnologías digitales, innovación y capital humano avanzado.
+## Bases de análisis
 
-Por eso la base 2021 se interpreta como una **línea base educativa** desde la cual observar esa transformación.
+- Base original: **106.555 registros**.
+- Pregrado para análisis de personas, edad e “Acero/Algoritmo”: **101.093 matrículas**.
+- Pregrado con arancel > $0 para análisis de precio: **101.067 matrículas**.
+- Ofertas académicas únicas para comparar precios: **1.273 ofertas**.
 
-Esto **no demuestra un déficit laboral** ni permite afirmar que la educación esté cambiando más lento que la industria. Para eso harían falta datos de empleo, vacantes, salarios y una serie temporal.
+Una oferta académica única evita contar el mismo precio una vez por cada estudiante matriculado.
 
-## Causas plausibles
-- Herencia productiva regional: una gran base industrial y manufacturera genera históricamente una oferta formativa asociada a esos sectores.
-- Transformación tecnológica más reciente: digitalización, automatización, IA y manufactura avanzada están siendo fortalecidas como parte de una nueva etapa productiva.
+## Preguntas obligatorias
 
-## Riesgo regional que plantea el trabajo
-Si la demanda futura por capacidades digitales y automatizadas creciera más rápido que la formación disponible, podrían aparecer dificultades de adopción tecnológica, dependencia de talento externo o menor capacidad para agregar valor.
+### 1. ¿Hay áreas del conocimiento donde las carreras sean más caras?
+Criterio principal: **mediana del arancel por área** sobre ofertas únicas.
 
-Ese riesgo se presenta como **hipótesis de investigación**, no como efecto probado por el notebook.
+- Mediana global: **$2.030.000**.
+- Derecho: **$3.586.000**.
+- Ciencias Básicas: **$3.290.000**.
+- Agropecuaria: **$2.981.500**.
+
+### 2. Edad y tipo de institución
+Se interpreta como **asociación**, no causalidad.
+
+- 15–19 años: CRUCH **46,24%**, IP **19,30%**.
+- 40 años o más: IP **52,93%**, CRUCH **10,88%**.
+
+### 3. ¿Hay carreras cuyo arancel sea sustantivamente más caro que la mayoría?
+Criterio definitivo: **Q3 + 1,5 × RIC**.
+
+- Q1: **$1.616.000**.
+- Q3: **$2.580.000**.
+- RIC: **$964.000**.
+- Límite superior: **$4.026.000**.
+- Ofertas sobre el límite: **135 de 1.273 (10,6%)**.
+- CRUCH: **73**; privadas: **62**.
+- Concepción: **129**; Biobío: **6**.
+- Salud: **39**; Tecnología: **39**.
+- Duración mediana: **10 semestres** en ofertas altas vs. **5** en el resto.
+
+## Contenidos estadísticos cubiertos
+
+El notebook aplica los laboratorios 0 al 5 del profesor y la pauta:
+
+- Pandas y filtros;
+- población, muestra y clasificación de variables;
+- frecuencias absoluta, relativa y acumuladas cuando corresponde;
+- gráficos circular, barras, histogramas, subplots y dispersión;
+- media, mediana, moda y percentiles;
+- `describe()`, `groupby()`, `agg()` y `crosstab()`;
+- rango, **varianza**, desviación estándar, coeficiente de variación y **RIC**.
+
+## Contexto regional
+
+La línea base 2021 se conecta con señales y procesos posteriores del Biobío: dificultades de contratación reportadas por ENADEL, el cierre siderúrgico de Huachipato como punto de inflexión regional, el Plan de Fortalecimiento Industrial, manufactura avanzada, Industria 4.0, sistemas inteligentes, mantenimiento predictivo, capital humano avanzado y la estrategia Biobío 2050.
+
+Estas conexiones se presentan como **contexto e hipótesis de investigación**, nunca como causalidad demostrada por la matrícula 2021.
 
 ## Hallazgos secundarios
+
 - Industria y manufactura: **11,10%** de la matrícula.
 - Digital y TIC: **3,33%**.
 - Automatización y robótica: **2,58%**.
@@ -61,70 +101,33 @@ Ese riesgo se presenta como **hipótesis de investigación**, no como efecto pro
 - Mujeres en Automatización y robótica: **5,79%**.
 
 ## Estado
-- ✅ Notebook corregido y ejecutado previamente.
-- ✅ Preguntas obligatorias 1, 2 y 3 preservadas.
-- ✅ Clasificación de motores productivos y capacidades transformadoras implementada.
-- ✅ Nuevo relato “Del acero al algoritmo” incorporado.
-- ✅ Causas, consecuencias plausibles y límites metodológicos documentados.
-- ✅ Notebook reestructurado siguiendo el estilo de desarrollo usado por el profesor.
-- ✅ Ejecución completa validada con el Excel real: **71/71 celdas de código sin errores**.
-- ✅ Gráfico principal **Acero vs Algoritmo** incorporado al notebook.
-- ✅ Tres gráficos narrativos guardados en `graficos/`.
-- ⏳ Rehacer la presentación con este único relato.
-- ⏳ Preparar defensa oral.
 
-## Fuentes regionales de contexto
-- GORE Biobío, Centro Tecnológico de Manufactura Avanzada e Industria 4.0: https://gorebiobio.cl/wp-content/uploads/2025/10/18.-Ord.-3310-GORE.pdf
-- CORFO, Centro Tecnológico de Manufactura Avanzada e Industria 4.0 en Biobío: https://postulaciones.corfo.cl/sites/Satellite?c=C_NoticiaNacional&cid=1476741161258&d=Touch&pagename=CorfoPortalPublico%2FC_NoticiaNacional%2FcorfoDetalleNoticiaNacionalWeb
-- GORE Biobío, Capital Humano Avanzado en Inteligencia Artificial: https://gorebiobio.cl/2023/10/18/gobierno-regional-del-biobio-lanza-el-primer-doctorado-en-inteligencia-artificial-de-sudamerica/
+- ✅ Un único notebook oficial: `notebooks/Estadistica_Descriptiva_Biobio.ipynb`.
+- ✅ Notebook alineado con los laboratorios del profesor.
+- ✅ Preguntas obligatorias 1, 2 y 3 preservadas.
+- ✅ Criterio Q3 + 1,5 × RIC restaurado y documentado.
+- ✅ Varianza y RIC incorporados según la pauta.
+- ✅ Validación local final: **71/71 celdas de código, 0 errores**.
+- ✅ Narrativa regional “Del acero al algoritmo” documentada.
+- ✅ Auditoría crítica del PowerPoint guardada en `documentos/auditoria_powerpoint_final.md`.
+- ✅ PowerPoint final auditado y corregido: **20 diapositivas con 19 transiciones Morph**.
+- ⏳ Preparar defensa oral individual.
+
+## Documentación principal
+
+- `documentos/criterio_metodologico.md`
+- `documentos/adn_profesional_biobio.md`
+- `documentos/contexto_regional_acero_algoritmo.md`
+- `documentos/auditoria_notebook_vs_profesor.md`
+- `documentos/validacion_ejecucion.md`
+- `documentos/auditoria_powerpoint_final.md`
+
+## Gráficos
+
+- `graficos/acero_vs_algoritmo.svg`
+- `graficos/familias_adn_profesional.svg`
+- `graficos/transformacion_por_provincia.svg`
 
 ## Regla de trabajo del repositorio
+
 Este repositorio es la **fuente oficial del proyecto**. Cada cambio debe quedar guardado en GitHub.
-
-
-## Gráficos del nuevo relato
-- `graficos/acero_vs_algoritmo.svg`: contraste principal 20,15% vs 6,92%.
-- `graficos/familias_adn_profesional.svg`: composición de las nueve familias estratégicas.
-- `graficos/transformacion_por_provincia.svg`: peso relativo de capacidades transformadoras por provincia.
-
-
-## Historia visual
-
-![Del acero al algoritmo](graficos/acero_vs_algoritmo.svg)
-
-![Familias del ADN profesional](graficos/familias_adn_profesional.svg)
-
-![Transformación por provincia](graficos/transformacion_por_provincia.svg)
-
-
-## Estilo de desarrollo del notebook
-El notebook fue reorganizado tomando como referencia los laboratorios resueltos del profesor:
-
-- pregunta o actividad claramente escrita;
-- código corto y visible;
-- resultado inmediatamente después;
-- interpretación en una celda Markdown;
-- uso directo de pandas y matplotlib;
-- tablas de frecuencia con groupby().size();
-- frecuencias relativas calculadas de forma explícita;
-- gráficos construidos con fig, ax = plt.subplots();
-- media, mediana, desviación estándar y coeficiente de variación calculados paso a paso;
-- conclusiones descriptivas sin atribuir causalidad.
-
-La creatividad queda en el problema regional **“Del acero al algoritmo”**, mientras que la forma de resolver estadísticamente sigue el nivel y la estructura utilizados en clases.
-
-
-## Alineación final con TODO el contenido del profesor
-
-El notebook principal fue rehecho siguiendo los laboratorios 0 al 5.
-
-- ✅ **Laboratorio 0 — Pandas:** read_excel, head, tail, shape, type, info, selección de columnas, value_counts, filtros y creación de columnas.
-- ✅ **Laboratorio 1 — Conceptos básicos:** población, muestra y clasificación de variables.
-- ✅ **Laboratorio 2 — Tablas de frecuencia:** frecuencia absoluta, relativa, acumuladas y pd.cut.
-- ✅ **Laboratorio 3 — Gráficos:** circular, barras, histogramas, subplots y dispersión.
-- ✅ **Laboratorio 4 — Tendencia central y percentiles:** media, mediana, moda, quantile, describe, groupby, agg y crosstab.
-- ✅ **Laboratorio 5 — Dispersión:** rango, desviación estándar, coeficiente de variación, comparación entre grupos e isin.
-- ✅ Las tres preguntas obligatorias se resuelven utilizando estas mismas herramientas.
-- ✅ La aplicación regional **“Del acero al algoritmo”** se conserva, pero su código usa filtros y estructuras trabajadas en clases.
-- ✅ Ejecución validada con el Excel real: **71/71 celdas de código, 0 errores**.
-- ✅ El notebook guardado en GitHub contiene los resultados ejecutados.
