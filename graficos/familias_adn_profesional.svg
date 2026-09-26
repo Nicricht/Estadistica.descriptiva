@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif;fill:#111827}
+    .title{font-size:38px;font-weight:700}.sub{font-size:21px;fill:#4b5563}
+    .lab{font-size:20px}.val{font-size:21px;font-weight:700}.small{font-size:17px;fill:#4b5563}
+  </style>
+  <text x="70" y="62" class="title">¿De qué está hecho el ADN profesional?</text>
+  <text x="70" y="96" class="sub">Participación de las nueve familias estratégicas sobre 101.067 matrículas</text><line x1="360" y1="135" x2="360" y2="605" stroke="#e5e7eb"/>
+      <text x="360" y="637" text-anchor="middle" class="small">0%</text><line x1="510" y1="135" x2="510" y2="605" stroke="#e5e7eb"/>
+      <text x="510" y="637" text-anchor="middle" class="small">2%</text><line x1="660" y1="135" x2="660" y2="605" stroke="#e5e7eb"/>
+      <text x="660" y="637" text-anchor="middle" class="small">5%</text><line x1="810" y1="135" x2="810" y2="605" stroke="#e5e7eb"/>
+      <text x="810" y="637" text-anchor="middle" class="small">7%</text><line x1="960" y1="135" x2="960" y2="605" stroke="#e5e7eb"/>
+      <text x="960" y="637" text-anchor="middle" class="small">10%</text><line x1="1110" y1="135" x2="1110" y2="605" stroke="#e5e7eb"/>
+      <text x="1110" y="637" text-anchor="middle" class="small">12%</text><text x="342" y="167.06666666666666" text-anchor="end" class="lab">Industria y manufactura</text>
+      <rect x="360" y="144.4" width="693.75" height="31.333333333333332" rx="5" fill="#374151"/>
+      <text x="1065.75" y="167.06666666666666" class="val">11.10%</text><text x="342" y="219.2888888888889" text-anchor="end" class="lab">Construcción e infraestructura</text>
+      <rect x="360" y="196.62222222222223" width="427.5" height="31.333333333333332" rx="5" fill="#374151"/>
+      <text x="799.5" y="219.2888888888889" class="val">6.84%</text><text x="342" y="271.5111111111111" text-anchor="end" class="lab">Digital y TIC</text>
+      <rect x="360" y="248.84444444444446" width="208.125" height="31.333333333333332" rx="5" fill="#9ca3af"/>
+      <text x="580.125" y="271.5111111111111" class="val">3.33%</text><text x="342" y="323.7333333333333" text-anchor="end" class="lab">Automatización y robótica</text>
+      <rect x="360" y="301.0666666666666" width="161.25" height="31.333333333333332" rx="5" fill="#9ca3af"/>
+      <text x="533.25" y="323.7333333333333" class="val">2.58%</text><text x="342" y="375.9555555555556" text-anchor="end" class="lab">Logística y puertos</text>
+      <rect x="360" y="353.2888888888889" width="63.75" height="31.333333333333332" rx="5" fill="#9ca3af"/>
+      <text x="435.75" y="375.9555555555556" class="val">1.02%</text><text x="342" y="428.17777777777775" text-anchor="end" class="lab">Energía, sustentabilidad y biotecnología</text>
+      <rect x="360" y="405.51111111111106" width="63.75" height="31.333333333333332" rx="5" fill="#9ca3af"/>
+      <text x="435.75" y="428.17777777777775" class="val">1.02%</text><text x="342" y="480.4" text-anchor="end" class="lab">Agroalimentario</text>
+      <rect x="360" y="457.7333333333333" width="53.125" height="31.333333333333332" rx="5" fill="#9ca3af"/>
+      <text x="425.125" y="480.4" class="val">0.85%</text><text x="342" y="532.6222222222221" text-anchor="end" class="lab">Forestal y madera</text>
+      <rect x="360" y="509.9555555555555" width="10.625000000000002" height="31.333333333333332" rx="5" fill="#9ca3af"/>
+      <text x="382.625" y="532.6222222222221" class="val">0.17%</text><text x="342" y="584.8444444444444" text-anchor="end" class="lab">Pesca y acuicultura</text>
+      <rect x="360" y="562.1777777777778" width="9.375" height="31.333333333333332" rx="5" fill="#9ca3af"/>
+      <text x="381.375" y="584.8444444444444" class="val">0.15%</text></svg>
