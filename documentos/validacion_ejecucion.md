@@ -1,54 +1,47 @@
-# Validación de ejecución
+# Validación de ejecución — Del acero al algoritmo
 
 **Fecha:** 26-09-2026
 
 ## Resultado técnico
 
-El notebook final fue ejecutado de principio a fin con la base real y la validación automática terminó correctamente.
+La versión final del notebook fue validada de principio a fin con el Excel real.
 
+- Celdas de código: **38**
+- Celdas ejecutadas correctamente: **38**
+- Errores: **0**
 - Registros originales: **106.555**
 - Matrículas de pregrado: **101.093**
-- Matrículas de pregrado con arancel mayor que 0: **101.067**
+- Matrículas de pregrado con arancel > $0: **101.067**
+- Ofertas académicas únicas: **1.273**
 
-## Medidas descriptivas del arancel
+## Resultado central
 
-- Media: **$3.224.895**
-- Mediana: **$3.133.750**
-- Moda: **$3.373.000**
-- Percentil 25: **$1.988.000**
-- Percentil 75: **$4.261.900**
-- Rango: **$8.133.670**
-- Desviación estándar: **$1.518.991**
-- Coeficiente de variación: **47,1%**
+| Bloque | Matrículas | % sobre pregrado |
+|---|---:|---:|
+| Motores productivos | 20.368 | 20,15% |
+| Capacidades transformadoras | 7.000 | 6,92% |
+| Otros campos | 73.725 | 72,93% |
 
-## Pregunta 1
+Relación aproximada: **2,9 a 1**.
 
-Medianas de arancel más altas por área:
-- Agropecuaria: **$4.751.078**
-- Derecho: **$4.250.000**
-- Salud: **$4.243.207**
-- Ciencias Básicas: **$4.144.870**
+## Pregunta 3 — validación definitiva
 
-## Pregunta 2
+Criterio: **percentil 90 (P90)** con `quantile(0.90)`.
 
-Entre 15 y 19 años:
-- CRUCH: **46,2%**
-- Institutos Profesionales: **19,3%**
+- P90: **$4.106.400**
+- Ofertas sobre P90: **128**
+- Porcentaje: **10,1%**
+- CRUCH: **73**
+- Privadas: **55**
+- Concepción: **123**
+- Biobío: **5**
+- Salud: **38**
+- Tecnología: **38**
+- Duración mediana del grupo alto: **10 semestres**
+- Duración mediana del resto: **5 semestres**
 
-Entre 40 años o más:
-- Institutos Profesionales: **52,9%**
-- CRUCH: **10,9%**
+## Interpretación permitida
 
-## Pregunta 3
+La base permite describir patrones y asociaciones. No demuestra causalidad, déficit profesional ni evolución temporal.
 
-Se usa **P75 = $4.261.900** como referencia, porque el Laboratorio 4 trabaja explícitamente `quantile(0.75)`.
-
-Entre las carreras cuya mediana supera P75 aparecen:
-- Odontología: **$7.625.300**
-- Medicina: **$7.490.000**
-- Licenciatura en Medicina: **$6.750.000**
-- Ingeniería Civil de Minas: **$6.050.705**
-
-## Regla final
-
-No se incorporan técnicas fuera de los laboratorios del profesor.
+El notebook utiliza el percentil 90 en la Pregunta 3, mediante `quantile(0.90)`. El bloque de dispersión general queda alineado con el Laboratorio 5 del profesor: rango, desviación estándar y coeficiente de variación.
