@@ -17,7 +17,7 @@ Versión de 14 diapositivas previa a la corrección final.
 | 5 | PARCIAL | Frecuencias correctas, pero faltaba integrarlas a resultados relevantes del proyecto. |
 | 6 | PARCIAL | Mostraba tipos de gráficos, pero la presentación final debe priorizar qué descubrimos con ellos y no solo enumerar técnicas. |
 | 7 | DEBE CORREGIRSE | Presentaba P90 como base de la Pregunta 3. El criterio metodológico oficial del proyecto usa Q3 + 1,5 × RIC. |
-| 8 | PARCIAL | Mostraba rango, desviación y CV, pero faltaban varianza y RIC exigidos por la descripción estadística general de la pauta. |
+| 8 | CUMPLE | Mostraba rango, desviación y CV, que coinciden con las medidas de dispersión del Laboratorio 5. Los cuartiles se trabajan aparte y el RIC se reserva para la Pregunta 3. |
 | 9 | CUMPLE | La clasificación Acero/Algoritmo y las nueve familias estaba correctamente representada. |
 | 10 | CUMPLE | Resultado central actualizado: 20.368 (20,15%) vs 7.000 (6,92%), relación aproximada 2,9:1, sin afirmar déficit. |
 | 11 | PARCIAL | Pregunta 1 correcta en mediana y ofertas únicas, pero debía explicitar por qué se usa mediana y mostrar Q1/Q3/RIC como complemento. |
@@ -27,7 +27,7 @@ Versión de 14 diapositivas previa a la corrección final.
 
 ## A. Contenido obligatorio que faltaba
 
-- Varianza y rango intercuartílico en la síntesis de descripción general.
+- No corresponde exigir varianza en la síntesis general: no aparece en el Laboratorio 5 entregado por el profesor. El RIC se mantiene solo como aplicación de Q1 y Q3 para la Pregunta 3.
 - Explicación clara de oferta académica única.
 - Criterio correcto de Pregunta 3: Q3 + 1,5 × RIC.
 - Contexto regional verificable y fuentes visibles.
