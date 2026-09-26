@@ -85,3 +85,12 @@ Este repositorio es la **fuente oficial del proyecto**. Cada cambio debe quedar 
 - `graficos/acero_vs_algoritmo.svg`: contraste principal 20,14% vs 6,93%.
 - `graficos/familias_adn_profesional.svg`: composición de las nueve familias estratégicas.
 - `graficos/transformacion_por_provincia.svg`: peso relativo de capacidades transformadoras por provincia.
+
+
+## Historia visual
+
+![Del acero al algoritmo](graficos/acero_vs_algoritmo.svg)
+
+![Familias del ADN profesional](graficos/familias_adn_profesional.svg)
+
+![Transformación por provincia](graficos/transformacion_por_provincia.svg)
