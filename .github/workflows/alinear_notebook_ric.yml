@@ -1,0 +1,40 @@
+name: Alinear notebook con RIC
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/patch_notebook_ric.py'
+      - '.github/workflows/alinear_notebook_ric.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  alinear:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Aplicar corrección metodológica
+        run: python scripts/patch_notebook_ric.py
+
+      - name: Guardar notebook corregido
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add notebooks/Estadistica_Descriptiva_Biobio.ipynb
+          if git diff --cached --quiet; then
+            echo 'El notebook ya está alineado.'
+          else
+            git commit -m 'fix: alinear notebook con RIC, varianza y pauta'
+            git push
+          fi
