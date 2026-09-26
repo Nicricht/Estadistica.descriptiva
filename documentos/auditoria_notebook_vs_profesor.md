@@ -1,114 +1,123 @@
-# Auditoría final del notebook contra los laboratorios del profesor
+# Auditoría final — Notebook vs. contenidos completos del profesor
 
-Fecha: 26-09-2026
+**Fecha:** 26-09-2026
 
 ## Objetivo
 
-Revisar que el notebook principal use una forma de desarrollo coherente con los laboratorios entregados por el profesor: pregunta, código visible, resultado e interpretación.
+Verificar que el notebook principal no solo obtenga resultados correctos, sino que recorra **todos los contenidos presentes en los laboratorios 0 al 5** y utilice una forma de desarrollo equivalente a la del profesor.
 
-## Cambios realizados
+## Laboratorio 0 — Introducción a Pandas
 
-### 1. Tablas de frecuencia
+Aplicado en el notebook:
+- importación de Pandas;
+- read_excel();
+- head() y tail();
+- shape;
+- type();
+- info();
+- selección de una o varias columnas;
+- value_counts();
+- creación de una nueva columna;
+- filtros por condición;
+- filtros con más de una condición.
 
-AREA CONOCIMIENTO es una variable cualitativa nominal.
+## Laboratorio 1 — Población, muestra y variables
 
-Por eso la tabla conserva:
+Aplicado:
+- definición de población;
+- definición de muestra;
+- clasificación de las variables utilizadas;
+- distinción entre cualitativas nominales, ordinales y cuantitativas.
+
+## Laboratorio 2 — Tablas de frecuencia
+
+Aplicado:
+- unique();
+- groupby().size();
 - frecuencia absoluta;
-- frecuencia relativa.
+- frecuencia relativa;
+- frecuencia absoluta acumulada;
+- frecuencia relativa acumulada;
+- pd.cut();
+- observed=True;
+- sort_values();
+- tablas para variables nominales, discretas y cuantitativas agrupadas.
 
-Se eliminan las frecuencias acumuladas para esta variable.
+## Laboratorio 3 — Gráficos
 
-Las frecuencias acumuladas se mantienen solamente cuando existe un orden, por ejemplo en variables cuantitativas agrupadas en intervalos.
+Aplicado:
+- gráfico circular;
+- gráfico de barras;
+- histogramas construidos con intervalos;
+- etiquetas en barras;
+- rotación de categorías;
+- subplots;
+- gráfico de dispersión.
 
-### 2. Medidas de tendencia central
+## Laboratorio 4 — Tendencia central y percentiles
 
-El desarrollo se separó por variable y se calcula de forma directa:
-- media;
-- mediana.
+Aplicado:
+- mean();
+- median();
+- mode();
+- quantile();
+- percentiles 25, 50, 75 y 90;
+- describe();
+- cálculos agrupados;
+- DataFrame con media, mediana y percentiles;
+- agg();
+- crosstab() para análisis bivariado.
 
-Cada resultado queda seguido por su interpretación.
+## Laboratorio 5 — Dispersión
 
-### 3. Medidas de dispersión
-
-El Laboratorio 5 trabaja:
+Aplicado:
+- máximo y mínimo;
 - rango;
 - desviación estándar;
-- coeficiente de variación.
+- coeficiente de variación;
+- comparación de dispersión entre grupos;
+- groupby().agg(['mean','median','std']);
+- filtrado de categorías mediante isin().
 
-El notebook queda alineado con esas tres medidas. Se eliminan del bloque general la varianza y el RIC.
+## Preguntas obligatorias
 
-### 4. Clasificación Del acero al algoritmo
+### Pregunta 1
+Se comparan los aranceles de las áreas usando ofertas únicas, mediana, media, percentiles 25 y 75, gráfico de barras y una tabla bivariada con crosstab().
 
-Se eliminó la clasificación basada en búsquedas largas con str.contains().
+### Pregunta 2
+Se analiza la edad por tipo de institución con groupby(), media, mediana, crosstab(), tablas de frecuencia y gráficos.
 
-Ahora:
-1. se crean listas explícitas de carreras;
-2. se utiliza isin() para seleccionar las carreras;
-3. se asigna cada lista a una familia;
-4. se construyen los bloques Motores productivos y Capacidades transformadoras.
-
-isin() aparece en el material del profesor como herramienta de filtrado.
-
-Resultado:
-- Motores productivos: **20.368 matrículas, 20,15%**.
-- Capacidades transformadoras: **7.000 matrículas, 6,92%**.
-- Relación aproximada: **2,9 a 1**.
-
-### 5. Pregunta 1
-
-Se utiliza:
-- groupby();
-- agg(['count', 'median']);
-- sort_values();
-- gráfico de barras.
-
-La mediana es el criterio para comparar el arancel entre áreas.
-
-### 6. Pregunta 2
-
-Se eliminó pd.crosstab().
-
-Ahora se utiliza:
-- groupby();
-- count, mean y median;
-- frecuencias absolutas;
-- frecuencias relativas;
-- gráficos de barras.
-
-Se comparan especialmente los grupos de 15 a 19 años y 40 años o más.
+### Pregunta 3
+Se define “sustantivamente caro” mediante **Percentil 90**, siguiendo el mismo enfoque que el Laboratorio 4 para estudiar el 10% superior.
 
 Resultados:
-- 15 a 19: CRUCH 46,24%; IP 19,30%.
-- 40 o más: IP 52,93%; CRUCH 10,88%.
-
-### 7. Pregunta 3
-
-Se reemplazó el criterio Q3 + 1,5 × RIC por un criterio basado en percentiles.
-
-**Criterio:** oferta con arancel superior al Percentil 90.
-
-Resultados:
-- Percentil 90: **$4.106.400**.
-- Ofertas sobre P90: **128 de 1.273**, aproximadamente **10,1%**.
-- Universidades CRUCH: **73**.
-- Universidades privadas: **55**.
+- P90: **$4.106.400**.
+- Máximo: **$8.783.670**.
+- Ofertas sobre P90: **128 de 1.273 (10,1%)**.
+- CRUCH: **73**.
+- Privadas: **55**.
 - Concepción: **123**.
 - Biobío: **5**.
-- Salud: **38** ofertas altas.
-- Tecnología: **38** ofertas altas.
 - Duración mediana de ofertas altas: **10 semestres**.
 - Duración mediana del resto: **5 semestres**.
 
+## Aplicación regional
+
+“Del acero al algoritmo” se mantiene como aplicación propia, pero su desarrollo utiliza herramientas vistas en clases, principalmente listas, isin(), groupby(), tablas de frecuencia y gráficos.
+
+Resultado:
+- Motores productivos: **20.368 matrículas (20,15%)**.
+- Capacidades transformadoras: **7.000 (6,92%)**.
+- Relación aproximada: **2,9 a 1**.
+
 ## Validación técnica
 
-Se ejecutó una copia equivalente de la versión final con el Excel real:
+- Celdas de código: **71**.
+- Celdas ejecutadas: **71**.
+- Errores: **0**.
 
-- Celdas de código: **51**
-- Celdas ejecutadas: **51**
-- Errores: **0**
+## Criterio final
 
-## Criterio de cierre
+El notebook queda estructurado en el mismo orden pedagógico del curso:
 
-El notebook conserva la investigación creativa “Del acero al algoritmo”, pero la forma de llegar a los resultados se acerca al estilo de los laboratorios del profesor:
-
-**pregunta → código corto y visible → resultado → interpretación.**
+**Pandas → conceptos básicos → tablas de frecuencia → gráficos → tendencia central y percentiles → dispersión → aplicación → preguntas obligatorias.**
