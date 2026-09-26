@@ -1,96 +1,114 @@
-# Auditoría final del notebook contra los laboratorios del profesor y la pauta
+# Auditoría final del notebook contra los laboratorios del profesor
 
 Fecha: 26-09-2026
 
-## Resultado general
+## Objetivo
 
-El notebook principal fue revisado tomando como referencia los laboratorios del profesor y los requisitos del trabajo práctico.
+Revisar que el notebook principal use una forma de desarrollo coherente con los laboratorios entregados por el profesor: pregunta, código visible, resultado e interpretación.
 
-## Correcciones realizadas
+## Cambios realizados
 
-### 1. Estructura
-Se mantiene el patrón:
-**pregunta → código → resultado → interpretación**.
+### 1. Tablas de frecuencia
 
-### 2. Clasificación de EDAD
-Se ajustó a **cuantitativa continua** para mantener el mismo criterio utilizado por el profesor en sus laboratorios.
+AREA CONOCIMIENTO es una variable cualitativa nominal.
 
-### 3. Calidad de datos
-Se agregó una revisión simple de:
-- filas y columnas;
-- valores nulos;
-- filas duplicadas;
-- aranceles registrados en $0.
+Por eso la tabla conserva:
+- frecuencia absoluta;
+- frecuencia relativa.
 
-Resultados:
-- Base original: 106.555 filas.
-- Duplicados completos: 0.
-- Valores nulos: 3.715 en PERIODO DE ACREDITACION y 3.715 en AÑOS DE ACREDITACION.
-- Aranceles $0 en la base original: 490.
+Se eliminan las frecuencias acumuladas para esta variable.
 
-### 4. Separación correcta de bases
-Se corrigió un problema metodológico importante.
+Las frecuencias acumuladas se mantienen solamente cuando existe un orden, por ejemplo en variables cuantitativas agrupadas en intervalos.
+
+### 2. Medidas de tendencia central
+
+El desarrollo se separó por variable y se calcula de forma directa:
+- media;
+- mediana.
+
+Cada resultado queda seguido por su interpretación.
+
+### 3. Medidas de dispersión
+
+El Laboratorio 5 trabaja:
+- rango;
+- desviación estándar;
+- coeficiente de variación.
+
+El notebook queda alineado con esas tres medidas. Se eliminan del bloque general la varianza y el RIC.
+
+### 4. Clasificación Del acero al algoritmo
+
+Se eliminó la clasificación basada en búsquedas largas con str.contains().
 
 Ahora:
-- **d** = pregrado completo: 101.093 matrículas.
-- **d_precio** = pregrado con arancel > $0: 101.067 matrículas.
-- Solo se excluyen 26 registros de pregrado cuando el cálculo realmente estudia precios.
+1. se crean listas explícitas de carreras;
+2. se utiliza isin() para seleccionar las carreras;
+3. se asigna cada lista a una familia;
+4. se construyen los bloques Motores productivos y Capacidades transformadoras.
 
-Edad, institución y ADN profesional usan las 101.093 matrículas.
+isin() aparece en el material del profesor como herramienta de filtrado.
 
-### 5. Frecuencias acumuladas
-Se corrigió la tabla de AREA CONOCIMIENTO. La frecuencia acumulada ahora se calcula después de ordenar las categorías.
+Resultado:
+- Motores productivos: **20.368 matrículas, 20,15%**.
+- Capacidades transformadoras: **7.000 matrículas, 6,92%**.
+- Relación aproximada: **2,9 a 1**.
 
-### 6. Intervalos de edad
-Se cambió a **10 intervalos**, siguiendo el patrón del laboratorio de gráficos del profesor.
+### 5. Pregunta 1
 
-### 7. Pregunta 1
-La tabla incluye cantidad de ofertas, mediana, Q1, Q3 y RIC.
+Se utiliza:
+- groupby();
+- agg(['count', 'median']);
+- sort_values();
+- gráfico de barras.
 
-### 8. Pregunta 2
-Se utilizan las 101.093 matrículas de pregrado.
+La mediana es el criterio para comparar el arancel entre áreas.
 
-Resultados extremos:
-- 15 a 19 años: CRUCH 46,24%; IP 19,30%.
-- 40 años o más: IP 52,93%; CRUCH 10,88%.
+### 6. Pregunta 2
 
-### 9. Pregunta 3
-Además del criterio RIC, se agregaron:
-- tipo de institución;
-- área del conocimiento;
-- provincia;
-- duración de la carrera.
+Se eliminó pd.crosstab().
 
-Hallazgos:
-- límite superior: $4.026.000;
-- 135 de 1.273 ofertas sobre el límite;
-- 73 CRUCH y 62 privadas;
-- 129 en Concepción y 6 en Biobío;
-- Salud y Tecnología: 39 ofertas altas cada una;
-- duración mediana: 10 semestres en ofertas altas vs 5 semestres en el resto.
+Ahora se utiliza:
+- groupby();
+- count, mean y median;
+- frecuencias absolutas;
+- frecuencias relativas;
+- gráficos de barras.
 
-También se agregó un gráfico de las carreras con mayor arancel mediano.
+Se comparan especialmente los grupos de 15 a 19 años y 40 años o más.
+
+Resultados:
+- 15 a 19: CRUCH 46,24%; IP 19,30%.
+- 40 o más: IP 52,93%; CRUCH 10,88%.
+
+### 7. Pregunta 3
+
+Se reemplazó el criterio Q3 + 1,5 × RIC por un criterio basado en percentiles.
+
+**Criterio:** oferta con arancel superior al Percentil 90.
+
+Resultados:
+- Percentil 90: **$4.106.400**.
+- Ofertas sobre P90: **128 de 1.273**, aproximadamente **10,1%**.
+- Universidades CRUCH: **73**.
+- Universidades privadas: **55**.
+- Concepción: **123**.
+- Biobío: **5**.
+- Salud: **38** ofertas altas.
+- Tecnología: **38** ofertas altas.
+- Duración mediana de ofertas altas: **10 semestres**.
+- Duración mediana del resto: **5 semestres**.
 
 ## Validación técnica
 
-Se ejecutó una copia auditada del notebook de principio a fin con el Excel real.
+Se ejecutó una copia equivalente de la versión final con el Excel real:
 
-- Celdas de código: **41**
-- Celdas ejecutadas: **41**
+- Celdas de código: **51**
+- Celdas ejecutadas: **51**
 - Errores: **0**
 
-## Tema creativo
+## Criterio de cierre
 
-Se mantiene una sola idea:
+El notebook conserva la investigación creativa “Del acero al algoritmo”, pero la forma de llegar a los resultados se acerca al estilo de los laboratorios del profesor:
 
-# Del acero al algoritmo
-
-- Motores productivos: 20.368 matrículas, **20,15%**.
-- Capacidades transformadoras: 7.000 matrículas, **6,92%**.
-- Relación aproximada: **2,9 a 1**.
-
-La conclusión sigue siendo descriptiva. No se afirma déficit de profesionales ni causalidad.
-
-## Estado
-
-El notebook ya está estructural y metodológicamente preparado para pasar a la presentación y la defensa oral.
+**pregunta → código corto y visible → resultado → interpretación.**
