@@ -66,7 +66,9 @@ Ese riesgo se presenta como **hipótesis de investigación**, no como efecto pro
 - ✅ Clasificación de motores productivos y capacidades transformadoras implementada.
 - ✅ Nuevo relato “Del acero al algoritmo” incorporado.
 - ✅ Causas, consecuencias plausibles y límites metodológicos documentados.
-- ⏳ Ejecutar nuevamente el notebook en Colab para guardar los nuevos gráficos.
+- ✅ Ejecución completa validada con el Excel real: **18/18 celdas de código sin errores**.
+- ✅ Gráfico principal **Acero vs Algoritmo** incorporado al notebook.
+- ✅ Tres gráficos narrativos guardados en `graficos/`.
 - ⏳ Rehacer la presentación con este único relato.
 - ⏳ Preparar defensa oral.
 
@@ -77,3 +79,9 @@ Ese riesgo se presenta como **hipótesis de investigación**, no como efecto pro
 
 ## Regla de trabajo del repositorio
 Este repositorio es la **fuente oficial del proyecto**. Cada cambio debe quedar guardado en GitHub.
+
+
+## Gráficos del nuevo relato
+- `graficos/acero_vs_algoritmo.svg`: contraste principal 20,14% vs 6,93%.
+- `graficos/familias_adn_profesional.svg`: composición de las nueve familias estratégicas.
+- `graficos/transformacion_por_provincia.svg`: peso relativo de capacidades transformadoras por provincia.
