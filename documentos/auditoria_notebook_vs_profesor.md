@@ -28,7 +28,9 @@ Aplicado: `mean()`, `median()`, `mode()`, `quantile()`, percentiles, `describe()
 
 ## Laboratorio 5 — Dispersión
 
-Aplicado: máximo, mínimo, rango, **varianza**, desviación estándar, coeficiente de variación, **rango intercuartílico (RIC)**, comparación de grupos e `isin()`.
+Aplicado según el material del profesor: máximo, mínimo, rango, desviación estándar, coeficiente de variación, comparación de grupos e `isin()`.
+
+**Aclaración:** el Laboratorio 5 completo no utiliza `var()` ni calcula RIC. Por eso la varianza se retiró del bloque principal. El RIC se conserva únicamente en la Pregunta 3 como una aplicación construida a partir de Q1 y Q3, usando `quantile()` del Laboratorio 4.
 
 ## Preguntas obligatorias
 
@@ -74,4 +76,4 @@ La versión corregida fue ejecutada localmente con el Excel real:
 - celdas ejecutadas: **38**;
 - errores: **0**.
 
-El repositorio fue alineado mediante el commit automatizado `098e13ab406993d4289d593fafe9a59b0360d2e8` (`fix: alinear notebook con RIC, varianza y pauta`).
+Después de recuperar el Laboratorio 5 completo del profesor, el notebook se volvió a alinear para distinguir estrictamente el contenido enseñado de las aplicaciones adicionales del proyecto.
