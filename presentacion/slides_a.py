@@ -11,8 +11,8 @@ for i,(k,v,sub,c) in enumerate([('ORIGINAL','106.555','28 columnas',C),('PREGRAD
 note(s,3.75,4.0,8.5,'Oferta única = institución + carrera + comuna + modalidad + jornada + duración + matrícula + arancel.',G); pill(s,4.0,4.8,2.0,'0 duplicados',GN); pill(s,6.2,4.8,2.5,'26 aranceles $0',O); pill(s,8.9,4.8,2.6,'nulos en acreditación',GR); footer(s)
 # 4
 s=basic(4,3,'Radiografía estadística','¿Qué nos dicen los datos antes del problema regional?','Frecuencias, tendencia central, percentiles y dispersión resumen la estructura general.',1); bars(s,.75,2.0,4.0,2.5,['Tecnol.','Salud','Adm.','Educ.'],[27.6,24.3,13.4,11.4],[C,C,O,G]);
-for i,(k,v,sub,c) in enumerate([('GÉNERO','54,3% F','45,7% M',C),('DURACIÓN','10 sem','moda',GN),('CV ARANCEL','47,1%','dispersión relativa',G),('MEDIA','$3,22M','arancel',C),('MEDIANA','$3,13M','arancel',O),('RIC','Q3 − Q1','rango central',G)]): card(s,5.2+(i%3)*2.25,2.0+(i//3)*1.55,1.95,1.25,k,v,sub,c,f'!!S{i}',13)
-note(s,5.2,5.25,6.45,'El notebook contiene fi, hi, acumuladas, moda, percentiles, rango, varianza, desviación, CV y RIC.',C); footer(s)
+for i,(k,v,sub,c) in enumerate([('GÉNERO','54,3% F','45,7% M',C),('DURACIÓN','10 sem','moda',GN),('CV ARANCEL','47,1%','dispersión relativa',G),('MEDIA','$3,22M','arancel',C),('MEDIANA','$3,13M','arancel',O),('CUARTILES','Q1 / Q3','percentiles',G)]): card(s,5.2+(i%3)*2.25,2.0+(i//3)*1.55,1.95,1.25,k,v,sub,c,f'!!S{i}',13)
+note(s,5.2,5.25,6.45,'El notebook aplica fi, hi, acumuladas, moda, percentiles, rango, desviación y CV; el RIC se reserva para la Pregunta 3.',C); footer(s)
 # 5
 s=basic(5,4,'ADN profesional','De cientos de carreras a nueve familias estratégicas','Taxonomía analítica propia: una carrera se asigna a una sola familia para evitar doble conteo.',2); pic(s,'industry',.45,1.9,3.2); pic(s,'chip',9.6,1.85,2.8,'!!IMG_B');
 for i,t in enumerate(['Industria','Construcción','Logística','Forestal','Pesca','Agro','Digital/TIC','Automatización','Energía+bio']): pill(s,3.35+(i%3)*2.05,2.0+(i//3)*.65,1.8,t,O if i<6 else C,f'!!F{i}')
