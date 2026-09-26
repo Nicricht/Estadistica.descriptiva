@@ -6,9 +6,9 @@ note(s,6.0,5.15,5.95,'128 / 1.273 = 10,1% · 123 Concepción · 5 Biobío · Sal
 # 12
 s=basic(12,5,'Dimensión territorial','¿Cuánto talento transformador hay y dónde está?','Proporción y volumen absoluto cuentan historias distintas; no inferimos causalidad territorial.',4)
 for i,(p,v,n,c) in enumerate([('ARAUCO','8,55%','232',O),('BIOBÍO','7,61%','966',G),('CONCEPCIÓN','6,77%','5.802',C)]): card(s,.85+i*4.05,2.1,3.45,1.5,p,v,n+' matrículas transformadoras',c,f'!!T{i}',23); q=s.shapes.add_shape(MSO_SHAPE.OVAL,Inches(2.2+i*4.05),Inches(4.25),Inches(.7),Inches(.7)); q.fill.solid(); q.fill.fore_color.rgb=c; q.line.color.rgb=W
-note(s,.85,5.45,11.5,'Arauco tiene mayor proporción; Concepción concentra por lejos el mayor volumen.',C); footer(s)
+note(s,.85,5.45,11.5,'Concepción concentra el mayor volumen; Arauco la mayor proporción. La base no registra residencia de origen ni migración estudiantil.',C); footer(s)
 # 13
-s=basic(13,0,'Dimensión de género','La participación tecnológica también tiene una dimensión de género','Hallazgo descriptivo y pregunta futura, no consecuencia demostrada.',4); pic(s,'people',.5,2.0,3.5); bars(s,4.7,2.2,6.0,2.8,['Industria','Digital/TIC','Automatización'],[17.17,11.50,5.79],[O,C,PUP],20,'GEN'); note(s,4.7,5.25,6.0,'¿La transformación reducirá brechas o trasladará desigualdades hacia nuevas ocupaciones?',G); footer(s)
+s=basic(13,0,'Dimensión de género','La participación tecnológica también tiene una dimensión de género','Hallazgo descriptivo y pregunta futura, no consecuencia demostrada.',4); pic(s,'people',.5,2.0,3.5); bars(s,4.7,2.2,6.0,2.8,['Industria','Digital/TIC','Automatización'],[17.17,11.50,5.79],[O,C,PUP],20,'GEN'); note(s,4.7,5.25,6.0,'La brecha es descriptiva: la base no demuestra que la matriz productiva cause esta distribución.',G); footer(s)
 # 14
 s=basic(14,1,'Huachipato 2024','Un shock industrial vuelve visible la vulnerabilidad regional','Punto de inflexión posterior a 2021. No atribuimos el cierre a falta de talento tecnológico.',4); pic(s,'industry',.45,2.0,4.5); card(s,5.55,2.05,2.55,1.45,'CIERRE','2024','Talcahuano',O,'!!HC',25); card(s,8.45,2.05,2.55,1.45,'AFECTADOS','7.168','directos e indirectos',R,'!!HW',24)
 for i,t in enumerate(['reconversión','diversificación','fortalecimiento','innovación']): pill(s,5.55+(i%2)*2.9,4.05+(i//2)*.65,2.55,t,C if i%2 else G,f'!!H{i}')
