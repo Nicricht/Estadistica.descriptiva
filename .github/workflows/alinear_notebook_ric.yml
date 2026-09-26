@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
     paths:
+      - 'notebooks/Estadistica_Descriptiva_Biobio.ipynb'
+      - '11_MATRICULAS_ED_SUPERIOR_BIOBIO_2021 (3).xlsx'
       - '.github/workflows/alinear_notebook_ric.yml'
 
 permissions:
