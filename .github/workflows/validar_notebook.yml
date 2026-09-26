@@ -1,0 +1,84 @@
+name: Validar notebook
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'notebooks/Estadistica_Descriptiva_Biobio.ipynb'
+      - '11_MATRICULAS_ED_SUPERIOR_BIOBIO_2021 (3).xlsx'
+      - '.github/workflows/validar_notebook.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install pandas openpyxl matplotlib nbconvert ipykernel
+
+      - name: Preparar base para ejecución
+        run: cp "11_MATRICULAS_ED_SUPERIOR_BIOBIO_2021 (3).xlsx" "notebooks/11_MATRICULAS_ED_SUPERIOR_BIOBIO_2021.xlsx"
+
+      - name: Ejecutar notebook completo
+        env:
+          MPLBACKEND: Agg
+        run: |
+          jupyter nbconvert \
+            --to notebook \
+            --execute \
+            --inplace \
+            --ExecutePreprocessor.timeout=600 \
+            notebooks/Estadistica_Descriptiva_Biobio.ipynb
+
+      - name: Validar ejecución completa
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path('notebooks/Estadistica_Descriptiva_Biobio.ipynb')
+          nb = json.loads(p.read_text(encoding='utf-8'))
+          code_cells = [c for c in nb['cells'] if c.get('cell_type') == 'code']
+          missing = [i + 1 for i, c in enumerate(code_cells) if c.get('execution_count') is None]
+          errors = [
+              i + 1
+              for i, c in enumerate(code_cells)
+              if any(o.get('output_type') == 'error' for o in c.get('outputs', []))
+          ]
+
+          print(f'Celdas de código: {len(code_cells)}')
+          print(f'Celdas sin ejecutar: {missing}')
+          print(f'Celdas con error: {errors}')
+
+          if missing or errors:
+              raise SystemExit('La validación del notebook falló.')
+          PY
+
+      - name: Limpiar copia temporal del Excel
+        run: rm -f "notebooks/11_MATRICULAS_ED_SUPERIOR_BIOBIO_2021.xlsx"
+
+      - name: Guardar notebook ejecutado
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add notebooks/Estadistica_Descriptiva_Biobio.ipynb
+          if git diff --cached --quiet; then
+            echo 'El notebook ya estaba ejecutado y validado.'
+          else
+            git commit -m 'chore: ejecutar notebook simplificado'
+            git fetch origin main
+            git rebase origin/main
+            git push origin main
+          fi
