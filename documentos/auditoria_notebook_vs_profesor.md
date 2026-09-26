@@ -4,120 +4,74 @@
 
 ## Objetivo
 
-Verificar que el notebook principal no solo obtenga resultados correctos, sino que recorra **todos los contenidos presentes en los laboratorios 0 al 5** y utilice una forma de desarrollo equivalente a la del profesor.
+Verificar que el notebook principal obtenga resultados correctos, recorra los contenidos de los laboratorios 0 al 5 y mantenga una forma de desarrollo equivalente a la del profesor: **pregunta → código visible → resultado → interpretación**.
 
 ## Laboratorio 0 — Introducción a Pandas
 
-Aplicado en el notebook:
-- importación de Pandas;
-- read_excel();
-- head() y tail();
-- shape;
-- type();
-- info();
-- selección de una o varias columnas;
-- value_counts();
-- creación de una nueva columna;
-- filtros por condición;
-- filtros con más de una condición.
+Aplicado: `read_excel()`, `head()`, `tail()`, `shape`, `type()`, `info()`, selección de columnas, `value_counts()`, creación de columnas y filtros.
 
 ## Laboratorio 1 — Población, muestra y variables
 
-Aplicado:
-- definición de población;
-- definición de muestra;
-- clasificación de las variables utilizadas;
-- distinción entre cualitativas nominales, ordinales y cuantitativas.
+Aplicado: población, muestra y clasificación de variables cualitativas y cuantitativas.
 
 ## Laboratorio 2 — Tablas de frecuencia
 
-Aplicado:
-- unique();
-- groupby().size();
-- frecuencia absoluta;
-- frecuencia relativa;
-- frecuencia absoluta acumulada;
-- frecuencia relativa acumulada;
-- pd.cut();
-- observed=True;
-- sort_values();
-- tablas para variables nominales, discretas y cuantitativas agrupadas.
+Aplicado: `unique()`, `groupby().size()`, frecuencia absoluta, relativa, acumuladas cuando corresponden, `pd.cut()`, `observed=True` y `sort_values()`.
 
 ## Laboratorio 3 — Gráficos
 
-Aplicado:
-- gráfico circular;
-- gráfico de barras;
-- histogramas construidos con intervalos;
-- etiquetas en barras;
-- rotación de categorías;
-- subplots;
-- gráfico de dispersión.
+Aplicado: circular, barras, histogramas, etiquetas, rotación de categorías, `subplots` y dispersión.
 
 ## Laboratorio 4 — Tendencia central y percentiles
 
-Aplicado:
-- mean();
-- median();
-- mode();
-- quantile();
-- percentiles 25, 50, 75 y 90;
-- describe();
-- cálculos agrupados;
-- DataFrame con media, mediana y percentiles;
-- agg();
-- crosstab() para análisis bivariado.
+Aplicado: `mean()`, `median()`, `mode()`, `quantile()`, percentiles, `describe()`, cálculos agrupados, `agg()` y `crosstab()`.
 
 ## Laboratorio 5 — Dispersión
 
-Aplicado:
-- máximo y mínimo;
-- rango;
-- desviación estándar;
-- coeficiente de variación;
-- comparación de dispersión entre grupos;
-- groupby().agg(['mean','median','std']);
-- filtrado de categorías mediante isin().
+Aplicado: máximo, mínimo, rango, **varianza**, desviación estándar, coeficiente de variación, **rango intercuartílico (RIC)**, comparación de grupos e `isin()`.
 
 ## Preguntas obligatorias
 
 ### Pregunta 1
-Se comparan los aranceles de las áreas usando ofertas únicas, mediana, media, percentiles 25 y 75, gráfico de barras y una tabla bivariada con crosstab().
+Se comparan 1.273 ofertas académicas únicas mediante mediana por área, complementada con Q1, Q3, RIC y cantidad de ofertas.
 
 ### Pregunta 2
-Se analiza la edad por tipo de institución con groupby(), media, mediana, crosstab(), tablas de frecuencia y gráficos.
+Se estudia la asociación entre edad y tipo de institución con `groupby()`, `crosstab()`, frecuencias, porcentajes y gráficos. No se interpreta causalidad.
 
 ### Pregunta 3
-Se define “sustantivamente caro” mediante **Percentil 90**, siguiendo el mismo enfoque que el Laboratorio 4 para estudiar el 10% superior.
+Se define “sustantivamente caro” mediante el criterio de valores atípicos superiores:
 
-Resultados:
-- P90: **$4.106.400**.
-- Máximo: **$8.783.670**.
-- Ofertas sobre P90: **128 de 1.273 (10,1%)**.
+**Límite superior = Q3 + 1,5 × RIC**
+
+Resultados verificados:
+- Q1: **$1.616.000**.
+- Q3: **$2.580.000**.
+- RIC: **$964.000**.
+- Límite superior: **$4.026.000**.
+- Ofertas sobre el límite: **135 de 1.273 (10,6%)**.
 - CRUCH: **73**.
-- Privadas: **55**.
-- Concepción: **123**.
-- Biobío: **5**.
+- Universidades privadas: **62**.
+- Concepción: **129**.
+- Biobío: **6**.
+- Salud: **39**.
+- Tecnología: **39**.
 - Duración mediana de ofertas altas: **10 semestres**.
 - Duración mediana del resto: **5 semestres**.
 
-## Aplicación regional
+## Aplicación regional “Del acero al algoritmo”
 
-“Del acero al algoritmo” se mantiene como aplicación propia, pero su desarrollo utiliza herramientas vistas en clases, principalmente listas, isin(), groupby(), tablas de frecuencia y gráficos.
-
-Resultado:
 - Motores productivos: **20.368 matrículas (20,15%)**.
 - Capacidades transformadoras: **7.000 (6,92%)**.
+- Otros campos: **73.725 (72,93%)**.
 - Relación aproximada: **2,9 a 1**.
+
+La interpretación es descriptiva: la fotografía 2021 muestra una base formativa productiva considerablemente mayor que la transformadora. No demuestra déficit profesional ni causalidad laboral.
 
 ## Validación técnica
 
-- Celdas de código: **71**.
-- Celdas ejecutadas: **71**.
-- Errores: **0**.
+La versión corregida fue ejecutada localmente con el Excel real:
+- celdas de código: **71**;
+- celdas ejecutadas: **71**;
+- errores: **0**.
 
-## Criterio final
-
-El notebook queda estructurado en el mismo orden pedagógico del curso:
-
-**Pandas → conceptos básicos → tablas de frecuencia → gráficos → tendencia central y percentiles → dispersión → aplicación → preguntas obligatorias.**
+El repositorio fue alineado mediante el commit automatizado `098e13ab406993d4289d593fafe9a59b0360d2e8` (`fix: alinear notebook con RIC, varianza y pauta`).
