@@ -75,7 +75,7 @@ La interpretación es descriptiva y no causal.
 
 ### Pregunta 3
 
-La formulación de la evaluación pide **diseñar un criterio** para identificar aranceles sustantivamente altos. El proyecto utiliza **percentil 90**, calculado con `quantile(0.90)`.
+Para operacionalizar la expresión **“arancel sustantivamente alto”**, el proyecto define un criterio reproducible: **percentil 90**, calculado con `quantile(0.90)`.
 
 Resultados verificados:
 
@@ -90,7 +90,7 @@ Resultados verificados:
 - duración mediana de ofertas altas: **10 semestres**;
 - duración mediana del resto: **5 semestres**.
 
-Un borrador metodológico anterior propuso IQR. Ese borrador no es el criterio vigente del notebook ni del PowerPoint. La versión final conserva P90 porque utiliza percentiles trabajados en clase y evita introducir una fórmula que no forma parte del desarrollo final acordado.
+Un documento metodológico interno anterior propuso IQR/Tukey como posible estrategia. Esa propuesta fue descartada del desarrollo final porque no aparece en los laboratorios del profesor revisados. La versión vigente conserva P90 porque utiliza percentiles trabajados en clase. Esta auditoría no presenta IQR como exigencia confirmada de la pauta.
 
 ## Aplicación regional “Del acero al algoritmo”
 
