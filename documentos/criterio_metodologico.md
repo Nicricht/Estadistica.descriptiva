@@ -92,7 +92,9 @@ Se estudia asociación, no causalidad.
 
 Unidad: **oferta académica única**.
 
-Criterio: **percentil 90 (P90)**, calculado con `quantile(0.90)`.
+Criterio final del proyecto: **percentil 90 (P90)**, calculado con `quantile(0.90)`.
+
+Se eligió P90 para transformar la expresión “sustantivamente alto” en un umbral reproducible usando una herramienta trabajada en el Laboratorio 4. Un borrador interno anterior propuso IQR/Tukey; esa propuesta queda descartada y no se presenta como requisito confirmado de la pauta.
 
 - P90 ≈ **$4.106.400**.
 - Ofertas sobre P90: **128 de 1.273 (10,1%)**.
