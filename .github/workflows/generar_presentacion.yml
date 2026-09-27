@@ -8,6 +8,8 @@ on:
       - 'presentacion/generar_presentacion_profesor.py'
       - 'scripts/alinear_presentacion_rubrica.py'
       - 'scripts/agregar_clasificacion_variables.py'
+      - 'scripts/explicar_titulo_notebook.py'
+      - 'scripts/compactar_presentacion.py'
       - '.github/workflows/generar_presentacion.yml'
 
 permissions:
@@ -33,11 +35,17 @@ jobs:
       - name: Alinear notebook y presentación con la pauta
         run: python scripts/alinear_presentacion_rubrica.py
 
-      - name: Agregar clasificación de variables
+      - name: Agregar clasificación de variables al notebook
         run: python scripts/agregar_clasificacion_variables.py
+
+      - name: Explicar el título dentro del notebook
+        run: python scripts/explicar_titulo_notebook.py
 
       - name: Generar presentación oficial
         run: python presentacion/generar_presentacion_profesor.py
+
+      - name: Compactar presentación
+        run: python scripts/compactar_presentacion.py
 
       - name: Validar PowerPoint
         shell: bash
@@ -54,7 +62,7 @@ jobs:
                   n for n in z.namelist()
                   if n.startswith('ppt/slides/slide') and n.endswith('.xml')
               )
-              assert len(slides) == 18, len(slides)
+              assert len(slides) == 13, len(slides)
               texto = '\n'.join(z.read(n).decode('utf-8') for n in slides)
 
           for esperado in [
@@ -62,14 +70,16 @@ jobs:
               '73 CRUCH', '55 privadas', 'cumsum()', '0 duplicados completos',
               'barras y subplots', 'Para operacionalizar “sustantivamente más caro”',
               'CRITERIO Y RESPUESTA', 'EXPLICACIÓN ENCONTRADA',
-              'ANEXO · Clasificación de variables', 'VARIABLES CUALITATIVAS',
-              'VARIABLES CUANTITATIVAS', 'Nominal', 'Ordinal', 'Discreta', 'Continua'
+              'ANEXO · Herramientas del curso utilizadas',
+              'ANEXO · Preguntas probables del profesor'
           ]:
               assert esperado in texto, esperado
 
           for prohibido in [
               'Q3 + 1,5 × RIC', 'Rango intercuartílico', 'var()', '10,6%',
-              'circular, histogramas, scatter'
+              'circular, histogramas, scatter',
+              'ANEXO · Clasificación de variables',
+              'ANEXO · Conceptos clave para la defensa'
           ]:
               assert prohibido not in texto, prohibido
 
@@ -87,6 +97,10 @@ jobs:
           p = Path('notebooks/Estadistica_Descriptiva_Biobio.ipynb')
           nb = json.loads(p.read_text(encoding='utf-8'))
           texto = '\n'.join(''.join(c.get('source', [])) for c in nb.get('cells', []))
+          assert '### ¿Qué significa el título “Del acero al algoritmo”?' in texto
+          assert '“Acero”** representa la base productiva e industrial del Biobío' in texto
+          assert '“Algoritmo”** representa las **capacidades transformadoras**' in texto
+          assert 'fotografía de la matrícula de educación superior de 2021' in texto
           assert '**Criterio diseñado:**' in texto
           assert '**Explicación encontrada:**' in texto
           assert 'no demuestran que estas variables sean la causa directa del precio' in texto
@@ -96,7 +110,7 @@ jobs:
           assert '| AÑO INGRESO | Cuantitativa | Discreta |' in texto
           assert '| EDAD | Cuantitativa | Continua |' in texto
           assert '| VALOR ARANCEL (PESOS) | Cuantitativa | Continua |' in texto
-          print('Notebook alineado con la pauta y con clasificación de variables.')
+          print('Notebook alineado con la pauta, título explicado y variables clasificadas.')
           PY
 
       - name: Guardar notebook y presentación oficiales
@@ -111,7 +125,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'El notebook y la presentación oficial ya están actualizados.'
           else
-            git commit -m 'build: agregar clasificación de variables'
+            git commit -m 'build: explicar titulo y compactar presentacion'
             git pull --rebase origin main
             git push origin main
           fi
