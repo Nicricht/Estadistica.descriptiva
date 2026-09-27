@@ -35,7 +35,7 @@ La exposición principal queda en **14 diapositivas** y la defensa dispone de **
 ## Correcciones de alineación realizadas
 
 1. La diapositiva 2 muestra ahora control de calidad: **0 duplicados completos**, nulos en variables de acreditación y **26 aranceles $0 excluidos** del análisis de precios.
-2. La diapositiva 10 aclara que la evaluación pide **diseñar un criterio reproducible** y que el criterio elegido es **P90**, trabajado mediante percentiles del Laboratorio 4.
+2. La diapositiva 10 aclara que **P90 es una decisión metodológica reproducible del proyecto**, trabajada mediante percentiles del Laboratorio 4. No se atribuye a la pauta una fórmula específica que no haya sido verificada.
 3. La diapositiva 15 dejó de atribuir al notebook gráficos o funciones que no aparecen en la versión final.
 4. El anexo de herramientas ahora declara únicamente:
    - Pandas: `read_excel`, `head`, `info`, filtros;
@@ -43,7 +43,7 @@ La exposición principal queda en **14 diapositivas** y la defensa dispone de **
    - gráficos: barras y `subplots`;
    - tendencia/percentiles: `mean`, `median`, `mode`, `quantile`, `crosstab`;
    - dispersión/comparaciones: rango, `std`, CV, `agg`, `isin`.
-5. La defensa de P90 explica que se trata de un **criterio diseñado**, no de una fórmula impuesta por la pauta.
+5. La defensa de P90 explica que se trata del **criterio metodológico final del proyecto**. El antiguo IQR/Tukey queda registrado solo como propuesta interna descartada, no como requisito confirmado de la pauta.
 
 ## Pregunta 3
 
