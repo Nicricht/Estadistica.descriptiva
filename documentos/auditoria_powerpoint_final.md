@@ -1,81 +1,67 @@
-# Auditoría crítica del PowerPoint — Del acero al algoritmo
+# Auditoría final del PowerPoint — Del acero al algoritmo
 
 Fecha: 26-09-2026
 
-## PowerPoint auditado
+## PowerPoint oficial
 
-Versión de 14 diapositivas previa a la corrección final.
+`presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx`
 
-## Resultado diapositiva por diapositiva
+La presentación fue rediseñada tomando como referencia visual los ejemplos del profesor proporcionados por el estudiante: títulos directos, tarjetas de indicadores, gráficos simples, una sola idea principal por diapositiva y una caja final de interpretación.
 
-| # | Estado | Auditoría |
+## Estructura final
+
+La exposición principal queda en **14 diapositivas** y la defensa dispone de **3 anexos**, para un total de **17 diapositivas**.
+
+| # | Contenido | Objetivo |
 |---|---|---|
-| 1 | PARCIAL | El tema “Del acero al algoritmo” estaba correcto, pero la pregunta central no utilizaba todavía la formulación definitiva de capital humano + transformación industrial del Biobío. |
-| 2 | PARCIAL | El recorrido por laboratorios demostraba metodología, pero ocupaba demasiado protagonismo al inicio y no instalaba primero el problema regional. |
-| 3 | PARCIAL | Presentaba 106.555, 101.093, 101.067 y 1.273 correctamente, pero faltaba explicar con mayor claridad por qué existen tres unidades de análisis y por qué se crean ofertas únicas. |
-| 4 | PARCIAL | Clasificación de variables correcta, pero demasiado cercana a una clase teórica para la exposición final. Debía condensarse dentro de la radiografía estadística general. |
-| 5 | PARCIAL | Frecuencias correctas, pero faltaba integrarlas a resultados relevantes del proyecto. |
-| 6 | PARCIAL | Mostraba tipos de gráficos, pero la presentación final debe priorizar qué descubrimos con ellos y no solo enumerar técnicas. |
-| 7 | CUMPLE | La Pregunta 3 utiliza P90, un percentil calculado con `quantile()`, coherente con el contenido del Laboratorio 4. |
-| 8 | CUMPLE | Mostraba rango, desviación y CV, que coinciden con las medidas de dispersión del Laboratorio 5. |
-| 9 | CUMPLE | La clasificación Acero/Algoritmo y las nueve familias estaba correctamente representada. |
-| 10 | CUMPLE | Resultado central actualizado: 20.368 (20,15%) vs 7.000 (6,92%), relación aproximada 2,9:1, sin afirmar déficit. |
-| 11 | CUMPLE | Pregunta 1 correcta en mediana y ofertas únicas, con percentiles como complemento descriptivo. |
-| 12 | PARCIAL | Los resultados extremos de edad estaban correctos, pero faltaba hacer visible la lógica de tabla de contingencia / porcentajes y reforzar “asociación, no causalidad”. |
-| 13 | CUMPLE | Pregunta 3 alineada con P90: 128 ofertas; 10,1%; 55 privadas; 123 en Concepción; 5 en Biobío; Salud 38 y Tecnología 38. |
-| 14 | FALTA | Cerraba demasiado pronto. Faltaban ENADEL 2021, dimensión territorial, género, Huachipato, respuesta regional 2024–2026, Acero + Algoritmo, hipótesis futura, línea temporal y fuentes. |
+| 1 | Portada | Instalar la pregunta central “Del acero al algoritmo”. |
+| 2 | Contexto del análisis y muestra | Explicar 106.555, 101.093, 101.067 y 1.273 sin tecnicismos innecesarios. |
+| 3 | Áreas de estudio | Mostrar frecuencias relativas y concentración principal. |
+| 4 | Género | Mostrar distribución global y diferencias en familias seleccionadas. |
+| 5 | Edad promedio por institución | Visualizar CRUCH, privadas, CFT e IP. |
+| 6 | Clasificación Acero/Algoritmo | Presentar las nueve familias y aclarar que la taxonomía es propia. |
+| 7 | Hallazgo central | Destacar 20,15% vs. 6,92% y ≈2,9:1. |
+| 8 | Pregunta 1 | Comparar mediana de arancel por área. |
+| 9 | Pregunta 2 | Comparar grupos 15–19 y 40+ por tipo de institución. |
+| 10 | Pregunta 3 | Explicar P90, 128 ofertas y 10,1%. |
+| 11 | Perfil del grupo P90 | Resumir institución, área, provincia y duración. |
+| 12 | Territorio | Diferenciar proporción y volumen absoluto. |
+| 13 | Conclusiones | Responder el objetivo sin causalidad. |
+| 14 | Cierre | Dejar la pregunta futura Acero + Algoritmo. |
+| 15 | Anexo: herramientas | Relacionar el trabajo con laboratorios 0–5. |
+| 16 | Anexo: preguntas probables | Preparar la defensa individual. |
+| 17 | Anexo: conceptos clave | Frecuencia relativa, mediana, P90 y desviación estándar. |
 
-## A. Contenido obligatorio que faltaba
+## Cambios clave respecto de versiones anteriores
 
-- No corresponde exigir varianza en la síntesis general: no aparece en el Laboratorio 5 entregado por el profesor.
-- Explicación clara de oferta académica única.
-- Criterio de Pregunta 3: percentil 90 mediante `quantile(0.90)`.
-- Contexto regional verificable y fuentes visibles.
+1. La presentación deja de funcionar como una clase de estadística y pasa a comunicar resultados.
+2. Cada diapositiva tiene una sola idea principal.
+3. Los detalles técnicos se mueven a anexos.
+4. La Pregunta 3 usa exclusivamente **P90 = $4.106.400**, coherente con el notebook y el Laboratorio 4.
+5. No aparecen RIC, `Q3 + 1,5 × RIC`, varianza ni `var()`.
+6. Los valores de Pregunta 3 quedan en **128 ofertas, 10,1%, 73 CRUCH, 55 privadas, 123 Concepción, 5 Biobío, 38 Salud y 38 Tecnología**.
+7. El contexto posterior a 2021 se conserva en la documentación, pero se retira del cuerpo principal para evitar que eclipse el análisis estadístico obligatorio.
+8. Se mantiene la regla interpretativa: **asociación o diferencia observada no equivale a causalidad**.
 
-## B. Partes desactualizadas
+## Validación visual
 
-La Pregunta 3 queda alineada con el criterio P90 del notebook y de `documentos/criterio_metodologico.md`.
+La versión generada fue renderizada completa y validada sin elementos fuera del lienzo. El diseño utiliza una paleta consistente de azul oscuro, turquesa, blanco y acentos naranjas, cercana a los ejemplos del profesor sin copiar su contenido.
 
-## C. Cifras utilizadas en la Pregunta 3
+## Arquitectura del repositorio
 
-- P90: **$4.106.400**.
-- 128 ofertas altas.
-- 10,1%.
-- 73 CRUCH y 55 privadas.
-- 123 en Concepción y 5 en Biobío.
-- Salud 38 y Tecnología 38.
+Existe una sola ruta de generación oficial:
 
-## D. Riesgos de causalidad
+- Generador: `presentacion/generar_presentacion_profesor.py`
+- Salida: `presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx`
+- Workflow: `.github/workflows/generar_presentacion.yml`
 
-La presentación corregida evita afirmar que:
-- el 6,92% cause dificultades laborales;
-- la edad cause la elección institucional;
-- Huachipato cerrara por falta de talento tecnológico;
-- institución, duración o territorio causen el arancel;
-- exista un déficit profesional demostrado.
+Los generadores y workflows antiguos de la presentación Morph se eliminan para evitar que el repositorio vuelva a producir una versión distinta.
 
-## E. Contexto regional incorporado
+## Criterio final de defensa
 
-- ENADEL 2021 Biobío.
-- Huachipato como punto de inflexión posterior a la línea base.
-- Plan de Fortalecimiento Industrial.
-- Manufactura avanzada e Industria 4.0.
-- Sistemas inteligentes y mantenimiento predictivo.
-- Capital humano avanzado en IA.
-- Estrategia Biobío 2050.
+El estudiante debe poder explicar cuatro ideas antes que cualquier fórmula:
 
-## F–I. Decisiones visuales
-
-Se mantienen los gráficos estadísticos útiles y el contraste 20,15% vs 6,92%. Se reducen las diapositivas puramente pedagógicas y se integran los contenidos del curso dentro de resultados del proyecto. La presentación corregida utiliza imágenes y objetos independientes, fondos variables y transición Morph por objeto.
-
-## J. Historia final
-
-La versión corregida sigue el recorrido:
-
-**Biobío industrial → matrícula 2021 → radiografía estadística → Acero/Algoritmo → preguntas obligatorias → señal laboral → territorio/género → Huachipato → respuesta industrial/tecnológica → hipótesis futura → 2050.**
-
-## Criterio de cierre
-
-El resultado central se expresa como línea base descriptiva:
-
-> En la fotografía educativa de 2021, la formación asociada a motores productivos tenía un peso cercano a tres veces la formación clasificada como capacidades transformadoras. Esto no demuestra una brecha laboral, pero adquiere relevancia frente a la posterior agenda de fortalecimiento industrial, manufactura avanzada e Industria 4.0 del Biobío.
+1. Qué representa cada unidad de análisis.
+2. Qué significa la clasificación Acero/Algoritmo.
+3. Cómo se responden las tres preguntas obligatorias.
+4. Qué conclusiones son descriptivas y cuáles no puede sostener la base.
