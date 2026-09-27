@@ -7,6 +7,7 @@ on:
     paths:
       - 'presentacion/generar_presentacion_profesor.py'
       - 'scripts/alinear_presentacion_rubrica.py'
+      - 'scripts/agregar_clasificacion_variables.py'
       - '.github/workflows/generar_presentacion.yml'
 
 permissions:
@@ -32,6 +33,9 @@ jobs:
       - name: Alinear notebook y presentación con la pauta
         run: python scripts/alinear_presentacion_rubrica.py
 
+      - name: Agregar clasificación de variables
+        run: python scripts/agregar_clasificacion_variables.py
+
       - name: Generar presentación oficial
         run: python presentacion/generar_presentacion_profesor.py
 
@@ -50,14 +54,16 @@ jobs:
                   n for n in z.namelist()
                   if n.startswith('ppt/slides/slide') and n.endswith('.xml')
               )
-              assert len(slides) == 17, len(slides)
+              assert len(slides) == 18, len(slides)
               texto = '\n'.join(z.read(n).decode('utf-8') for n in slides)
 
           for esperado in [
               '4.106.400', '20,15%', '6,92%', '128', 'quantile(0.90)',
               '73 CRUCH', '55 privadas', 'cumsum()', '0 duplicados completos',
               'barras y subplots', 'Para operacionalizar “sustantivamente más caro”',
-              'CRITERIO Y RESPUESTA', 'EXPLICACIÓN ENCONTRADA'
+              'CRITERIO Y RESPUESTA', 'EXPLICACIÓN ENCONTRADA',
+              'ANEXO · Clasificación de variables', 'VARIABLES CUALITATIVAS',
+              'VARIABLES CUANTITATIVAS', 'Nominal', 'Ordinal', 'Discreta', 'Continua'
           ]:
               assert esperado in texto, esperado
 
@@ -70,7 +76,7 @@ jobs:
           print('PowerPoint validado:', len(slides), 'diapositivas')
           PY
 
-      - name: Validar refuerzo de pauta en notebook
+      - name: Validar notebook contra la pauta
         shell: bash
         run: |
           set -e
@@ -84,7 +90,13 @@ jobs:
           assert '**Criterio diseñado:**' in texto
           assert '**Explicación encontrada:**' in texto
           assert 'no demuestran que estas variables sean la causa directa del precio' in texto
-          print('Notebook alineado con las preguntas de la pauta.')
+          assert '## 1.1 Clasificación de las variables principales' in texto
+          assert '| GÉNERO | Cualitativa | Nominal |' in texto
+          assert '| RANGO EDAD | Cualitativa | Ordinal |' in texto
+          assert '| AÑO INGRESO | Cuantitativa | Discreta |' in texto
+          assert '| EDAD | Cuantitativa | Continua |' in texto
+          assert '| VALOR ARANCEL (PESOS) | Cuantitativa | Continua |' in texto
+          print('Notebook alineado con la pauta y con clasificación de variables.')
           PY
 
       - name: Guardar notebook y presentación oficiales
@@ -99,7 +111,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'El notebook y la presentación oficial ya están actualizados.'
           else
-            git commit -m 'build: reforzar respuestas según pauta oficial'
+            git commit -m 'build: agregar clasificación de variables'
             git pull --rebase origin main
             git push origin main
           fi
