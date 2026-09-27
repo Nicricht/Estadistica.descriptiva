@@ -1,59 +1,96 @@
-# Auditoría final — Notebook vs. contenidos completos del profesor
+# Auditoría final — Notebook vs. contenidos del profesor
 
-**Fecha:** 26-09-2026
+**Fecha:** 27-09-2026
 
 ## Objetivo
 
-Verificar que el notebook principal obtenga resultados correctos, recorra los contenidos de los laboratorios 0 al 5 y mantenga una forma de desarrollo equivalente a la del profesor: **pregunta → código visible → resultado → interpretación**.
+Verificar que el notebook principal obtenga resultados correctos, use herramientas compatibles con los laboratorios del profesor y mantenga una forma de desarrollo defendible: **pregunta → código visible → resultado → interpretación**.
 
 ## Laboratorio 0 — Introducción a Pandas
 
-Aplicado: `read_excel()`, `head()`, `tail()`, `shape`, `type()`, `info()`, selección de columnas, `value_counts()`, creación de columnas y filtros.
+Presente en el notebook: `read_excel()`, `head()`, `shape`, `info()`, filtros y creación de subbases.
+
+Además se incorporó un control explícito de calidad con `isna()` y `duplicated()` para dejar evidencia de nulos y duplicados completos.
 
 ## Laboratorio 1 — Población, muestra y variables
 
-Aplicado: población, muestra y clasificación de variables cualitativas y cuantitativas.
+Presente: población, base disponible, subbase principal y clasificación de variables cualitativas y cuantitativas.
 
 ## Laboratorio 2 — Tablas de frecuencia
 
-Aplicado: `unique()`, `groupby().size()`, frecuencia absoluta, relativa, acumuladas cuando corresponden, `pd.cut()`, `observed=True` y `sort_values()`.
+Presente: `groupby().size()`, frecuencia absoluta, frecuencia relativa, `pd.cut()` y `cumsum()`.
+
+La frecuencia acumulada se utiliza donde tiene sentido estadístico: **intervalos ordenados de edad y arancel**.
 
 ## Laboratorio 3 — Gráficos
 
-Aplicado: circular, barras, histogramas, etiquetas, rotación de categorías, `subplots` y dispersión.
+El notebook vigente utiliza **gráficos de barras** y `subplots()` para comparar distribuciones y grupos.
+
+No se declara el uso de gráficos circulares, histogramas o scatter porque esas visualizaciones no aparecen actualmente en el notebook final.
 
 ## Laboratorio 4 — Tendencia central y percentiles
 
-Aplicado: `mean()`, `median()`, `mode()`, `quantile()`, percentiles, `describe()`, cálculos agrupados, `agg()` y `crosstab()`.
+Presente: `mean()`, `median()`, `mode()`, `quantile()`, `agg()` y `crosstab()`.
+
+La Pregunta 3 utiliza **P90 con `quantile(0.90)`**, herramienta consistente con el trabajo de percentiles del Laboratorio 4.
 
 ## Laboratorio 5 — Dispersión
 
-Aplicado según el material del profesor: máximo, mínimo, rango, desviación estándar, coeficiente de variación, comparación de grupos e `isin()`.
+Presente: máximo, mínimo, rango, desviación estándar, coeficiente de variación, comparación de grupos e `isin()`.
 
-**Aclaración:** el Laboratorio 5 completo no utiliza `var()`, por lo que la varianza se retiró del bloque principal. La Pregunta 3 utiliza un percentil con `quantile()`, herramienta trabajada en el Laboratorio 4.
+No se utiliza `var()` ni se incorpora una fórmula RIC/Tukey en el desarrollo final.
+
+## Calidad y preparación de los datos
+
+La versión final deja evidencia explícita de:
+
+- tamaño de la base con `shape`;
+- estructura y valores no nulos con `info()`;
+- **0 duplicados completos**;
+- valores nulos concentrados en variables de acreditación;
+- **26 registros con arancel igual a $0**, excluidos del análisis de precios;
+- construcción verificable de **1.273 ofertas académicas únicas**.
 
 ## Preguntas obligatorias
 
 ### Pregunta 1
-Se comparan 1.273 ofertas académicas únicas mediante mediana por área, complementada con percentiles y cantidad de ofertas.
+
+Se comparan **1.273 ofertas académicas únicas** mediante mediana de arancel por área, complementada con media, P25, P75 y cantidad de ofertas.
+
+Resultados principales:
+
+- mediana global: **$2.030.000**;
+- Derecho: **$3.586.000**;
+- Ciencias Básicas: **$3.290.000**;
+- Agropecuaria: **$2.981.500**.
 
 ### Pregunta 2
-Se estudia la asociación entre edad y tipo de institución con `groupby()`, `crosstab()`, frecuencias, porcentajes y gráficos. No se interpreta causalidad.
+
+Se estudia la asociación entre edad y tipo de institución con `groupby()`, `crosstab()`, frecuencias, porcentajes y gráficos.
+
+- 15–19 años: CRUCH **46,24%**, IP **19,30%**;
+- 40 años o más: IP **52,93%**, CRUCH **10,88%**.
+
+La interpretación es descriptiva y no causal.
 
 ### Pregunta 3
-Se utiliza el **percentil 90**, calculado con `quantile(0.90)`.
+
+La formulación de la evaluación pide **diseñar un criterio** para identificar aranceles sustantivamente altos. El proyecto utiliza **percentil 90**, calculado con `quantile(0.90)`.
 
 Resultados verificados:
-- P90: **$4.106.400**.
-- Ofertas sobre P90: **128 de 1.273 (10,1%)**.
-- CRUCH: **73**.
-- Universidades privadas: **55**.
-- Concepción: **123**.
-- Biobío: **5**.
-- Salud: **38**.
-- Tecnología: **38**.
-- Duración mediana de ofertas altas: **10 semestres**.
-- Duración mediana del resto: **5 semestres**.
+
+- P90: **$4.106.400**;
+- ofertas sobre P90: **128 de 1.273 (10,1%)**;
+- CRUCH: **73**;
+- universidades privadas: **55**;
+- Concepción: **123**;
+- Biobío: **5**;
+- Salud: **38**;
+- Tecnología: **38**;
+- duración mediana de ofertas altas: **10 semestres**;
+- duración mediana del resto: **5 semestres**.
+
+Un borrador metodológico anterior propuso IQR. Ese borrador no es el criterio vigente del notebook ni del PowerPoint. La versión final conserva P90 porque utiliza percentiles trabajados en clase y evita introducir una fórmula que no forma parte del desarrollo final acordado.
 
 ## Aplicación regional “Del acero al algoritmo”
 
@@ -62,13 +99,16 @@ Resultados verificados:
 - Otros campos: **73.725 (72,93%)**.
 - Relación aproximada: **2,9 a 1**.
 
-La interpretación es descriptiva: la fotografía 2021 muestra una base formativa productiva considerablemente mayor que la transformadora. No demuestra déficit profesional ni causalidad laboral.
+La interpretación es descriptiva. No demuestra déficit profesional ni causalidad laboral.
 
 ## Validación técnica
 
-La versión corregida fue ejecutada localmente con el Excel real:
-- celdas de código: **38**;
-- celdas ejecutadas: **38**;
-- errores: **0**.
+El workflow final ejecutó el notebook completo después de aplicar los ajustes de rúbrica:
 
-Después de recuperar el Laboratorio 5 completo del profesor, el notebook se volvió a alinear para distinguir estrictamente el contenido enseñado de las aplicaciones adicionales del proyecto.
+- celdas de código: **39**;
+- celdas ejecutadas: **39**;
+- errores: **0**;
+- validación de `duplicated()`, `isna()`, `cumsum()` y `quantile(0.90)`: **correcta**;
+- presencia de fórmula RIC/Tukey o `var()`: **0**.
+
+Resultado del workflow: **SUCCESS**.
