@@ -22,6 +22,8 @@ El proyecto utiliza las matrículas de Educación Superior del Biobío de 2021 c
 
 La idea no es “Acero vs. Algoritmo”, sino **Acero + Algoritmo**: transformar una base industrial histórica incorporando digitalización, automatización, datos, energía e innovación.
 
+El notebook explica explícitamente el significado del título y aclara que se trata de una **metáfora del problema de investigación**, no de una transición causal demostrada por la base de 2021.
+
 ## Hallazgo principal
 
 Sobre **101.093 matrículas de pregrado**:
@@ -82,7 +84,7 @@ El notebook actual utiliza únicamente herramientas que aparecen en su desarroll
 
 - carga con `read_excel()`, revisión con `head()`, `shape` e `info()`;
 - control de calidad con nulos, duplicados completos y filtro de aranceles mayores que $0;
-- población, muestra y clasificación de variables;
+- población, muestra y **clasificación explícita de variables cualitativas/cuantitativas y nominales/ordinales/discretas/continuas**;
 - frecuencia absoluta y relativa;
 - frecuencia acumulada con `cumsum()` en intervalos ordenados de edad y arancel;
 - agrupación de intervalos con `pd.cut()`;
@@ -102,17 +104,23 @@ El repositorio tiene **una sola presentación oficial**:
 
 `presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx`
 
-La versión actual sigue la lógica visual mostrada por el profesor: una idea principal por diapositiva, gráficos o tarjetas grandes, interpretación breve y detalle técnico en anexos.
+La versión actual sigue la lógica visual mostrada por el profesor: una idea principal por diapositiva, gráficos o tarjetas grandes, interpretación breve y detalle técnico solo cuando ayuda a la defensa.
 
-Estructura:
+Estructura compacta:
 
-- **14 diapositivas de exposición principal**.
-- **3 anexos de defensa individual**.
-- **17 diapositivas en total**.
+- **11 diapositivas de exposición principal**.
+- **2 anexos de defensa individual**.
+- **13 diapositivas en total**.
 
-La presentación se genera únicamente desde:
+Se eliminaron diapositivas redundantes de género, edad promedio separada, cierre repetido, conceptos repetidos y clasificación de variables. La clasificación de variables queda en el **notebook**, donde corresponde al desarrollo estadístico.
+
+La presentación se genera desde:
 
 `presentacion/generar_presentacion_profesor.py`
+
+Luego se compacta automáticamente con:
+
+`scripts/compactar_presentacion.py`
 
 El workflow oficial es:
 
@@ -142,12 +150,14 @@ La documentación conserva contexto adicional sobre ENADEL, Huachipato, fortalec
 ## Estado
 
 - ✅ Un único notebook oficial: `notebooks/Estadistica_Descriptiva_Biobio.ipynb`.
+- ✅ Título “Del acero al algoritmo” explicado dentro del notebook.
+- ✅ Clasificación de variables incorporada en el notebook.
 - ✅ Preguntas obligatorias 1, 2 y 3 preservadas.
 - ✅ Control explícito de nulos y duplicados completos.
 - ✅ Frecuencias acumuladas incorporadas donde corresponde.
 - ✅ Pregunta 3 resuelta con P90, sin RIC ni fórmula adicional.
 - ✅ Dispersión: rango, desviación estándar y coeficiente de variación.
-- ✅ Un único PowerPoint oficial, con 14 diapositivas principales + 3 anexos.
+- ✅ Un único PowerPoint oficial, compactado a **11 diapositivas principales + 2 anexos**.
 - ✅ Anexo de herramientas limitado a funciones y gráficos realmente presentes en el notebook.
 - ⏳ Preparar y practicar la defensa oral individual.
 
