@@ -38,7 +38,7 @@ Esto **no demuestra déficit laboral ni causalidad**.
 ## Bases de análisis
 
 - Base original: **106.555 registros**.
-- Pregrado para análisis de personas, edad e “Acero/Algoritmo”: **101.093 matrículas**.
+- Pregrado para análisis de personas, edad y “Acero/Algoritmo”: **101.093 matrículas**.
 - Pregrado con arancel > $0 para análisis de precio: **101.067 matrículas**.
 - Ofertas académicas únicas para comparar precios: **1.273 ofertas**.
 
@@ -59,6 +59,7 @@ Se interpreta como **asociación**, no causalidad.
 
 - 15–19 años: CRUCH **46,24%**, IP **19,30%**.
 - 40 años o más: IP **52,93%**, CRUCH **10,88%**.
+- Edad media por tipo: CRUCH **22,8**, privadas **24,0**, CFT **25,7**, IP **26,5** años.
 
 ### 3. ¿Hay carreras cuyo arancel sea sustantivamente más caro que la mayoría?
 Criterio: **percentil 90 (P90)**, utilizando `quantile(0.90)`.
@@ -83,11 +84,33 @@ El notebook aplica los laboratorios 0 al 5 del profesor y la pauta:
 - rango, desviación estándar y coeficiente de variación, como en el Laboratorio 5;
 - percentiles y `quantile()` del Laboratorio 4, usando **P90** en la Pregunta 3.
 
+## PowerPoint oficial
+
+El repositorio tiene **una sola presentación oficial**:
+
+`presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx`
+
+La versión actual fue rediseñada siguiendo la lógica visual mostrada por el profesor: una idea principal por diapositiva, gráficos o tarjetas grandes, una interpretación breve y el detalle técnico movido a anexos.
+
+Estructura:
+
+- **14 diapositivas de exposición principal**.
+- **3 anexos de defensa individual**.
+- **17 diapositivas en total**.
+
+La presentación se genera únicamente desde:
+
+`presentacion/generar_presentacion_profesor.py`
+
+El workflow oficial es:
+
+`.github/workflows/generar_presentacion.yml`
+
+No existen generadores paralelos para otra versión del PowerPoint.
+
 ## Contexto regional
 
-La línea base 2021 se conecta con señales y procesos posteriores del Biobío: dificultades de contratación reportadas por ENADEL, el cierre siderúrgico de Huachipato como punto de inflexión regional, el Plan de Fortalecimiento Industrial, manufactura avanzada, Industria 4.0, sistemas inteligentes, mantenimiento predictivo, capital humano avanzado y la estrategia Biobío 2050.
-
-Estas conexiones se presentan como **contexto e hipótesis de investigación**, nunca como causalidad demostrada por la matrícula 2021.
+La documentación del proyecto conserva contexto adicional sobre ENADEL, Huachipato, fortalecimiento industrial, manufactura avanzada e Industria 4.0. Ese material se mantiene como **contexto e hipótesis de investigación**, pero no domina la presentación principal, que se concentra en los resultados descriptivos de 2021.
 
 ## Hallazgos secundarios
 
@@ -103,14 +126,13 @@ Estas conexiones se presentan como **contexto e hipótesis de investigación**, 
 - ✅ Un único notebook oficial: `notebooks/Estadistica_Descriptiva_Biobio.ipynb`.
 - ✅ Notebook alineado con los laboratorios del profesor.
 - ✅ Preguntas obligatorias 1, 2 y 3 preservadas.
-- ✅ Pregunta 3 resuelta con percentil 90, sin fórmula adicional.
+- ✅ Pregunta 3 resuelta con percentil 90, sin RIC ni fórmula adicional.
 - ✅ Dispersión alineada con el Laboratorio 5: rango, desviación estándar y coeficiente de variación.
-- ✅ Percentil 90 aplicado con `quantile(0.90)` para responder la Pregunta 3.
-- ✅ Validación local final: **38/38 celdas de código, 0 errores**.
-- ✅ Narrativa regional “Del acero al algoritmo” documentada.
-- ✅ Auditoría crítica del PowerPoint guardada en `documentos/auditoria_powerpoint_final.md`.
-- ✅ PowerPoint final auditado y corregido: **20 diapositivas con 19 transiciones Morph**.
-- ⏳ Preparar defensa oral individual.
+- ✅ PowerPoint oficial rediseñado con estilo visual cercano al ejemplo del profesor.
+- ✅ 14 diapositivas principales + 3 anexos de defensa.
+- ✅ Un solo generador y un solo workflow para la presentación.
+- ✅ Presentación validada sin desbordes visuales.
+- ⏳ Preparar y practicar la defensa oral individual.
 
 ## Documentación principal
 
