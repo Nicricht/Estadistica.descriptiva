@@ -1,11 +1,13 @@
 name: Validar notebook final
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
       - 'notebooks/Estadistica_Descriptiva_Biobio.ipynb'
       - '11_MATRICULAS_ED_SUPERIOR_BIOBIO_2021 (3).xlsx'
+      - 'scripts/alinear_notebook_rubrica.py'
       - '.github/workflows/validar_notebook.yml'
 
 permissions:
@@ -28,6 +30,9 @@ jobs:
       - name: Instalar dependencias
         run: pip install pandas openpyxl matplotlib nbconvert ipykernel
 
+      - name: Alinear notebook con rúbrica
+        run: python scripts/alinear_notebook_rubrica.py
+
       - name: Preparar base para ejecución
         run: cp "11_MATRICULAS_ED_SUPERIOR_BIOBIO_2021 (3).xlsx" "notebooks/11_MATRICULAS_ED_SUPERIOR_BIOBIO_2021.xlsx"
 
@@ -42,7 +47,7 @@ jobs:
             --ExecutePreprocessor.timeout=600 \
             notebooks/Estadistica_Descriptiva_Biobio.ipynb
 
-      - name: Validar ejecución completa
+      - name: Validar ejecución y alineación
         run: |
           python - <<'PY'
           import json
@@ -57,11 +62,24 @@ jobs:
               for i, c in enumerate(code_cells)
               if any(o.get('output_type') == 'error' for o in c.get('outputs', []))
           ]
+          source = '\n'.join(''.join(c.get('source', [])) for c in nb['cells'])
+          outputs = '\n'.join(
+              ''.join(o.get('text', []))
+              for c in nb['cells']
+              for o in c.get('outputs', [])
+              if o.get('output_type') == 'stream'
+          )
+
+          for esperado in ['df.duplicated().sum()', 'df.isna().sum()', '.cumsum()', 'quantile(0.90)']:
+              assert esperado in source, esperado
+          for esperado in ['Duplicados completos: 0', 'Ofertas sobre P90: 128', 'Porcentaje: 10.1%']:
+              assert esperado in outputs, esperado
+          for prohibido in ['Q3 + 1,5 × RIC', 'Q3 + 1.5 * IQR', '.var(']:
+              assert prohibido not in source, prohibido
 
           print(f'Celdas de código: {len(code_cells)}')
           print(f'Celdas sin ejecutar: {missing}')
           print(f'Celdas con error: {errors}')
-
           if missing or errors:
               raise SystemExit('La validación del notebook falló.')
           PY
@@ -77,7 +95,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'El notebook ya estaba ejecutado y validado.'
           else
-            git commit -m 'chore: ejecutar y validar notebook final'
+            git commit -m 'chore: alinear y ejecutar notebook contra rúbrica'
             git fetch origin main
             git rebase origin/main
             git push origin main
