@@ -65,7 +65,7 @@ Se interpreta como **asociación**, no causalidad.
 - Edad media por tipo: CRUCH **22,8**, privadas **24,0**, CFT **25,7**, IP **26,5** años.
 
 ### 3. ¿Hay carreras cuyo arancel sea sustantivamente más caro que la mayoría?
-La pregunta solicita **diseñar un criterio reproducible**. El criterio vigente del proyecto es el **percentil 90 (P90)**, calculado con `quantile(0.90)`, porque los percentiles sí forman parte del Laboratorio 4 del profesor.
+Para operacionalizar la expresión **“sustantivamente más caro que la mayoría”**, el proyecto define un criterio reproducible: **percentil 90 (P90)**, calculado con `quantile(0.90)`. Esta decisión metodológica usa percentiles trabajados en el Laboratorio 4 del profesor.
 
 - P90: **$4.106.400**.
 - Ofertas sobre P90: **128 de 1.273 (10,1%)**.
@@ -124,7 +124,7 @@ La presentación y el notebook mantienen las tres preguntas obligatorias. Para c
 
 **pregunta → herramienta → cálculo → resultado → interpretación → límite de lo que se puede concluir**.
 
-La Pregunta 3 conserva P90 porque la formulación de la evaluación pide diseñar un criterio y el método elegido utiliza percentiles trabajados por el profesor. Un borrador metodológico anterior propuso IQR, pero ese borrador no es el criterio vigente del notebook ni del PowerPoint.
+La Pregunta 3 conserva P90 como **decisión metodológica final del proyecto**. Un documento maestro interno anterior propuso IQR/Tukey como una posible estrategia, pero esa propuesta no corresponde al desarrollo final acordado ni a una técnica enseñada en los laboratorios revisados. Para evitar atribuir a la pauta una fórmula que no hemos verificado como obligatoria, el repositorio ya no afirma que la evaluación imponga IQR ni que imponga P90: simplemente documenta y defiende el criterio elegido, P90.
 
 ## Contexto regional
 
