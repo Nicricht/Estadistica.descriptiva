@@ -14,6 +14,10 @@ s = s.replace(
     "s=base('Pregunta 3 · ¿Qué aranceles están entre los más altos?',10,'Usamos el percentil 90 (P90) para estudiar aproximadamente el 10% superior de las ofertas.')",
     "s=base('Pregunta 3 · ¿Qué aranceles están entre los más altos?',10,'Para operacionalizar “sustantivamente más caro”, usamos el percentil 90 (P90), trabajado en el Laboratorio 4.')"
 )
+s = s.replace(
+    "s=base('Pregunta 3 · ¿Qué aranceles están entre los más altos?',10,'La pauta pide diseñar un criterio reproducible; usamos el percentil 90 (P90), trabajado en el Laboratorio 4.')",
+    "s=base('Pregunta 3 · ¿Qué aranceles están entre los más altos?',10,'Para operacionalizar “sustantivamente más caro”, usamos el percentil 90 (P90), trabajado en el Laboratorio 4.')"
+)
 
 # El anexo debe enumerar solo herramientas que realmente aparecen en el notebook vigente.
 old_rows = "rows=[('Laboratorio','Contenido aplicado','Uso en el proyecto'),('0 · Pandas','read_excel, head, tail, info, filtros','Carga y preparación de la base'),('1 · Conceptos','población, muestra, tipos de variables','Definición de unidades de análisis'),('2 · Frecuencias','groupby().size(), relativas, acumuladas','Áreas, género, edad y arancel'),('3 · Gráficos','barras, circular, histogramas, scatter','Visualización de distribuciones'),('4 · Tendencia y percentiles','mean, median, mode, quantile, crosstab','Preguntas 1, 2 y P90'),('5 · Dispersión','rango, std, CV, agg, isin','Dispersión general y comparaciones')]"
