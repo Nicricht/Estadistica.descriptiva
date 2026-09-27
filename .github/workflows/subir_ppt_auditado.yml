@@ -20,35 +20,48 @@ jobs:
           fetch-depth: 0
 
       - name: Comprobar fragmentos
-        id: check
         shell: bash
         run: |
           set -e
-          ok=1
-          for i in 00 01 02 03 04 05 06; do
-            if [ ! -f "presentacion/_ppt_chunks/chunk_${i}" ]; then
-              ok=0
-            fi
+          for f in \
+            chunk_00 chunk_01 \
+            chunk_02a chunk_02b chunk_02c chunk_02d \
+            chunk_03 chunk_04 chunk_05 \
+            chunk_06a chunk_06b \
+            chunk_06c0 chunk_06c1 chunk_06c2 chunk_06c3 \
+            chunk_06d0 chunk_06d1 chunk_06d2 chunk_06d3; do
+            test -f "presentacion/_ppt_chunks/$f"
           done
-          echo "ready=$ok" >> "$GITHUB_OUTPUT"
 
       - name: Reconstruir PowerPoint oficial
-        if: steps.check.outputs.ready == '1'
         shell: bash
         run: |
           set -e
-          cat presentacion/_ppt_chunks/chunk_00 \
-              presentacion/_ppt_chunks/chunk_01 \
-              presentacion/_ppt_chunks/chunk_02 \
-              presentacion/_ppt_chunks/chunk_03 \
-              presentacion/_ppt_chunks/chunk_04 \
-              presentacion/_ppt_chunks/chunk_05 \
-              presentacion/_ppt_chunks/chunk_06 \
+          cat \
+            presentacion/_ppt_chunks/chunk_00 \
+            presentacion/_ppt_chunks/chunk_01 \
+            presentacion/_ppt_chunks/chunk_02a \
+            presentacion/_ppt_chunks/chunk_02b \
+            presentacion/_ppt_chunks/chunk_02c \
+            presentacion/_ppt_chunks/chunk_02d \
+            presentacion/_ppt_chunks/chunk_03 \
+            presentacion/_ppt_chunks/chunk_04 \
+            presentacion/_ppt_chunks/chunk_05 \
+            presentacion/_ppt_chunks/chunk_06a \
+            presentacion/_ppt_chunks/chunk_06b \
+            presentacion/_ppt_chunks/chunk_06c0 \
+            presentacion/_ppt_chunks/chunk_06c1 \
+            presentacion/_ppt_chunks/chunk_06c2 \
+            presentacion/_ppt_chunks/chunk_06c3 \
+            presentacion/_ppt_chunks/chunk_06d0 \
+            presentacion/_ppt_chunks/chunk_06d1 \
+            presentacion/_ppt_chunks/chunk_06d2 \
+            presentacion/_ppt_chunks/chunk_06d3 \
             | base64 -d > presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx
           unzip -t presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx > /dev/null
+          test "$(stat -c%s presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx)" -eq 72596
 
       - name: Guardar presentación oficial
-        if: steps.check.outputs.ready == '1'
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
@@ -58,5 +71,6 @@ jobs:
             echo 'El PowerPoint oficial ya coincide con los fragmentos.'
           else
             git commit -m 'build: publicar PowerPoint oficial Estilo Profesor'
-            git push
+            git pull --rebase origin main
+            git push origin main
           fi
