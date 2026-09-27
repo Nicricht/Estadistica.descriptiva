@@ -117,4 +117,22 @@ s=base('ANEXO · Conceptos clave para la defensa',17,'No memorices definiciones 
 for i,(t,f,d,c) in enumerate(con):
  x=.82+(i%2)*6; y=1.76+(i//2)*2.2; shape(s,x,y,5.48,1.86,L,EDGE); badge(s,x+.22,y+.2,2.15,t,c); text(s,x+.25,y+.72,4.98,.36,f,11.3,NAV,True); text(s,x+.25,y+1.14,4.98,.48,d,8.8,MUT)
 note(s,.82,6.08,11.48,.74,'REGLA DE ORO','Resultado observado ≠ causa demostrada. En la defensa, usa “se observa”, “se asocia” o “la base muestra”.',RED)
+
+
+s=base('ANEXO · Clasificación de variables',18,'Clasificamos las variables principales según el criterio trabajado en el Laboratorio 1.')
+shape(s,.72,1.62,5.82,4.72,L,EDGE); shape(s,6.78,1.62,5.82,4.72,L,EDGE)
+text(s,1.02,1.9,4.9,.38,'VARIABLES CUALITATIVAS',13.5,NAV,True)
+text(s,7.08,1.9,4.9,.38,'VARIABLES CUANTITATIVAS',13.5,NAV,True)
+for i,(v,t,c) in enumerate([
+ ('GÉNERO','Nominal',TEAL),('RANGO EDAD','Ordinal',ORG),('TIPO DE INSTITUCIÓN','Nominal',TEAL),
+ ('NOMBRE CARRERA','Nominal',TEAL),('ÁREA DEL CONOCIMIENTO','Nominal',TEAL),('PROVINCIA SEDE','Nominal',TEAL)
+]):
+ y=2.42+i*.58; badge(s,1.02,y,1.15,t,c); text(s,2.35,y-.02,3.72,.34,v,9.4,TXT,True)
+for i,(v,t,c) in enumerate([
+ ('EDAD','Continua',GRN),('AÑO INGRESO','Discreta',BLUE),('DURACIÓN TOTAL (SEMESTRES)','Continua',GRN),('VALOR ARANCEL (PESOS)','Continua',GRN)
+]):
+ y=2.42+i*.78; badge(s,7.08,y,1.25,t,c); text(s,8.55,y-.02,3.55,.34,v,9.4,TXT,True)
+note(s,7.08,5.55,5.15,.62,'CLAVE','Nominal: sin orden · Ordinal: con orden · Discreta: valores contables · Continua: medida en una escala.',ORG)
+note(s,.72,6.47,11.88,.48,'CRITERIO DEL CURSO','Seguimos el criterio de los laboratorios del profesor: por ejemplo, Edad se clasifica como cuantitativa continua.',TEAL)
+
 prs.save(OUT); print('Generado',OUT,len(prs.slides))
