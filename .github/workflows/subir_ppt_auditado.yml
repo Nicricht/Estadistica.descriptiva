@@ -25,7 +25,7 @@ jobs:
         run: |
           set -e
           ok=1
-          for i in 00 01 02 03 04; do
+          for i in 00 01 02 03 04 05 06; do
             if [ ! -f "presentacion/_ppt_chunks/chunk_${i}" ]; then
               ok=0
             fi
@@ -42,6 +42,8 @@ jobs:
               presentacion/_ppt_chunks/chunk_02 \
               presentacion/_ppt_chunks/chunk_03 \
               presentacion/_ppt_chunks/chunk_04 \
+              presentacion/_ppt_chunks/chunk_05 \
+              presentacion/_ppt_chunks/chunk_06 \
             | base64 -d > presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx
           unzip -t presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx > /dev/null
 
