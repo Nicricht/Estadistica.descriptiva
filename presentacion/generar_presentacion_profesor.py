@@ -81,7 +81,7 @@ for x,t,vals in [(0.78,'Estudiantes de 15 a 19 años',[('Universidad CRUCH',46.2
  for i,(l,v,c) in enumerate(vals):hbar(s,x+.28,2.62+i*.83,4.95,l,v,60,c,f'{v:.1f}%')
 note(s,.78,5.12,11.62,1.1,'INTERPRETACIÓN','La composición institucional cambia entre grupos de edad. Observamos una asociación descriptiva, pero la base no permite afirmar que la edad cause la elección de institución.')
 
-s=base('Pregunta 3 · ¿Qué aranceles están entre los más altos?',10,'La pauta pide diseñar un criterio reproducible; usamos el percentil 90 (P90), trabajado en el Laboratorio 4.')
+s=base('Pregunta 3 · ¿Qué aranceles están entre los más altos?',10,'Para operacionalizar “sustantivamente más caro”, usamos el percentil 90 (P90), trabajado en el Laboratorio 4.')
 for x,w,v,l,c,su in [(0.82,2.65,'$4.106.400','percentil 90',TEAL,'P90'),(3.78,2.35,'128','ofertas sobre P90',RED,'de 1.273'),(6.45,2.35,'10,1%','del total',GRN,''),(9.12,2.8,'$8.783.670','valor máximo',ORG,'')]:card(s,x,1.72,w,v,l,c,su)
 text(s,.84,3.64,11,.35,'Cómo leer el P90',11,NAV,True); shape(s,.84,4.23,10.68,.54,C((223,231,238))); shape(s,.84,4.23,9.61,.54,TEAL); shape(s,10.45,4.23,1.07,.54,ORG); text(s,1.2,4.26,8.8,.4,'≈ 90% de las ofertas está en o bajo $4.106.400',9.3,W,True,PP_ALIGN.CENTER); text(s,10.52,4.26,.92,.4,'≈10%',9,W,True,PP_ALIGN.CENTER); note(s,.84,5.24,11.1,1.03,'RESPUESTA','El P90 es $4.106.400. Lo superan 128 ofertas, equivalentes al 10,1% del total. Ese es el grupo que analizamos como arancel alto.')
 
