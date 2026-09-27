@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'presentacion/generar_presentacion_profesor.py'
+      - 'scripts/alinear_presentacion_rubrica.py'
       - '.github/workflows/generar_presentacion.yml'
 
 permissions:
@@ -28,6 +29,9 @@ jobs:
       - name: Instalar dependencias
         run: pip install python-pptx
 
+      - name: Alinear presentación con rúbrica
+        run: python scripts/alinear_presentacion_rubrica.py
+
       - name: Generar presentación oficial
         run: python presentacion/generar_presentacion_profesor.py
 
@@ -48,10 +52,20 @@ jobs:
               )
               assert len(slides) == 17, len(slides)
               texto = '\n'.join(z.read(n).decode('utf-8') for n in slides)
-          for esperado in ['4.106.400', '20,15%', '6,92%', '128', 'quantile(0.90)', '73 CRUCH', '55 privadas']:
+
+          for esperado in [
+              '4.106.400', '20,15%', '6,92%', '128', 'quantile(0.90)',
+              '73 CRUCH', '55 privadas', 'cumsum()', '0 duplicados completos',
+              'barras y subplots', 'La pauta pide diseñar un criterio reproducible'
+          ]:
               assert esperado in texto, esperado
-          for prohibido in ['Q3 + 1,5 × RIC', 'Rango intercuartílico', 'var()', '10,6%']:
+
+          for prohibido in [
+              'Q3 + 1,5 × RIC', 'Rango intercuartílico', 'var()', '10,6%',
+              'circular, histogramas, scatter'
+          ]:
               assert prohibido not in texto, prohibido
+
           print('PowerPoint validado:', len(slides), 'diapositivas')
           PY
 
@@ -60,11 +74,11 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx
+          git add presentacion/generar_presentacion_profesor.py presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx
           if git diff --cached --quiet; then
             echo 'La presentación oficial ya está actualizada.'
           else
-            git commit -m 'build: generar PowerPoint Estilo Profesor'
+            git commit -m 'build: alinear PowerPoint con rúbrica y notebook'
             git pull --rebase origin main
             git push origin main
           fi
