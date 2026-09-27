@@ -23,15 +23,15 @@ assert len(prs.slides) == 13, len(prs.slides)
 
 # Renumerar las diapositivas visibles del estilo del profesor.
 # La portada no lleva número. Las demás tienen un pequeño número arriba a la derecha.
-for new_number, slide in enumerate(prs.slides[1:], start=2):
+for new_number, slide in enumerate(list(prs.slides)[1:], start=2):
     for shape in slide.shapes:
         if not getattr(shape, 'has_text_frame', False):
             continue
         # Posición usada por la función base() del generador.
         if shape.left >= Inches(12.0) and shape.top <= Inches(0.9):
-            txt = shape.text.strip()
-            if txt.isdigit() and len(txt) <= 2:
-                shape.text_frame.paragraphs[0].runs[0].text = f'{new_number:02d}'
+            current = shape.text.strip()
+            if current.isdigit() and len(current) <= 2:
+                shape.text = f'{new_number:02d}'
                 break
 
 prs.save(PPT)
