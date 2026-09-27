@@ -1,4 +1,4 @@
-name: Publicar PowerPoint auditado
+name: Publicar PowerPoint Estilo Profesor
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
           done
           echo "ready=$ok" >> "$GITHUB_OUTPUT"
 
-      - name: Reconstruir PowerPoint
+      - name: Reconstruir PowerPoint oficial
         if: steps.check.outputs.ready == '1'
         shell: bash
         run: |
@@ -44,19 +44,19 @@ jobs:
               presentacion/_ppt_chunks/chunk_04 \
               presentacion/_ppt_chunks/chunk_05 \
               presentacion/_ppt_chunks/chunk_06 \
-            | base64 -d > presentacion/Del_Acero_al_Algoritmo_FINAL_MORPH.pptx
-          unzip -t presentacion/Del_Acero_al_Algoritmo_FINAL_MORPH.pptx > /dev/null
+            | base64 -d > presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx
+          unzip -t presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx > /dev/null
 
-      - name: Guardar presentación
+      - name: Guardar presentación oficial
         if: steps.check.outputs.ready == '1'
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add presentacion/Del_Acero_al_Algoritmo_FINAL_MORPH.pptx
+          git add presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx
           if git diff --cached --quiet; then
-            echo 'El PowerPoint ya coincide con la versión auditada.'
+            echo 'El PowerPoint oficial ya coincide con los fragmentos.'
           else
-            git commit -m 'build: publicar PowerPoint auditado Del acero al algoritmo'
+            git commit -m 'build: publicar PowerPoint oficial Estilo Profesor'
             git push
           fi
