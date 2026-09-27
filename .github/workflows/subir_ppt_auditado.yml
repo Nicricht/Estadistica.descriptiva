@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'presentacion/_ppt_chunks/official_revised.b64'
+      - 'presentacion/corregir_ppt_estilo_profesor.py'
       - '.github/workflows/subir_ppt_auditado.yml'
 
 permissions:
@@ -19,13 +19,28 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Reconstruir PowerPoint oficial
+      - name: Corregir PowerPoint oficial sin cambiar su diseño
         shell: bash
         run: |
           set -e
-          base64 -d presentacion/_ppt_chunks/official_revised.b64 > presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx
+          python presentacion/corregir_ppt_estilo_profesor.py
           unzip -t presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx > /dev/null
-          test "$(stat -c%s presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx)" -eq 72328
+
+      - name: Validar contenido actualizado
+        shell: bash
+        run: |
+          set -e
+          rm -rf /tmp/ppt_check
+          mkdir -p /tmp/ppt_check
+          unzip -q presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx -d /tmp/ppt_check
+          grep -R -q '4.106.400' /tmp/ppt_check/ppt/slides
+          grep -R -q 'quantile(0.90)' /tmp/ppt_check/ppt/slides
+          grep -R -q '73 / 55' /tmp/ppt_check/ppt/slides
+          grep -R -q '123 / 5' /tmp/ppt_check/ppt/slides
+          if grep -R -q 'Q3 + 1,5 × RIC\|10,6%\|73 / 62\|129 / 6\|39 Salud\|39 Tecnología' /tmp/ppt_check/ppt/slides; then
+            echo 'Se encontró contenido obsoleto.'
+            exit 1
+          fi
 
       - name: Guardar presentación oficial
         shell: bash
@@ -34,7 +49,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx
           if git diff --cached --quiet; then
-            echo 'El PowerPoint oficial ya coincide con la versión revisada.'
+            echo 'El PowerPoint oficial ya está actualizado.'
           else
             git commit -m 'build: publicar PowerPoint Estilo Profesor entendible'
             git pull --rebase origin main
