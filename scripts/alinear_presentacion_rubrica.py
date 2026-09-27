@@ -9,10 +9,10 @@ new = old + "\ntext(s,.78,6.28,11.92,.34,'Control de calidad: 0 duplicados compl
 if old in s and '0 duplicados completos' not in s:
     s = s.replace(old, new)
 
-# Explicar por qué P90 cumple la pregunta: la pauta solicita diseñar un criterio reproducible.
+# Explicar por qué P90 es el criterio metodológico final, sin atribuir una fórmula específica a la pauta.
 s = s.replace(
     "s=base('Pregunta 3 · ¿Qué aranceles están entre los más altos?',10,'Usamos el percentil 90 (P90) para estudiar aproximadamente el 10% superior de las ofertas.')",
-    "s=base('Pregunta 3 · ¿Qué aranceles están entre los más altos?',10,'La pauta pide diseñar un criterio reproducible; usamos el percentil 90 (P90), trabajado en el Laboratorio 4.')"
+    "s=base('Pregunta 3 · ¿Qué aranceles están entre los más altos?',10,'Para operacionalizar “sustantivamente más caro”, usamos el percentil 90 (P90), trabajado en el Laboratorio 4.')"
 )
 
 # El anexo debe enumerar solo herramientas que realmente aparecen en el notebook vigente.
@@ -23,7 +23,7 @@ if old_rows in s:
 
 s = s.replace(
     "('¿Por qué usamos P90?','Porque permite separar aproximadamente el 10% superior usando percentiles trabajados en clase.')",
-    "('¿Por qué usamos P90?','Porque la pauta pide diseñar un criterio reproducible y el P90 usa percentiles trabajados en el Laboratorio 4.')"
+    "('¿Por qué usamos P90?','Porque necesitábamos un umbral reproducible y P90 usa percentiles trabajados en el Laboratorio 4.')"
 )
 
 p.write_text(s, encoding='utf-8')
