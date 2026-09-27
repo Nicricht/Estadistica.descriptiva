@@ -73,7 +73,7 @@ note(s,.95,5.75,11.3,.78,'INTERPRETACIÓN','En esta fotografía de 2021, el bloq
 
 s=base('Pregunta 1 · ¿Hay áreas donde las carreras sean más caras?',8,'Comparamos la mediana del arancel sobre 1.273 ofertas académicas únicas.'); text(s,.85,1.6,7.65,.34,'Mediana de arancel por área (millones de pesos)',10.7,NAV,True)
 for i,(l,v,c) in enumerate([('Derecho',3.586,ORG),('Ciencias Básicas',3.29,GRN),('Agropecuaria',2.982,TEAL),('Tecnología',2.122,BLUE),('Salud',2.08,TDK)]): hbar(s,.88,2.08+i*.64,8.3,l,v,4,c,f'${v:.3f}M')
-card(s,9.55,1.8,2.45,'$2.030M','mediana global'); note(s,9.2,3.45,3.15,2.08,'RESPUESTA','Sí. Derecho, Ciencias Básicas y Agropecuaria presentan medianas por encima de la mediana global. Usamos mediana porque los valores extremos la afectan menos.',ORG)
+card(s,9.55,1.8,2.45,'$2.030M','mediana global'); note(s,9.2,3.45,3.15,2.08,'CRITERIO Y RESPUESTA','Criterio: comparar la mediana por área con la mediana global, porque la mediana es menos sensible a valores extremos. Resultado: Derecho, Ciencias Básicas y Agropecuaria quedan por encima de $2.030.000.',ORG)
 
 s=base('Pregunta 2 · Edad y tipo de institución',9,'Comparamos la composición institucional de dos grupos de edad con porcentajes.')
 for x,t,vals in [(0.78,'Estudiantes de 15 a 19 años',[('Universidad CRUCH',46.24,TEAL),('Instituto Profesional',19.3,BLUE)]),(6.85,'Estudiantes de 40 años o más',[('Instituto Profesional',52.93,ORG),('Universidad CRUCH',10.88,TEAL)])]:
@@ -88,7 +88,7 @@ text(s,.84,3.64,11,.35,'Cómo leer el P90',11,NAV,True); shape(s,.84,4.23,10.68,
 s=base('¿Qué caracteriza al grupo de ofertas sobre P90?',11,'Describimos las 128 ofertas de arancel alto sin interpretar estas variables como causas del precio.')
 for i,(t,a,b,c) in enumerate([('TIPO DE INSTITUCIÓN','73 CRUCH','55 privadas',TEAL),('ÁREA DEL CONOCIMIENTO','38 Salud','38 Tecnología',GRN),('PROVINCIA','123 Concepción','5 Biobío',ORG),('DURACIÓN MEDIANA','10 semestres','resto: 5',BLUE)]):
  x=.78+(i%2)*6.05; y=1.78+(i//2)*1.72; shape(s,x,y,5.55,1.42,L,EDGE); badge(s,x+.22,y+.21,1.85,t,c); text(s,x+.25,y+.67,2.35,.45,a,14,NAV,True); text(s,x+2.7,y+.67,2.55,.45,b,14,c,True,PP_ALIGN.RIGHT)
-note(s,.78,5.42,11.62,.88,'LECTURA','Las ofertas altas se concentran en determinados tipos de institución, áreas y territorio, y tienen mayor duración mediana. La base no demuestra que estas variables causen el precio.')
+note(s,.78,5.28,11.62,1.15,'EXPLICACIÓN ENCONTRADA','Las ofertas sobre P90 se concentran en universidades, Salud y Tecnología, carreras de mayor duración y especialmente en Concepción. La concentración territorial aporta contexto regional; estas asociaciones no demuestran causalidad.',ORG)
 
 s=base('Capacidades transformadoras por provincia',12,'La proporción y la cantidad absoluta cuentan historias distintas.'); prov=[('ARAUCO','8,55%','232 matrículas',ORG,232),('BIOBÍO','7,61%','966 matrículas',GRN,966),('CONCEPCIÓN','6,77%','5.802 matrículas',TEAL,5802)]
 for i,(n,pct,nn,c,cnt) in enumerate(prov):
