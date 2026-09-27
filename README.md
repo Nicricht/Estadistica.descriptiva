@@ -35,12 +35,15 @@ La interpretación correcta es descriptiva: en la fotografía educativa de 2021,
 
 Esto **no demuestra déficit laboral ni causalidad**.
 
-## Bases de análisis
+## Bases de análisis y calidad de datos
 
-- Base original: **106.555 registros**.
+- Base original: **106.555 registros y 28 columnas**.
 - Pregrado para análisis de personas, edad y “Acero/Algoritmo”: **101.093 matrículas**.
 - Pregrado con arancel > $0 para análisis de precio: **101.067 matrículas**.
+- Registros con arancel $0 excluidos del análisis de precios: **26**.
 - Ofertas académicas únicas para comparar precios: **1.273 ofertas**.
+- Duplicados completos: **0**.
+- Los valores nulos se concentran en variables de acreditación que no son necesarias para responder las tres preguntas.
 
 Una oferta académica única evita contar el mismo precio una vez por cada estudiante matriculado.
 
@@ -62,7 +65,7 @@ Se interpreta como **asociación**, no causalidad.
 - Edad media por tipo: CRUCH **22,8**, privadas **24,0**, CFT **25,7**, IP **26,5** años.
 
 ### 3. ¿Hay carreras cuyo arancel sea sustantivamente más caro que la mayoría?
-Criterio: **percentil 90 (P90)**, utilizando `quantile(0.90)`.
+La pregunta solicita **diseñar un criterio reproducible**. El criterio vigente del proyecto es el **percentil 90 (P90)**, calculado con `quantile(0.90)`, porque los percentiles sí forman parte del Laboratorio 4 del profesor.
 
 - P90: **$4.106.400**.
 - Ofertas sobre P90: **128 de 1.273 (10,1%)**.
@@ -71,18 +74,27 @@ Criterio: **percentil 90 (P90)**, utilizando `quantile(0.90)`.
 - Salud: **38**; Tecnología: **38**.
 - Duración mediana: **10 semestres** en ofertas altas vs. **5** en el resto.
 
-## Contenidos estadísticos cubiertos
+El proyecto **no utiliza RIC ni la regla Q3 + 1,5 × RIC** en la respuesta final de la Pregunta 3.
 
-El notebook aplica los laboratorios 0 al 5 del profesor y la pauta:
+## Contenidos estadísticos realmente presentes en el notebook
 
-- Pandas y filtros;
+El notebook actual utiliza únicamente herramientas que aparecen en su desarrollo visible:
+
+- carga con `read_excel()`, revisión con `head()`, `shape` e `info()`;
+- control de calidad con nulos, duplicados completos y filtro de aranceles mayores que $0;
 - población, muestra y clasificación de variables;
-- frecuencias absoluta, relativa y acumuladas cuando corresponde;
-- gráficos circular, barras, histogramas, subplots y dispersión;
-- media, mediana, moda y percentiles;
-- `describe()`, `groupby()`, `agg()` y `crosstab()`;
-- rango, desviación estándar y coeficiente de variación, como en el Laboratorio 5;
-- percentiles y `quantile()` del Laboratorio 4, usando **P90** en la Pregunta 3.
+- frecuencia absoluta y relativa;
+- frecuencia acumulada con `cumsum()` en intervalos ordenados de edad y arancel;
+- agrupación de intervalos con `pd.cut()`;
+- gráficos de barras y comparaciones con `subplots()`;
+- media, mediana y moda;
+- percentiles con `quantile()`;
+- `groupby()`, `agg()` y `crosstab()`;
+- rango, desviación estándar y coeficiente de variación;
+- `isin()` para filtros de grupos;
+- **P90** como criterio reproducible de la Pregunta 3.
+
+No se declara en la presentación el uso de gráficos o funciones que el notebook actual no ejecuta.
 
 ## PowerPoint oficial
 
@@ -90,7 +102,7 @@ El repositorio tiene **una sola presentación oficial**:
 
 `presentacion/Del_Acero_al_Algoritmo_Estilo_Profesor.pptx`
 
-La versión actual fue rediseñada siguiendo la lógica visual mostrada por el profesor: una idea principal por diapositiva, gráficos o tarjetas grandes, una interpretación breve y el detalle técnico movido a anexos.
+La versión actual sigue la lógica visual mostrada por el profesor: una idea principal por diapositiva, gráficos o tarjetas grandes, interpretación breve y detalle técnico en anexos.
 
 Estructura:
 
@@ -106,11 +118,17 @@ El workflow oficial es:
 
 `.github/workflows/generar_presentacion.yml`
 
-No existen generadores paralelos para otra versión del PowerPoint.
+## Alineación con la pauta
+
+La presentación y el notebook mantienen las tres preguntas obligatorias. Para cada resultado se busca la secuencia:
+
+**pregunta → herramienta → cálculo → resultado → interpretación → límite de lo que se puede concluir**.
+
+La Pregunta 3 conserva P90 porque la formulación de la evaluación pide diseñar un criterio y el método elegido utiliza percentiles trabajados por el profesor. Un borrador metodológico anterior propuso IQR, pero ese borrador no es el criterio vigente del notebook ni del PowerPoint.
 
 ## Contexto regional
 
-La documentación del proyecto conserva contexto adicional sobre ENADEL, Huachipato, fortalecimiento industrial, manufactura avanzada e Industria 4.0. Ese material se mantiene como **contexto e hipótesis de investigación**, pero no domina la presentación principal, que se concentra en los resultados descriptivos de 2021.
+La documentación conserva contexto adicional sobre ENADEL, Huachipato, fortalecimiento industrial, manufactura avanzada e Industria 4.0. Ese material se mantiene como **contexto e hipótesis de investigación**, pero no domina la presentación principal, que se concentra en los resultados descriptivos de 2021.
 
 ## Hallazgos secundarios
 
@@ -124,14 +142,13 @@ La documentación del proyecto conserva contexto adicional sobre ENADEL, Huachip
 ## Estado
 
 - ✅ Un único notebook oficial: `notebooks/Estadistica_Descriptiva_Biobio.ipynb`.
-- ✅ Notebook alineado con los laboratorios del profesor.
 - ✅ Preguntas obligatorias 1, 2 y 3 preservadas.
-- ✅ Pregunta 3 resuelta con percentil 90, sin RIC ni fórmula adicional.
-- ✅ Dispersión alineada con el Laboratorio 5: rango, desviación estándar y coeficiente de variación.
-- ✅ PowerPoint oficial rediseñado con estilo visual cercano al ejemplo del profesor.
-- ✅ 14 diapositivas principales + 3 anexos de defensa.
-- ✅ Un solo generador y un solo workflow para la presentación.
-- ✅ Presentación validada sin desbordes visuales.
+- ✅ Control explícito de nulos y duplicados completos.
+- ✅ Frecuencias acumuladas incorporadas donde corresponde.
+- ✅ Pregunta 3 resuelta con P90, sin RIC ni fórmula adicional.
+- ✅ Dispersión: rango, desviación estándar y coeficiente de variación.
+- ✅ Un único PowerPoint oficial, con 14 diapositivas principales + 3 anexos.
+- ✅ Anexo de herramientas limitado a funciones y gráficos realmente presentes en el notebook.
 - ⏳ Preparar y practicar la defensa oral individual.
 
 ## Documentación principal
