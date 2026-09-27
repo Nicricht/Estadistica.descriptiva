@@ -66,7 +66,7 @@ jobs:
               texto = '\n'.join(z.read(n).decode('utf-8') for n in slides)
 
           for esperado in [
-              '4.106.400', '20,15%', '6,92%', '128', 'quantile(0.90)',
+              '4.106.400', '20,15%', '6,92%', '128',
               '73 CRUCH', '55 privadas', 'cumsum()', '0 duplicados completos',
               'barras y subplots', 'Para operacionalizar “sustantivamente más caro”',
               'CRITERIO Y RESPUESTA', 'EXPLICACIÓN ENCONTRADA',
@@ -110,6 +110,7 @@ jobs:
           assert '| AÑO INGRESO | Cuantitativa | Discreta |' in texto
           assert '| EDAD | Cuantitativa | Continua |' in texto
           assert '| VALOR ARANCEL (PESOS) | Cuantitativa | Continua |' in texto
+          assert 'quantile(0.90)' in texto
           print('Notebook alineado con la pauta, título explicado y variables clasificadas.')
           PY
 
