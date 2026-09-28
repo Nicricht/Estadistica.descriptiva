@@ -11,34 +11,35 @@ import json
 nb_path = Path('notebooks/Estadistica_Descriptiva_Biobio.ipynb')
 nb = json.loads(nb_path.read_text(encoding='utf-8'))
 
-variables_text = (
-    "# 1. Población, muestra y variables\n"
-    "\n"
-    "**Población:** matrículas de educación superior de la Región del Biobío durante 2021.\n"
-    "\n"
-    "**Base disponible:** 106.555 registros.\n"
-    "\n"
-    "**Subbase principal:** 101.093 matrículas de pregrado.\n"
-    "\n"
-    "## 1.1 Clasificación de las variables principales\n"
-    "\n"
-    "Siguiendo el criterio trabajado en el **Laboratorio 1**, distinguimos variables cualitativas y cuantitativas. Dentro de ellas usamos los subtipos nominal, ordinal, discreta y continua.\n"
-    "\n"
-    "| Variable | Tipo general | Subtipo | Justificación breve |\n"
-    "|---|---|---|---|\n"
-    "| GÉNERO | Cualitativa | Nominal | Son categorías sin un orden natural. |\n"
-    "| RANGO EDAD | Cualitativa | Ordinal | Los rangos tienen un orden natural de menor a mayor edad. |\n"
-    "| TIPO DE INSTITUCIÓN | Cualitativa | Nominal | Distingue categorías de institución sin jerarquía numérica. |\n"
-    "| NOMBRE CARRERA | Cualitativa | Nominal | Identifica categorías de carreras sin orden natural. |\n"
-    "| ÁREA DEL CONOCIMIENTO | Cualitativa | Nominal | Clasifica áreas sin un orden natural. |\n"
-    "| PROVINCIA SEDE | Cualitativa | Nominal | Identifica territorios sin un orden estadístico. |\n"
-    "| EDAD | Cuantitativa | Continua | Seguimos el criterio del Laboratorio 1 del profesor, donde edad se clasifica como continua. |\n"
-    "| AÑO INGRESO | Cuantitativa | Discreta | Se registra en años enteros, por ejemplo 2019, 2020 o 2021. |\n"
-    "| DURACIÓN TOTAL CARRERA (SEMESTRES) | Cuantitativa | Continua | Representa una medida de duración expresada en semestres. |\n"
-    "| VALOR ARANCEL (PESOS) | Cuantitativa | Continua | Es una magnitud numérica sobre la que calculamos media, mediana, percentiles y dispersión. |\n"
-    "\n"
-    "**Cómo recordarlo:** nominal = categorías sin orden; ordinal = categorías ordenadas; discreta = valores contables separados; continua = una medición sobre una escala numérica.\n"
-)
+variables_text = """# 1. Población, base de análisis y variables
+
+**Población de interés:** matrículas de educación superior de la Región del Biobío durante 2021.
+
+**Base disponible:** 106.555 registros.
+
+**Subbase principal:** 101.093 matrículas de pregrado.
+
+**Unidad de análisis:** para describir la matrícula se trabaja con registros de matrícula; para comparar precios entre carreras y áreas se utilizan ofertas académicas únicas. No se extrajo una muestra aleatoria adicional, sino que se trabajó con la base entregada y con subbases construidas según el objetivo de cada análisis.
+
+## 1.1 Clasificación de las variables principales
+
+Para organizar el análisis se clasificaron las variables principales según su naturaleza estadística. Las variables cualitativas representan categorías, mientras que las cuantitativas expresan magnitudes numéricas. A su vez, se distinguen los subtipos nominal, ordinal, discreta y continua.
+
+| Variable | Tipo general | Subtipo | Justificación breve |
+|---|---|---|---|
+| GÉNERO | Cualitativa | Nominal | Presenta categorías sin un orden natural. |
+| RANGO EDAD | Cualitativa | Ordinal | Sus categorías siguen un orden de menor a mayor edad. |
+| TIPO DE INSTITUCIÓN | Cualitativa | Nominal | Distingue categorías de institución sin jerarquía numérica. |
+| NOMBRE CARRERA | Cualitativa | Nominal | Identifica carreras como categorías sin un orden natural. |
+| ÁREA DEL CONOCIMIENTO | Cualitativa | Nominal | Agrupa campos de estudio sin establecer jerarquía entre ellos. |
+| PROVINCIA SEDE | Cualitativa | Nominal | Identifica territorios sin un orden estadístico. |
+| EDAD | Cuantitativa | Continua | Conceptualmente mide edad sobre una escala continua, aunque en la base se registra en años enteros. |
+| AÑO INGRESO | Cuantitativa | Discreta | Se registra mediante años enteros, por ejemplo 2019, 2020 o 2021. |
+| DURACIÓN TOTAL CARRERA (SEMESTRES) | Cuantitativa | Continua | Se trabaja como una medida de duración y la base la expresa en semestres. |
+| VALOR ARANCEL (PESOS) | Cuantitativa | Continua | Representa una magnitud monetaria sobre la que se calculan medidas descriptivas. |
+
+**Criterio utilizado:** nominal corresponde a categorías sin orden; ordinal a categorías ordenadas; discreta a valores numéricos separados; y continua a mediciones realizadas sobre una escala numérica.
+"""
 
 changed = False
 for cell in nb.get('cells', []):
