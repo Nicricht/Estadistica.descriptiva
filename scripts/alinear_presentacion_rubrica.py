@@ -56,14 +56,13 @@ p.write_text(s, encoding='utf-8')
 nb_path = Path('notebooks/Estadistica_Descriptiva_Biobio.ipynb')
 nb = json.loads(nb_path.read_text(encoding='utf-8'))
 
-p1_text = (
-    "## Pregunta 1\n"
-    "### ¿Hay áreas del conocimiento donde las carreras sean más caras?\n"
-    "\n"
-    "Usamos las **1.273 ofertas académicas únicas**.\n"
-    "\n"
-    "**Criterio diseñado:** comparamos la **mediana del arancel de cada área** con la **mediana global** de las ofertas. Elegimos la mediana porque es menos sensible a valores extremos y representa mejor el arancel típico de un área.\n"
-)
+p1_text = """## Pregunta 1
+### ¿Hay áreas del conocimiento donde las carreras sean más caras?
+
+El análisis se realiza sobre las **1.273 ofertas académicas únicas**, de manera que cada oferta tenga un peso comparable.
+
+**Criterio diseñado:** se compara la **mediana del arancel de cada área** con la **mediana global** de las ofertas. Se utiliza la mediana porque es menos sensible a valores extremos y representa mejor el arancel típico de un área.
+"""
 
 p3_extra = (
     "\n"
