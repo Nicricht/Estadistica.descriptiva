@@ -23,7 +23,7 @@ La idea **no es afirmar que el Biobío esté abandonando su industria ni demostr
 
 En simple, el proyecto busca responder: **¿con qué formación de capital humano contaba el Biobío en 2021 para combinar su identidad productiva con nuevas capacidades tecnológicas?**
 
-El notebook se desarrolla con las herramientas trabajadas en clases y se concentra en los análisis que aportan directamente al trabajo.
+El desarrollo se organiza desde la preparación de la base hasta la interpretación de los resultados, manteniendo como foco las variables y preguntas definidas para el análisis.
 """
 
 if not nb.get('cells') or nb['cells'][0].get('cell_type') != 'markdown':
