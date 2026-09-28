@@ -26,7 +26,7 @@ s = s.replace(
 # Pregunta 1: hacer visible el criterio diseñado, porque la pauta lo solicita explícitamente.
 s = s.replace(
     "card(s,9.55,1.8,2.45,'$2.030M','mediana global'); note(s,9.2,3.45,3.15,2.08,'RESPUESTA','Sí. Derecho, Ciencias Básicas y Agropecuaria presentan medianas por encima de la mediana global. Usamos mediana porque los valores extremos la afectan menos.',ORG)",
-    "card(s,9.55,1.8,2.45,'$2.030M','mediana global'); note(s,9.2,3.45,3.15,2.08,'CRITERIO Y RESPUESTA','Criterio: comparar la mediana por área con la mediana global, porque la mediana es menos sensible a valores extremos. Resultado: Derecho, Ciencias Básicas y Agropecuaria quedan por encima de $2.030.000.',ORG)"
+    "card(s,9.55,1.8,2.45,'$2.030M','mediana global'); note(s,9.2,3.45,3.15,2.08,'CRITERIO Y RESPUESTA','Criterio: comparar la mediana por área con la mediana global, porque la mediana es menos sensible a valores extremos. Resultado: Derecho, Ciencias Básicas, Agropecuaria, Tecnología y Salud quedan por encima de $2.030.000; las tres primeras presentan las mayores diferencias.',ORG)"
 )
 
 # Pregunta 3: responder de forma explícita la parte de la pauta que pide una explicación
@@ -82,7 +82,7 @@ for cell in nb.get('cells', []):
             changed = True
 
     if txt.startswith('### Respuesta') and 'El **percentil 90** de las 1.273 ofertas' in txt:
-        if '**Explicación encontrada:**' not in txt:
+        if '**Explicación encontrada:**' not in txt and '**Interpretación:**' not in txt:
             txt = txt.rstrip() + '\n' + p3_extra
             cell['source'] = txt.splitlines(keepends=True)
             changed = True
